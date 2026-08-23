@@ -1,39 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tiny Twirl Cloud by Diya Sahai 💖</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fffcf8;color:#6d3e4a}
-header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blur(12px);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffe0e5}
-.logo{display:flex;align-items:center;gap:8px;font-weight:800;color:#d68a8a;text-decoration:none;font-size:17px}
-.logo img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #ffd6db;background:#fff}
-.nav{display:flex;gap:6px}
-.nav a{font-size:11px;font-weight:600;text-decoration:none;color:#a66;padding:7px 12px;background:#fff;border-radius:999px;box-shadow:0 2px 6px #00000008}
-.hero{margin:14px;background:linear-gradient(135deg,#ffd6db,#ffe8ec);border-radius:24px;padding:28px 20px;text-align:center}
-.hero h1{font-size:22px;color:#5a2a35}
-.hero p{font-size:12px;margin-top:6px;opacity:.8}
-.social{margin-top:14px;display:flex;gap:8px;justify-content:center}
-.sbtn{padding:10px 16px;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none}
-.insta{background:#ff8fab;color:#fff} .yt{background:#fff;color:#ff8fab;border:1px solid #ffd6db}
-h2{font-size:18px;text-align:center;margin:18px 0 10px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 12px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #5a2a3512;cursor:pointer;position:relative}
-.card img{width:100%;height:155px;object-fit:cover;background:#ffe0e5;display:block}
-.badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;background:#fff;color:#ff8fab;border:1px solid #ffd6db}
-.heart{position:absolute;top:8px;right:8px;background:#ffffffee;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
-.card-body{padding:10px 12px}
-.name{font-size:12px;font-weight:700} .price{font-size:10px;color:#b07a85;margin-top:2px}
-.favBar{margin:14px;background:#fff0f2;border:1px dashed #ffb3c0;border-radius:18px;padding:12px}
-.favBar h3{font-size:14px;text-align:center}
-.founder{margin:22px 12px;background:#fff0f2;border-radius:22px;padding:16px;display:flex;gap:12px;align-items:center}
-.founder img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff}
-#popup{position:fixed;inset:0;background:#00000066;backdrop-filter:blur(6px);display:none;align-items:end;justify-content:center;z-index:99;padding:12px}
-#popup.show{display:flex}
-.sheet{background:#fff;width:100%;max-width:420px;border-radius:26px 26px 20px 20px;overflow:hidden;position:relative}
-.sheet img{width:100%;height:240px;object-fit:cover}
-.sheet-body{padding:16px}
-.close{position:absolute;top:10px;right:14px;background:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tiny Twirl Cloud 💖</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}body{background:#fffcf8;color:#6d3e4a}header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blur(10px);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffe0e5}.logo{display:flex;align-items:center;gap:6px;font-weight:800;color:#d68a8a;text-decoration:none;font-size:14px}.logo img{width:24px;height:24px;border-radius:50%;border:1.5px solid #ffd6db}.nav a{font-size:10px;font-weight:600;text-decoration:none;color:#a66;padding:6px 10px;background:#fff;border-radius:999px}.hero{margin:12px;background:linear-gradient(135deg,#ffd6db,#ffe8ec);border-radius:20px;padding:20px;text-align:center}.sbtn{padding:8px 12px;border-radius:999px;font-size:11px;font-weight:700;text-decoration:none;display:inline-block;margin:4px}.insta{background:#ff8fab;color:#fff}.yt{background:#fff;color:#ff8fab;border:1px solid #ffd6db}h2{font-size:16px;text-align:center;margin:14px 0 8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 10px}.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 16px #5a2a3510;position:relative;cursor:pointer}.card img{width:100%;height:130px;object-fit:cover;background:#ffe0e5}.badge{position:absolute;top:6px;left:6px;font-size:8px;font-weight:800;padding:3px 6px;border-radius:999px;background:#fff;color:#ff8fab;border:1px solid #ffd6db}.heart{position:absolute;top:6px;right:6px;background:#ffffffee;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}.card-body{padding:8px 10px}.name{font-size:11px;font-weight:700}.price{font-size:9px;color:#b07a85}.favBar{margin:10px;background:#fff0f2;border:1px dashed #ffb3c0;border-radius:14px;padding:8px}.founder{margin:16px 10px;background:#fff0f2;border-radius:18px;padding:12px;display:flex;gap:10px;align-items:center}.founder img{width:44px;height:44px;border-radius:50%;border:2px solid #fff}#popup{position:fixed;inset:0;background:#0006;backdrop-filter:blur(5px);display:none;align-items:end;justify-content:center;z-index:99;padding:10px}#popup.show{display:flex}.sheet{background:#fff;width:100%;max-width:400px;border-radius:20px 20px 16px 16px;overflow:hidden;position:relative}.sheet img{width:100%;height:200px;object-fit:cover}.sheet-body{padding:12px}.close{position:absolute;top:8px;right:10px;background:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}.freeBtn{width:100%;margin-top:10px;padding:10px;border:none;border-radius:12px;font-weight:700;font-size:12px;background:#ff8fab;color:#fff}</style></head><body>
+<header><a class="logo" href="#"><img src="IMG-20260823-WA0231.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'"> Tiny Twirl Cloud</a><div class="nav"><a href="#home">Home</a><a href="#fav">❤️</a></div></header>
+<div id="home" class="hero"><h1>Handmade Crochet 🎀</h1><p style="font-size:11px;opacity:.8;margin-top:4px">6 free patterns by Diya Sahai</p><div style="margin-top:10px"><a class="sbtn insta" href="https://www.instagram.com/tinytwirlcloud/" target="_blank">Insta 💖</a><a class="sbtn yt" href="https://youtube.com/@tinytwirlcloud?si=LCmGC1IwD8YWAIW7" target="_blank">YouTube ▶️</a></div></div>
+<div id="fav" class="favBar" style="display:none"><h3 style="font-size:12px;text-align:center">Your Favorites ❤️</h3><div class="grid" id="favGrid" style="margin-top:8px"></div></div>
+<h2>6 Free Patterns 💖</h2><div class="grid" id="allGrid"></div>
+<div class="founder"><img src="IMG-20260823-WA0231.jpg"><div><b style="font-size:12px">Tiny Twirl Cloud</b><br><span style="font-size:10px;opacity:.8">Hi! I'm Diya Sahai 💖 All free!</span></div></div>
+<div id="popup" onclick="closeP()"><div class="sheet" onclick="event.stopPropagation()"><div class="close" onclick="closeP()">✕</div><img id="pImg" src=""><div class="sheet-body"><h3 id="pTitle" style="font-size:13px"></h3><p id="pDesc" style="font-size:11px;opacity:.8;margin-top:4px"></p><button class="freeBtn" onclick="window.open('https://www.instagram.com/tinytwirlcloud/','_blank')">Get Free on Insta 💌</button></div></div></div>
+<script>
+const P=[{i:'bunny',n:'Watermelon Bunny',m:'IMG-20260823-WA9459.jpg',d:'Soft bunny with sprout ears! 🍉🐰'},{i:'bow',n:'Bow Scrunchie',m:'IMG-20260823-WA5906.jpg',d:'Viral bow scrunchie with pearls! 🤍'},{i:'scrunchie',n:'Strawberry Scrunchie',m:'IMG-20260823-WA8603.jpg',d:'Cute strawberry scrunchie 🍓 15min make!'},{i:'head',n:'Flower Headband',m:'IMG-20260823-WA9402.jpg',d:'Lace headband with bow 🌸'},{i:'granny',n:'Granny Square',m:'IMG-20260823-WA4084.jpg',d:'Classic granny square base! 🌈'},{i:'daisy',n:'Daisy Blanket',m:'IMG-20260823-WA3458.jpg',d:'Cozy daisy blanket ☁️'}];
+let F=JSON.parse(localStorage.getItem('tinyFav')||'[]');
+function R(){let A=document.getElementById('allGrid'),G=document.getElementById('favGrid'),B=document.getElementById('fav');A.innerHTML='';G.innerHTML='';P.forEach(p=>{let f=F.includes(p.i);A.innerHTML+=`<div class="card" onclick="O('${p.i}')"><span class="badge">FREE</span><span class="heart" onclick="T(event,'${p.i}')">${f?'❤️':'♡'}</span><img src="${p.m}" onerror="this.src='https://picsum.photos/300/300?random=${p.i}'"><div class="card-body"><div class="name">${p.n}</div><div class="price">Free</div></div></div>`});let fav=P.filter(p=>F.includes(p.i));if(fav.length){B.style.display='block';fav.forEach(p=>{G.innerHTML+=`<div class="card" onclick="O('${p.i}')"><span class="badge">FREE</span><span class="heart" onclick="T(event,'${p.i}')">❤️</span><img src="${p.m}"><div class="card-body"><div class="name">${p.n}</div></div></div>`})}else B.style.display='none';localStorage.setItem('tinyFav',JSON.stringify(F))}
+function T(e,i){e.stopPropagation();F=F.includes(i)?F.filter(x=>x!==i):[...F,i];R()}
+function O(i){let p=P.find(x=>x.i===i);document.getElementById('pImg').src=p.m;document.getElementById('pTitle').textContent=p.n;document.getElementById('pDesc').textContent=p.d;document.getElementById('popup').classList.add('show')}
+function closeP(){document.getElementById('popup').classList.remove('show')}
+R();
+</script></body></html>
