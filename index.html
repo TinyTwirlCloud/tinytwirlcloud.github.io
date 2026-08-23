@@ -1,70 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tiny Twirl Cloud ☁️</title>
 <style>
-body{margin:0;background:#fffcf8;font-family:sans-serif;color:#7a4a4a;text-align:center}
-header{padding:8px 10px;background:#fff8f0;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px #0001}
-.logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:14px;color:#d68a8a;text-decoration:none}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fffcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#7a4a4a;text-align:center}
+header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px #0001}
+.logo{display:flex;align-items:center;gap:7px;font-weight:800;font-size:14px;color:#d68a8a;text-decoration:none}
 .logo img{width:28px;height:28px;border-radius:50%;border:2px solid #ffdae0;object-fit:cover}
-.nav{display:flex;gap:8px}
-.nav a{font-size:11px;text-decoration:none;color:#b06a6a;font-weight:700;background:#fff;padding:5px 9px;border-radius:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;max-width:900px;margin:auto}
-.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 10px #0001;text-align:left}
-.card img{width:100%;height:170px;object-fit:cover;background:#fff0f2}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{font-size:11px;text-decoration:none;color:#b06a6a;font-weight:700;background:#fff;padding:5px 9px;border-radius:12px;box-shadow:0 1px 3px #0001}
+.pro{font-size:10px;font-weight:800;background:linear-gradient(90deg,#ffd6e7,#ff9ab2);border:none;padding:6px 11px;border-radius:20px;color:#6a2a3a}
+.hero{margin:12px;background:linear-gradient(135deg,#ffdadf,#ffe8ec);border-radius:24px;padding:32px 18px}
+.hero h1{font-size:22px}
+.hero p{font-size:12px;margin-top:6px;opacity:0.8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px #0001;text-align:left;position:relative}
+.card img{width:100%;height:175px;object-fit:cover;background:#fff0f2;display:block}
 .card-body{padding:10px 12px}
-.badge{background:#ffe0e5;padding:3px 8px;border-radius:8px;font-size:8px;font-weight:700}
-.badge-pro{background:linear-gradient(90deg,#ff8fab,#ff5a7a);color:#fff;padding:3px 8px;border-radius:8px;font-size:8px;font-weight:800}
-.bio{display:flex;gap:14px;align-items:center;background:#fff0f2;margin:14px;border-radius:20px;padding:16px;text-align:left}
-.bio img{width:75px;height:75px;border-radius:50%;border:3px solid #fff;object-fit:cover}
+.heart{position:absolute;top:8px;right:8px;background:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px #0002;font-size:15px;z-index:2;cursor:pointer}
+.badge{font-size:9px;font-weight:800;padding:4px 8px;border-radius:8px}
+.free{background:#ffe0e5;color:#a04a5a}
+.paid{background:#ff8fab;color:#fff}
+.title{font-weight:700;font-size:13px;margin-top:6px}
+.bio{display:flex;gap:15px;align-items:center;background:#fff0f2;margin:18px 12px;border-radius:22px;padding:18px;text-align:left;border:1px solid #ffdae0}
+.bio img{width:80px;height:80px;border-radius:50%;border:3px solid #fff;object-fit:cover;flex-shrink:0}
+.bio h3{font-size:15px;margin:0}
+.bio p{font-size:12px;margin:7px 0 0;line-height:1.5}
+.section-title{font-size:18px;margin:18px 0 4px}
 </style>
 </head>
 <body>
 
 <header>
-<a class="logo" href="#home"><img src="IMG-20260823-WAO231.jpg"> Tiny Twirl Cloud</a>
+<a class="logo" href="#home">
+<img src="IMG-20260823-WA2184.jpg" alt="logo"> Tiny Twirl Cloud
+</a>
 <div class="nav">
 <a href="#home">Home</a>
 <a href="#pattern">Pattern</a>
 <a href="#fav">Fav</a>
 <a href="#you">You</a>
+<button class="pro">👑 Pro ₹5</button>
 </div>
-<button style="background:linear-gradient(90deg,#ffd6e7,#ff9ab2);border:none;padding:6px 10px;border-radius:20px;font-size:10px;font-weight:800">👑 Pro ₹5</button>
 </header>
 
-<div id="home" style="background:linear-gradient(135deg,#ffdadf,#ffe8ec);margin:12px;border-radius:22px;padding:28px">
-<h1 style="margin:0;font-size:21px">Handmade Crochet Patterns 🎀</h1>
-<p style="font-size:12px">Soft pastel • Coquette • Made with love</p>
+<div id="home" class="hero">
+<h1>Handmade Crochet Patterns 🎀</h1>
+<p>Soft pastel • Coquette • Beginner friendly • Made with love</p>
 </div>
 
 <div id="pattern">
-<h2 style="margin:16px 0 4px">Patterns 💖</h2>
+<h2 class="section-title">Patterns 💖</h2>
 <div class="grid">
-<div class="card"><img src="IMG-20260823-WA9459.jpg"><div class="card-body"><span class="badge">FREE</span><div style="font-weight:700;font-size:13px;margin-top:5px">Watermelon Bunny</div><small>🧶 Free pattern</small></div></div>
-<div class="card"><img src="IMG-20260823-WA5906.jpg"><div class="card-body"><span class="badge-pro">👑 PRO ₹5</span><div style="font-weight:700;font-size:13px;margin-top:5px">Bow Scrunchie</div><small>🔒 Unlock for ₹5</small></div></div>
-<div class="card"><img src="IMG-20260823-WA9402.jpg"><div class="card-body"><span class="badge">FREE</span><div style="font-weight:700;font-size:13px;margin-top:5px">Flower Headband</div><small>🧶 Free pattern</small></div></div>
-<div class="card"><img src="IMG-20260823-WA3458.jpg"><div class="card-body"><span class="badge-pro">👑 PRO ₹5</span><div style="font-weight:700;font-size:13px;margin-top:5px">Daisy Blanket</div><small>🔒 Unlock for ₹5</small></div></div>
-</div>
+
+<div class="card">
+<span class="heart">❤️</span>
+<img src="IMG-20260823-WA9459.jpg" alt="Bunny">
+<div class="card-body"><span class="badge free">FREE</span><div class="title">Watermelon Bunny</div></div>
 </div>
 
-<div id="fav" style="display:none"></div>
+<div class="card">
+<span class="heart">🤍</span>
+<img src="IMG-20260823-WA5906.jpg" alt="Bow">
+<div class="card-body"><span class="badge paid">👑 PRO ₹5</span><div class="title">Bow Scrunchie</div></div>
+</div>
+
+<div class="card">
+<span class="heart">🤍</span>
+<img src="IMG-20260823-WA9402.jpg" alt="Headband">
+<div class="card-body"><span class="badge free">FREE</span><div class="title">Flower Headband</div></div>
+</div>
+
+<div class="card">
+<span class="heart">🤍</span>
+<img src="IMG-20260823-WA3458.jpg" alt="Daisy">
+<div class="card-body"><span class="badge paid">👑 PRO ₹5</span><div class="title">Daisy Blanket</div></div>
+</div>
+
+</div>
+</div>
 
 <div id="you" class="bio">
-<img src="IMG-20260823-WAO231.jpg" onerror="this.src='IMG-20260823-WA2184.jpg'">
+<img src="IMG-20260823-WAO231.jpg" alt="Diya">
 <div>
-<h3 style="margin:0">🎀 You — Diya Sahai</h3>
-<p style="font-size:12px;margin:6px 0;line-height:1.5">
+<h3>🎀 You — Diya Sahai</h3>
+<p>
 <b>Tiny Twirl Cloud ☁️ Founder</b><br>
-soft pastel crochet • coquette vibes<br>
-handmade with love 💖<br>
+Soft pastel crochet • Handmade with love 💖<br>
+Beginner friendly patterns<br>
 📍 Gurugram, India
 </p>
 </div>
 </div>
 
-<div style="padding:16px;font-size:10px;opacity:0.4">© Tiny Twirl Cloud • Home • Pattern • Fav • You</div>
+<div style="padding:20px;font-size:11px;opacity:0.6">© 2026 Tiny Twirl Cloud • Made with 🎀</div>
 
 </body>
 </html>
