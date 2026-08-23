@@ -8,41 +8,33 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#fffcf8;color:#6d3e4a}
-header{position:sticky;top:0;z-index:20;background:#fff8f0d9;backdrop-filter:blur(12px);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffe0e5}
+header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blur(12px);padding:12px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffe0e5}
 .logo{font-weight:800;color:#d68a8a;text-decoration:none;font-size:17px}
 .nav{display:flex;gap:6px}
 .nav a{font-size:11px;font-weight:600;text-decoration:none;color:#a66;padding:7px 12px;background:#fff;border-radius:999px;box-shadow:0 2px 6px #00000008}
 .hero{margin:14px;background:linear-gradient(135deg,#ffd6db,#ffe8ec);border-radius:24px;padding:28px 20px;text-align:center}
-.hero h1{font-size:22px;color:#5a2a35;line-height:1.2}
+.hero h1{font-size:22px;color:#5a2a35}
 .hero p{font-size:12px;margin-top:6px;opacity:.8}
 .social{margin-top:14px;display:flex;gap:8px;justify-content:center}
-.sbtn{padding:8px 14px;border-radius:999px;font-size:11px;font-weight:700;text-decoration:none}
-.insta{background:#ff8fab;color:#fff} .yt{background:#fff;color:#ff8fab}
+.sbtn{padding:10px 16px;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none}
+.insta{background:#ff8fab;color:#fff} .yt{background:#fff;color:#ff8fab;border:1px solid #ffd6db}
 h2{font-size:18px;text-align:center;margin:18px 0 10px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 12px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #5a2a3512;cursor:pointer;position:relative;transition:.2s}
-.card:active{transform:scale(.98)}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #5a2a3512;cursor:pointer;position:relative}
 .card img{width:100%;height:155px;object-fit:cover;background:#ffe0e5;display:block}
-.badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px}
-.free{background:#fff;color:#ff8fab;border:1px solid #ffd6db} .paid{background:#ff8fab;color:#fff}
-.heart{position:absolute;top:8px;right:8px;background:#ffffffee;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 2px 8px #0001}
-.card-body{padding:10px 12px 12px}
-.name{font-size:12px;font-weight:700;line-height:1.2}
-.price{font-size:10px;color:#b07a85;margin-top:2px}
+.badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;background:#fff;color:#ff8fab;border:1px solid #ffd6db}
+.heart{position:absolute;top:8px;right:8px;background:#ffffffee;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.card-body{padding:10px 12px}
+.name{font-size:12px;font-weight:700} .price{font-size:10px;color:#b07a85;margin-top:2px}
 .founder{margin:22px 12px;background:#fff0f2;border-radius:22px;padding:16px;display:flex;gap:12px;align-items:center}
 .founder img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff}
-.founder b{font-size:13px} .founder span{font-size:11px;opacity:.8;line-height:1.3;display:block;margin-top:2px}
 #popup{position:fixed;inset:0;background:#00000066;backdrop-filter:blur(6px);display:none;align-items:end;justify-content:center;z-index:99;padding:12px}
 #popup.show{display:flex}
-.sheet{background:#fff;width:100%;max-width:420px;border-radius:26px 26px 20px 20px;overflow:hidden;animation:up .25s ease}
-@keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.sheet{background:#fff;width:100%;max-width:420px;border-radius:26px 26px 20px 20px;overflow:hidden;position:relative}
 .sheet img{width:100%;height:240px;object-fit:cover}
 .sheet-body{padding:16px}
-.sheet-body h3{font-size:16px} .sheet-body p{font-size:11px;margin-top:6px;line-height:1.5;opacity:.8}
-.buy{width:100%;margin-top:12px;padding:12px;border:none;border-radius:14px;font-weight:700;font-size:13px;cursor:pointer}
-.buy-free{background:#ffe0e5;color:#d68a8a} .buy-paid{background:#ff8fab;color:#fff}
 .close{position:absolute;top:10px;right:14px;background:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer}
-#favEmpty{text-align:center;font-size:12px;opacity:.6;padding:20px;display:none}
+.freeBtn{width:100%;margin-top:12px;padding:12px;border:none;border-radius:14px;font-weight:700;font-size:13px;background:#ff8fab;color:#fff;cursor:pointer}
 </style>
 </head>
 <body>
@@ -53,63 +45,64 @@ h2{font-size:18px;text-align:center;margin:18px 0 10px}
 
 <div id="home" class="hero">
 <h1>Handmade Crochet Patterns 🎀</h1>
-<p>cute • soft • made with love by Diya Sahai</p>
+<p>6 cute free patterns by Diya Sahai</p>
 <div class="social">
-<a class="sbtn insta" href="https://instagram.com/tiny.twirl.cloud" target="_blank">Instagram 💖</a>
-<a class="sbtn yt" href="https://youtube.com" target="_blank">YouTube ▶️</a>
+<a class="sbtn insta" href="https://www.instagram.com/tinytwirlcloud/" target="_blank">Instagram 💖</a>
+<a class="sbtn yt" href="https://youtube.com/@tinytwirlcloud?si=LCmGC1IwD8YWAIW7" target="_blank">YouTube ▶️</a>
 </div>
 </div>
 
-<h2 id="pattern">Patterns 💖</h2>
+<h2 id="pattern">6 Free Patterns 💖</h2>
 <div class="grid" id="allGrid"></div>
-<div id="favEmpty">No favourites yet! Tap ♡ to save 💕</div>
-<div class="grid" id="favGrid" style="display:none"></div>
 
 <div id="you" class="founder">
 <img src="IMG-20260823-WA0231.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'">
-<div><b>Tiny Twirl Cloud - Founder</b><span>Hi! I'm Diya Sahai from Gurugram 💖 I love making tiny cute things with yarn. DM me on Insta for custom orders!</span></div>
+<div>
+<b>Tiny Twirl Cloud - Founder</b><br>
+<span style="font-size:11px;opacity:.8">Hi! I'm Diya Sahai from Gurugram 💖 All 6 patterns free!</span><br>
+<div style="margin-top:8px;display:flex;gap:6px">
+<a href="https://www.instagram.com/tinytwirlcloud/" target="_blank" style="font-size:11px;background:#ff8fab;color:#fff;padding:5px 10px;border-radius:999px;text-decoration:none">Instagram</a>
+<a href="https://youtube.com/@tinytwirlcloud?si=LCmGC1IwD8YWAIW7" target="_blank" style="font-size:11px;background:#fff;color:#ff8fab;border:1px solid #ffd6db;padding:5px 10px;border-radius:999px;text-decoration:none">YouTube</a>
+</div>
+</div>
 </div>
 
 <div id="popup" onclick="closeP()">
-<div class="sheet" onclick="event.stopPropagation()" style="position:relative">
+<div class="sheet" onclick="event.stopPropagation()">
 <div class="close" onclick="closeP()">✕</div>
 <img id="pImg" src="">
 <div class="sheet-body">
 <h3 id="pTitle"></h3>
-<p id="pDesc"></p>
-<button id="pBtn" class="buy"></button>
+<p id="pDesc" style="font-size:11px;margin-top:6px;opacity:.8;line-height:1.5"></p>
+<button class="freeBtn" onclick="window.open('https://www.instagram.com/tinytwirlcloud/','_blank')">Get Free Pattern on Instagram 💌</button>
 </div>
 </div>
 </div>
 
 <script>
 const patterns=[
-{id:'bunny',name:'Watermelon Bunny',img:'IMG-20260823-WA9459.jpg',type:'FREE',price:'Free Pattern',desc:'Super soft watermelon bunny with green sprout ears! Perfect for beginners. Includes full step-by-step PDF + video help. 🍉🐰'},
-{id:'bow',name:'Bow Scrunchie',img:'IMG-20260823-WA5906.jpg',type:'PRO ₹5',price:'₹5 Only',desc:'Viral Pinterest bow scrunchie with pearls! Best seller 🤍 Makes your hair look so aesthetic. Instant download after payment.'},
-{id:'head',name:'Flower Headband',img:'IMG-20260823-WA9402.jpg',type:'FREE',price:'Free Pattern',desc:'Elegant lace headband with tiny bow. So pretty for dresses! 🌸 Includes stitch diagram.'},
-{id:'daisy',name:'Daisy Blanket',img:'IMG-20260823-WA3458.jpg',type:'PRO ₹5',price:'₹5 Only',desc:'Cozy chunky daisy granny square blanket! My fav project ☁️ Super warm and cute for your room.'}
+{id:'bunny',name:'Watermelon Bunny',img:'IMG-20260823-WA9459.jpg',desc:'Super soft watermelon bunny with sprout ears! Perfect for beginners 🍉🐰'},
+{id:'bow',name:'Bow Scrunchie',img:'IMG-20260823-WA5906.jpg',desc:'Viral Pinterest bow scrunchie with pearls! So aesthetic 🤍'},
+{id:'scrunchie',name:'Strawberry Scrunchie',img:'IMG-20260823-WA8603.jpg',desc:'NEW! Cute strawberry scrunchie with green leaves 🍓 Super easy, 15 mins make!'},
+{id:'head',name:'Flower Headband',img:'IMG-20260823-WA9402.jpg',desc:'Elegant lace headband with tiny bow. So pretty! 🌸'},
+{id:'granny',name:'Classic Granny Square',img:'IMG-20260823-WA4084.jpg',desc:'NEW! Classic granny square - base for all projects! Beginner friendly 🌈'},
+{id:'daisy',name:'Daisy Blanket',img:'IMG-20260823-WA3458.jpg',desc:'Cozy daisy granny square blanket! My fav project ☁️'}
 ];
 let favs=JSON.parse(localStorage.getItem('tinyFav')||'[]');
 function render(){
 let all=document.getElementById('allGrid'); all.innerHTML='';
 patterns.forEach(p=>{
 let isFav=favs.includes(p.id);
-all.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge ${p.type.includes('FREE')?'free':'paid'}">${p.type}</span><span class="heart" onclick="toggleFav(event,'${p.id}')">${isFav?'❤️':'♡'}</span><img src="${p.img}" onerror="this.src='https://picsum.photos/300/300?random=${p.id}'"><div class="card-body"><div class="name">${p.name}</div><div class="price">${p.price}</div></div></div>`
+all.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge">FREE</span><span class="heart" onclick="toggleFav(event,'${p.id}')">${isFav?'❤️':'♡'}</span><img src="${p.img}" onerror="this.src='https://picsum.photos/300/300?random=${p.id}'"><div class="card-body"><div class="name">${p.name}</div><div class="price">Free Pattern</div></div></div>`;
 });
-let favGrid=document.getElementById('favGrid'); let empty=document.getElementById('favEmpty');
-if(favs.length===0){favGrid.style.display='none'; empty.style.display='block'; favGrid.innerHTML='';}
-else{empty.style.display='none'; favGrid.style.display='grid'; favGrid.innerHTML=''; favs.forEach(id=>{let p=patterns.find(x=>x.id===id); if(p){favGrid.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge ${p.type.includes('FREE')?'free':'paid'}">${p.type}</span><span class="heart" onclick="toggleFav(event,'${p.id}')">❤️</span><img src="${p.img}"><div class="card-body"><div class="name">${p.name}</div><div class="price">${p.price}</div></div></div>`}})}
 localStorage.setItem('tinyFav',JSON.stringify(favs));
 }
 function toggleFav(e,id){e.stopPropagation(); favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id]; render();}
 function openP(id){
 let p=patterns.find(x=>x.id===id);
 document.getElementById('pImg').src=p.img;
-document.getElementById('pTitle').textContent=p.name+' - '+p.price;
+document.getElementById('pTitle').textContent=p.name;
 document.getElementById('pDesc').textContent=p.desc;
-let btn=document.getElementById('pBtn');
-if(p.type.includes('FREE')){btn.textContent='Download FREE Pattern 💌'; btn.className='buy buy-free'; btn.onclick=()=>{alert('Yay! Free pattern downloading! Check your DMs 💖'); window.open('https://instagram.com/tiny.twirl.cloud','_blank')}}
-else{btn.textContent='Buy for ₹5 on Instagram 🛒'; btn.className='buy buy-paid'; btn.onclick=()=>{window.open('https://instagram.com/tiny.twirl.cloud','_blank')}}
 document.getElementById('popup').classList.add('show');
 }
 function closeP(){document.getElementById('popup').classList.remove('show');}
