@@ -12,7 +12,7 @@ header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-be
 .logo img{width:26px;height:26px;border-radius:50%;border:2px solid #ffdae0;object-fit:cover}
 .nav{display:flex;gap:5px;align-items:center}
 .nav a{font-size:11px;text-decoration:none;color:#b06a6a;font-weight:700;background:#fff;padding:5px 8px;border-radius:12px;box-shadow:0 1px 3px #0001}
-.pro{font-size:10px;font-weight:800;background:linear-gradient(90deg,#ffd6e7,#ff9ab2);border:none;padding:6px 10px;border-radius:20px;color:#6a2a3a;cursor:pointer}
+.pro{font-size:10px;font-weight:800;background:linear-gradient(90deg,#ffd6e7,#ff9ab2);border:none;padding:6px 10px;border-radius:20px;color:#6a2a3a}
 .hero{margin:12px;background:linear-gradient(135deg,#ffdadf,#ffe8ec);border-radius:24px;padding:28px 16px}
 .hero h1{font-size:20px}
 .hero p{font-size:11px;margin-top:6px;opacity:0.8}
@@ -28,8 +28,8 @@ header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-be
 .free{background:#ffe0e5;color:#a04a5a}
 .paid{background:#ff8fab;color:#fff}
 .title{font-weight:700;font-size:12px;margin-top:5px}
-.bio{display:flex;gap:14px;align-items:center;background:#fff0f2;margin:18px 12px;border-radius:22px;padding:16px;text-align:left;border:1px solid #ffdae0}
-.bio img{width:70px;height:70px;border-radius:50%;border:3px solid #fff;object-fit:cover;flex-shrink:0}
+.bio{display:flex;gap:14px;align-items:center;background:#fff0f2;margin:18px 12px;border-radius:22px;padding:18px;text-align:left;border:1px solid #ffdae0}
+.bio img{width:72px;height:72px;border-radius:50%;border:3px solid #fff;object-fit:cover;flex-shrink:0}
 .section-title{font-size:17px;margin:16px 0 4px}
 #fav-section{display:none;padding:12px}
 #fav-section.show{display:block}
@@ -39,13 +39,11 @@ header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-be
 <body>
 
 <header>
-<a class="logo" href="#home">
-<img src="IMG-20260823-WA2184.jpg"> Tiny Twirl Cloud
-</a>
+<a class="logo" href="#home"><img src="IMG-20260823-WA2184.jpg"> Tiny Twirl Cloud</a>
 <div class="nav">
 <a href="#home">Home</a>
 <a href="#pattern">Pattern</a>
-<a href="#fav" onclick="showFav(event)">Fav <span id="fav-count">(2)</span></a>
+<a href="#fav" onclick="showFav(event)">Fav <span id="fav-count"></span></a>
 <a href="#you">You</a>
 <button class="pro">👑 Pro ₹5</button>
 </div>
@@ -59,99 +57,62 @@ header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-be
 <h2 class="section-title">Patterns 💖</h2>
 
 <div class="grid" id="all-patterns">
-
-<!-- FREE = ♡ white then red -->
 <div class="card" data-type="free" data-id="bunny">
 <span class="heart free-heart" onclick="toggleFav(this,'bunny')">♡</span>
-<img src="IMG-20260823-WA9459.jpg">
-<div class="card-body"><span class="badge free">FREE</span><div class="title">Watermelon Bunny</div></div>
+<img src="IMG-20260823-WA9459.jpg"><div class="card-body"><span class="badge free">FREE</span><div class="title">Watermelon Bunny</div></div>
 </div>
-
-<!-- PRO = only 𐙚 -->
 <div class="card" data-type="pro" data-id="bow">
 <span class="heart pro-heart" onclick="toggleFav(this,'bow')">𐙚</span>
-<img src="IMG-20260823-WA5906.jpg">
-<div class="card-body"><span class="badge paid">PRO ₹5</span><div class="title">Bow Scrunchie</div></div>
+<img src="IMG-20260823-WA5906.jpg"><div class="card-body"><span class="badge paid">PRO ₹5</span><div class="title">Bow Scrunchie</div></div>
 </div>
-
 <div class="card" data-type="free" data-id="headband">
 <span class="heart free-heart" onclick="toggleFav(this,'headband')">♡</span>
-<img src="IMG-20260823-WA9402.jpg">
-<div class="card-body"><span class="badge free">FREE</span><div class="title">Flower Headband</div></div>
+<img src="IMG-20260823-WA9402.jpg"><div class="card-body"><span class="badge free">FREE</span><div class="title">Flower Headband</div></div>
 </div>
-
 <div class="card" data-type="pro" data-id="daisy">
 <span class="heart pro-heart" onclick="toggleFav(this,'daisy')">𐙚</span>
-<img src="IMG-20260823-WA3458.jpg">
-<div class="card-body"><span class="badge paid">PRO ₹5</span><div class="title">Daisy Blanket</div></div>
+<img src="IMG-20260823-WA3458.jpg"><div class="card-body"><span class="badge paid">PRO ₹5</span><div class="title">Daisy Blanket</div></div>
 </div>
-
 </div>
 
 <div id="fav-section">
 <h2 class="section-title">Favourites</h2>
 <div class="grid" id="fav-grid"></div>
 <div id="fav-empty" class="empty">No favourites yet — tap ♡ to add! 🎀</div>
-</div<div id="you" class="bio">
-<img src="IMG-20260823-WA0231.jpg">
+</div>
+
+<!-- YOUR BIO - BOLD FOUNDER + DESCRIPTION ABOUT YOU -->
+<div id="you" class="bio">
+<img src="IMG-20260823-WA0231.jpg" alt="Diya">
 <div>
 <h3>🎀 Diya Sahai</h3>
-<p style="margin-top:6px;line-height:1.6;font-size:12px">
-<b style="font-size:13px;">Tiny Twirl Cloud - Founder</b><br><br>
-Hi! I'm Diya, I love crocheting cute soft toys and bows 🎀💖<br>
-I started this page to share my handmade patterns with you!<br>
+<p style="margin-top:8px;line-height:1.6;font-size:12px">
+<b style="font-size:13.5px;color:#7a4a4a;">Tiny Twirl Cloud - Founder</b><br><br>
+Hi! I'm Diya 💖 I love crocheting cute soft toys, bows & pastel things 🎀<br>
+I started Tiny Twirl Cloud to share my handmade patterns with love, made for beginners like you!<br>
 📍 Gurugram, India
 </p>
 </div>
 </div>
+
 <div style="padding:18px;font-size:10px;opacity:0.5">© 2026 Tiny Twirl Cloud • Made with 🎀</div>
 
 <script>
 let favs = JSON.parse(localStorage.getItem('tiny_favs') || '["bunny","bow"]');
 function updateUI(){
   document.querySelectorAll('#all-patterns .card').forEach(card=>{
-    let id=card.dataset.id;
-    let type=card.dataset.type;
-    let heart=card.querySelector('.heart');
-    let isFav=favs.includes(id);
-    if(type==='free'){
-      heart.textContent = isFav ? '❤️' : '♡';
-      heart.style.opacity = isFav ? '1' : '0.7';
-    } else {
-      heart.textContent = '𐙚';
-      heart.style.opacity = isFav ? '1' : '0.35';
-    }
+    let id=card.dataset.id; let type=card.dataset.type; let heart=card.querySelector('.heart'); let isFav=favs.includes(id);
+    if(type==='free'){ heart.textContent = isFav ? '❤️' : '♡'; heart.style.opacity = isFav ? '1' : '0.7'; }
+    else { heart.textContent = '𐙚'; heart.style.opacity = isFav ? '1' : '0.35'; }
   });
   document.getElementById('fav-count').textContent = favs.length ? `(${favs.length})` : '';
-  let favGrid=document.getElementById('fav-grid');
-  let empty=document.getElementById('fav-empty');
-  favGrid.innerHTML='';
-  if(favs.length===0){empty.style.display='block';}
-  else{
-    empty.style.display='none';
-    favs.forEach(id=>{
-      let orig=document.querySelector(`#all-patterns .card[data-id="${id}"]`);
-      if(orig){
-        let clone=orig.cloneNode(true);
-        clone.querySelector('.heart').onclick=function(){toggleFav(this,id)};
-        favGrid.appendChild(clone);
-      }
-    });
-  }
+  let favGrid=document.getElementById('fav-grid'); let empty=document.getElementById('fav-empty'); favGrid.innerHTML='';
+  if(favs.length===0){empty.style.display='block';} else { empty.style.display='none'; favs.forEach(id=>{ let orig=document.querySelector(`#all-patterns .card[data-id="${id}"]`); if(orig){ let clone=orig.cloneNode(true); clone.querySelector('.heart').onclick=function(){toggleFav(this,id)}; favGrid.appendChild(clone); } }); }
   localStorage.setItem('tiny_favs',JSON.stringify(favs));
 }
-function toggleFav(el,id){
-  favs = favs.includes(id) ? favs.filter(f=>f!==id) : [...favs,id];
-  updateUI();
-}
-function showFav(e){
-  e.preventDefault();
-  let sec=document.getElementById('fav-section');
-  sec.classList.toggle('show');
-  if(sec.classList.contains('show')) sec.scrollIntoView({behavior:'smooth'});
-}
+function toggleFav(el,id){ favs = favs.includes(id) ? favs.filter(f=>f!==id) : [...favs,id]; updateUI(); }
+function showFav(e){ e.preventDefault(); let sec=document.getElementById('fav-section'); sec.classList.toggle('show'); if(sec.classList.contains('show')) sec.scrollIntoView({behavior:'smooth'}); }
 updateUI();
 </script>
-
 </body>
 </html>
