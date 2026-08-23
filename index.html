@@ -2,55 +2,69 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Tiny Twirl Cloud ☁️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny Twirl Cloud ☁️</title>
 <style>
-body{margin:0;background:#fffcf8;font-family:sans-serif;color:#7a4a4a;text-align:center;scroll-behavior:smooth}
-header{padding:8px 10px;background:#fff8f0;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px #00000008}
-.logo-area{display:flex;align-items:center;gap:6px;font-weight:800;font-size:14px;color:#d68a8a;text-decoration:none}
-.logo-area img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid #ffdae0}
-.nav{flex:1;display:flex;justify-content:center;gap:12px}
-.nav a{font-size:12px;text-decoration:none;color:#b06a6a;font-weight:700;padding:5px 8px;border-radius:12px;background:#fff}
-.pro-btn{background:linear-gradient(90deg,#ffd6e7,#ff9ab2);padding:6px 10px;border-radius:20px;font-size:10px;font-weight:800;border:none;cursor:pointer}
-.banner{background:linear-gradient(135deg,#ffdadf,#ffe8ec);margin:14px;border-radius:24px;padding:28px}
-.btn{background:#f0a0a8;color:#fff;border:none;padding:11px 24px;border-radius:24px;font-weight:700;cursor:pointer}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px;max-width:860px;margin:auto}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 3px 12px #00000012;position:relative;text-align:left}
-.card-pic{width:100%;height:150px;display:flex;align-items:center;justify-content:center;font-size:55px;background:#fff5f6}
+body{margin:0;background:#fffcf8;font-family:sans-serif;color:#7a4a4a;text-align:center}
+header{padding:8px 10px;background:#fff8f0;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px #0001}
+.logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:14px;color:#d68a8a;text-decoration:none}
+.logo img{width:28px;height:28px;border-radius:50%;border:2px solid #ffdae0;object-fit:cover}
+.nav{display:flex;gap:8px}
+.nav a{font-size:11px;text-decoration:none;color:#b06a6a;font-weight:700;background:#fff;padding:5px 9px;border-radius:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;max-width:900px;margin:auto}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 3px 10px #0001;text-align:left}
+.card img{width:100%;height:170px;object-fit:cover;background:#fff0f2}
 .card-body{padding:10px 12px}
 .badge{background:#ffe0e5;padding:3px 8px;border-radius:8px;font-size:8px;font-weight:700}
 .badge-pro{background:linear-gradient(90deg,#ff8fab,#ff5a7a);color:#fff;padding:3px 8px;border-radius:8px;font-size:8px;font-weight:800}
-.heart{position:absolute;top:8px;right:10px;background:#fff;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 2px 6px #0002;z-index:2}
-.heart.liked{color:#ff3b6b}
-.bio{display:flex;gap:14px;align-items:center;background:#fff0f2;margin:20px 14px;border-radius:20px;padding:18px;text-align:left}
-.bio img{width:65px;height:65px;border-radius:50%;object-fit:cover;border:3px solid #fff}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0006;z-index:999;align-items:center;justify-content:center}
-.modal-box{background:#fff;border-radius:22px;padding:22px;max-width:320px;width:90%;text-align:center}
+.bio{display:flex;gap:14px;align-items:center;background:#fff0f2;margin:14px;border-radius:20px;padding:16px;text-align:left}
+.bio img{width:75px;height:75px;border-radius:50%;border:3px solid #fff;object-fit:cover}
 </style>
 </head>
 <body>
+
 <header>
-<a class="logo-area" href="#home"><img src="IMG-20260823-WA2184.jpg"> Tiny Twirl</a>
-<div class="nav"><a href="#home">Home</a><a href="#pattern">Pattern</a><a href="#fav">Fav ♥<span id="favCount">0</span></a><a href="#you">You</a></div>
-<button class="pro-btn" onclick="openPro()">👑 ₹5</button>
+<a class="logo" href="#home"><img src="IMG-20260823-WA2184.jpg"> Tiny Twirl Cloud</a>
+<div class="nav">
+<a href="#home">Home</a>
+<a href="#pattern">Pattern</a>
+<a href="#fav">Fav</a>
+<a href="#you">You</a>
+</div>
+<button style="background:linear-gradient(90deg,#ffd6e7,#ff9ab2);border:none;padding:6px 10px;border-radius:20px;font-size:10px;font-weight:800">👑 Pro ₹5</button>
 </header>
-<div id="home" class="banner"><h1 style="margin:0;font-size:22px">Handmade Crochet Patterns 🎀</h1><p style="font-size:12px">Soft • Pastel • Beginner-friendly ♡</p><button class="btn" onclick="document.getElementById('pattern').scrollIntoView()">Explore Patterns ↓</button></div>
-<div id="pattern"><h2>Patterns 💖</h2><div class="grid">
-<div class="card"><span class="heart" onclick="toggleFav(this,'Watermelon Bunny','🐰🍉')">♡</span><div class="card-pic" style="background:#ffeaea">🐰🍉</div><div class="card-body"><span class="badge">FREE</span><h3 style="font-size:13px;margin:6px 0">Watermelon Bunny</h3></div></div>
-<div class="card" onclick="openPro()"><span class="heart" onclick="event.stopPropagation();toggleFav(this,'Bow Scrunchie','🎀')">♡</span><div class="card-pic" style="background:#ffe6f0">🎀</div><div class="card-body"><span class="badge-pro">👑 PRO ₹5</span><h3 style="font-size:13px;margin:6px 0">Bow Scrunchie</h3></div></div>
-<div class="card"><span class="heart" onclick="toggleFav(this,'Flower Headband','🌸')">♡</span><div class="card-pic" style="background:#fff0f7">🌸</div><div class="card-body"><span class="badge">FREE</span><h3 style="font-size:13px;margin:6px 0">Flower Headband</h3></div></div>
-<div class="card" onclick="openPro()"><span class="heart" onclick="event.stopPropagation();toggleFav(this,'Daisy Blanket','🌼')">♡</span><div class="card-pic" style="background:#fff5e6">🌼</div><div class="card-body"><span class="badge-pro">👑 PRO ₹5</span><h3 style="font-size:13px;margin:6px 0">Daisy Blanket</h3></div></div>
-</div></div>
-<div id="fav" style="background:#fff0f5;margin:14px;border-radius:20px;padding:18px"><h2>♥ Your Fav</h2><div id="favList">No fav yet — tap ♡!</div></div>
-<div id="you" class="bio"><img src="myphoto.jpg" onerror="this.src='IMG-20260823-WA2184.jpg'"><div><h3 style="margin:0">🎀 You — Diya Sahai</h3><p style="font-size:12px;margin:6px 0;line-height:1.5"><b>Tiny Twirl Cloud ☁️</b><br>soft pastel crochet • handmade with love 💖<br>📍 Gurugram</p></div></div>
-<div id="proModal" class="modal" onclick="closePro()"><div class="modal-box" onclick="event.stopPropagation()"><div style="font-size:36px">👑</div><h2>Twirl Pro - ₹5!</h2><p style="font-size:12px">20+ patterns • PDFs • Ad-free</p><button class="btn" style="width:100%;background:linear-gradient(90deg,#ff8fab,#ff5a7a)" onclick="payPro()">Pay ₹5 & Unlock</button><br><button style="background:none;border:none;font-size:11px;margin-top:8px;color:#999" onclick="closePro()">Close</button></div></div>
-<script>
-let favs=JSON.parse(localStorage.getItem('twirlFavs')||'[]');updateFav();
-function toggleFav(el,name,emoji){event.stopPropagation();el.classList.toggle('liked');el.innerHTML=el.classList.contains('liked')?'♥':'♡';if(el.classList.contains('liked')){if(!favs.find(f=>f.name===name))favs.push({name,emoji})}else{favs=favs.filter(f=>f.name!==name)}localStorage.setItem('twirlFavs',JSON.stringify(favs));updateFav()}
-function updateFav(){document.getElementById('favCount').innerText=favs.length?` ${favs.length}`:'';let h=favs.length?'': 'No fav yet — tap ♡!';favs.forEach(f=>{h+=`<div style="padding:8px;background:#fff;border-radius:12px;margin:6px 0;text-align:left">${f.emoji} ${f.name} <span style="float:right;color:#ff5a7a">♥</span></div>`});document.getElementById('favList').innerHTML=h}
-function openPro(){document.getElementById('proModal').style.display='flex'}
-function closePro(){document.getElementById('proModal').style.display='none'}
-function payPro(){alert('Add UPI for real ₹5 payment!');closePro()}
-</script>
+
+<div id="home" style="background:linear-gradient(135deg,#ffdadf,#ffe8ec);margin:12px;border-radius:22px;padding:28px">
+<h1 style="margin:0;font-size:21px">Handmade Crochet Patterns 🎀</h1>
+<p style="font-size:12px">Soft pastel • Coquette • Made with love</p>
+</div>
+
+<div id="pattern">
+<h2 style="margin:16px 0 4px">Patterns 💖</h2>
+<div class="grid">
+<div class="card"><img src="IMG-20260823-WA9459.jpg"><div class="card-body"><span class="badge">FREE</span><div style="font-weight:700;font-size:13px;margin-top:5px">Watermelon Bunny</div><small>🧶 Free pattern</small></div></div>
+<div class="card"><img src="IMG-20260823-WA5906.jpg"><div class="card-body"><span class="badge-pro">👑 PRO ₹5</span><div style="font-weight:700;font-size:13px;margin-top:5px">Bow Scrunchie</div><small>🔒 Unlock for ₹5</small></div></div>
+<div class="card"><img src="IMG-20260823-WA9402.jpg"><div class="card-body"><span class="badge">FREE</span><div style="font-weight:700;font-size:13px;margin-top:5px">Flower Headband</div><small>🧶 Free pattern</small></div></div>
+<div class="card"><img src="IMG-20260823-WA3458.jpg"><div class="card-body"><span class="badge-pro">👑 PRO ₹5</span><div style="font-weight:700;font-size:13px;margin-top:5px">Daisy Blanket</div><small>🔒 Unlock for ₹5</small></div></div>
+</div>
+</div>
+
+<div id="fav" style="display:none"></div>
+
+<div id="you" class="bio">
+<img src="IMG-20260823-WAO231.jpg" onerror="this.src='IMG-20260823-WA2184.jpg'">
+<div>
+<h3 style="margin:0">🎀 You — Diya Sahai</h3>
+<p style="font-size:12px;margin:6px 0;line-height:1.5">
+<b>Tiny Twirl Cloud ☁️ Founder</b><br>
+soft pastel crochet • coquette vibes<br>
+handmade with love 💖<br>
+📍 Gurugram, India
+</p>
+</div>
+</div>
+
+<div style="padding:16px;font-size:10px;opacity:0.4">© Tiny Twirl Cloud • Home • Pattern • Fav • You</div>
+
 </body>
 </html>
