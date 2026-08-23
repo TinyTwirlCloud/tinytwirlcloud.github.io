@@ -7,64 +7,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 <style>
 body{font-family:'Quicksand'; background:#fff0f5; margin:0; padding:20px 20px 90px; text-align:center;}
-h1{color:#e94e8a; font-size:36px; margin:10px 0 0;}
-.sub{color:#ff8fab; background:#ffe3ea; display:inline-block; padding:8px 18px; border-radius:99px; font-size:12px; font-weight:700; margin-bottom:12px;}
+h1{color:#e94e8a; font-size:36px;}
+.sub{color:#ff8fab; background:#ffe3ea; display:inline-block; padding:8px 18px; border-radius:99px; font-size:12px; font-weight:700;}
 .hero{background:white; border:2px solid #ffe3ea; border-radius:28px; padding:20px; max-width:500px; margin:16px auto;}
 .hero img{width:90px; height:90px; border-radius:50%; object-fit:cover; border:3px solid #ffd6e5;}
-.grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:500px; margin:16px auto;}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:500px; margin:0 auto;}
 .card{background:white; border:2px solid #ffe3ea; border-radius:28px; padding:12px; text-align:left; cursor:pointer;}
 .card img{width:100%; height:160px; object-fit:cover; border-radius:20px;}
-.card:active{transform:scale(0.97);}
+.card:active{transform:scale(0.96);}
 .section{display:none;} .section.active{display:block;}
 .bottom{position:fixed; bottom:12px; left:50%; transform:translateX(-50%); background:white; border:2px solid #ffe3ea; border-radius:99px; display:flex; gap:8px; padding:8px 12px; width:90%; max-width:320px; justify-content:space-around; box-shadow:0 4px 20px rgba(255,143,171,0.3); z-index:10;}
 .bottom button{border:0; background:#ffe3ea; color:#e94e8a; padding:10px 20px; border-radius:99px; font-weight:700; font-size:13px; cursor:pointer;}
 .bottom button.active{background:#ff8fab; color:white;}
-/* POPUP */
-#popup{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); display:none; align-items:center; justify-content:center; z-index:99; padding:20px;}
+#popup{position:fixed; inset:0; background:rgba(0,0,0,0.45); display:none; align-items:center; justify-content:center; z-index:99; padding:20px;}
 #popup.show{display:flex;}
-.pop{background:white; border-radius:28px; padding:20px; max-width:380px; width:100%; text-align:left;}
+.pop{background:white; border-radius:28px; padding:20px; max-width:360px; width:100%; text-align:left; animation:pop .2s ease;}
+@keyframes pop{from{transform:scale(.9); opacity:0} to{transform:scale(1); opacity:1}}
 .pop img{width:100%; height:220px; object-fit:cover; border-radius:20px;}
-.pop button{width:100%; margin-top:12px; background:#ff8fab; color:white; border:0; padding:12px; border-radius:99px; font-weight:700; cursor:pointer;}
+.pop button{width:100%; margin-top:12px; background:#ff8fab; color:white; border:0; padding:12px; border-radius:99px; font-weight:700;}
 </style>
 </head>
 <body>
 <h1>Tiny Twirl Cloud</h1>
 <div class="sub">• SOFT • PASTEL • BEGINNER FRIENDLY • HANDMADE •</div>
-<div style="color:#ff8fab; margin-bottom:10px;">Handmade with love ☁️✨</div>
+<div style="color:#ff8fab; margin:8px 0 20px;">Handmade with love ☁️✨</div>
 
 <div id="home" class="section active">
 <div class="hero">
 <img src="IMG-20260823-WA0231.jpg">
-<h3 style="color:#e94e8a;">Hi, I'm Diya Sahai! 🎀</h3>
-<p style="color:#777; font-size:13px;">Soft pastel crochet • beginner friendly 💖</p>
+<h3 style="color:#e94e8a; margin:8px 0 2px;">Hi, I'm Diya Sahai! 🎀</h3>
+<p style="color:#777; font-size:13px; margin:0;">Soft pastel crochet • beginner friendly 💖</p>
 </div>
 <div class="grid">
-<div class="card" onclick="openPop('Watermelon Bunny','IMG-20260823-WA9459.jpg','Soft cotton bunny • beginner friendly • 2hr make 💖')"><img src="IMG-20260823-WA9459.jpg"><h3>Watermelon Bunny</h3><p style="color:#888; font-size:12px;">Tap to view →</p></div>
-<div class="card" onclick="openPop('Coquette Bow','IMG-20260823-WA5906.jpg','Pink satin bow • coquette aesthetic 🎀')"><img src="IMG-20260823-WA5906.jpg"><h3>Coquette Bow</h3><p style="color:#888; font-size:12px;">Tap to view →</p></div>
-<div class="card" onclick="openPop('Lace Headband','IMG-20260823-WA9402.jpg','Delicate lace • perfect for summer 🌸')"><img src="IMG-20260823-WA9402.jpg"><h3>Lace Headband</h3><p style="color:#888; font-size:12px;">Tap to view →</p></div>
-<div class="card" onclick="openPop('Cloudy Daisy','IMG-20260823-WA3458.jpg','Fluffy daisy • super soft ☁️')"><img src="IMG-20260823-WA3458.jpg"><h3>Cloudy Daisy</h3><p style="color:#888; font-size:12px;">Tap to view →</p></div>
+<div class="card" onclick="openPop('Watermelon Bunny','IMG-20260823-WA9459.jpg','Soft cotton bunny • beginner friendly • 2hr make 💖')"><img src="IMG-20260823-WA9459.jpg"><h3>Watermelon Bunny</h3></div>
+<div class="card" onclick="openPop('Coquette Bow','IMG-20260823-WA5906.jpg','Pink satin bow • coquette aesthetic 🎀')"><img src="IMG-20260823-WA5906.jpg"><h3>Coquette Bow</h3></div>
+<div class="card" onclick="openPop('Lace Headband','IMG-20260823-WA9402.jpg','Delicate lace • perfect for summer 🌸')"><img src="IMG-20260823-WA9402.jpg"><h3>Lace Headband</h3></div>
+<div class="card" onclick="openPop('Cloudy Daisy','IMG-20260823-WA3458.jpg','Fluffy daisy • super soft ☁️')"><img src="IMG-20260823-WA3458.jpg"><h3>Cloudy Daisy</h3></div>
 </div>
 </div>
 
 <div id="fav" class="section"><div style="background:white; border-radius:28px; padding:40px 20px; max-width:500px; margin:40px auto; border:2px solid #ffe3ea;"><div style="font-size:50px;">💖</div><h3 style="color:#e94e8a;">No favorites yet</h3></div></div>
-
 <div id="you" class="section"><div class="hero" style="margin-top:40px;"><img src="IMG-20260823-WA0231.jpg" style="width:120px; height:120px;"><h2 style="color:#e94e8a;">Diya Sahai 🎀</h2><p style="color:#777;">Crochet lover • 5 patterns</p></div></div>
 
-<!-- POPUP DETAILS -->
-<div id="popup" onclick="closePop()"><div class="pop" onclick="event.stopPropagation()"><img id="pimg" src=""><h2 id="ptitle" style="color:#e94e8a; margin:10px 0 4px;"></h2><p id="pdesc" style="color:#777; font-size:14px;"></p><button onclick="closePop()">Close 💖</button></div></div>
+<div id="popup" onclick="closePop()"><div class="pop" onclick="event.stopPropagation()"><img id="pimg" src=""><h2 id="ptitle" style="color:#e94e8a; margin:12px 0 4px;"></h2><p id="pdesc" style="color:#777; font-size:14px; margin:0;"></p><button onclick="closePop()">Close 💖</button></div></div>
 
 <div class="bottom">
-<button class="active" onclick="show('home', this)">🏠 Home</button>
-<button onclick="show('fav', this)">💖 Favorites</button>
-<button onclick="show('you', this)">👤 You</button>
+<button class="active" onclick="showTab('home', this)">🏠 Home</button>
+<button onclick="showTab('fav', this)">💖 Favorites</button>
+<button onclick="showTab('you', this)">👤 You</button>
 </div>
 
 <script>
-function show(id, btn){
+function showTab(id, btn){
 document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 document.querySelectorAll('.bottom button').forEach(b=>b.classList.remove('active'));
 btn.classList.add('active');
+window.scrollTo(0,0);
 }
 function openPop(t,i,d){
 document.getElementById('ptitle').innerText=t;
