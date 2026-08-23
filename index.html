@@ -3,64 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiny Twirl Cloud ☁️</title>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<title>Tiny Twirl Cloud</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
 <style>
-body{font-family:'Quicksand'; background:#fff0f5; margin:0; padding:20px; text-align:center;}
-h1{color:#e94e8a; font-size:36px; margin:10px 0 0;}
-.sub{color:#ff8fab; background:#ffe3ea; display:inline-block; padding:8px 18px; border-radius:99px; letter-spacing:2px; font-size:12px; font-weight:700; margin-bottom:12px;}
-.hero{background:white; border:2px solid #ffe3ea; border-radius:28px; padding:20px; max-width:500px; margin:16px auto; box-shadow:0 4px 15px rgba(255,143,171,0.15);}
-.hero img{width:90px; height:90px; border-radius:50%; object-fit:cover; border:3px solid #ffd6e5;}
+body{font-family:Quicksand; background:#fff0f5; margin:0; padding:20px; text-align:center;}
+.sub{background:#ffe3ea; color:#ff8fab; padding:8px 16px; border-radius:99px; font-size:11px; letter-spacing:1px; display:inline-block; font-weight:700;}
+.hero{background:white; border-radius:28px; padding:20px; max-width:500px; margin:20px auto; border:2px solid #ffe3ea;}
+.hero img{width:110px; height:110px; border-radius:50%; border:4px solid #ffd6e5; object-fit:cover;}
 .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:500px; margin:0 auto;}
-.card{background:white; border:2px solid #ffe3ea; border-radius:28px; padding:12px; text-align:left; cursor:pointer; box-shadow:0 4px 15px rgba(255,143,171,0.15);}
-.card img{width:100%; height:160px; object-fit:cover; border-radius:20px; background:#fff0f5;}
-.card h3{margin:10px 6px 0; font-size:17px; color:#333;}
-.card p{margin:2px 6px 6px; color:#ff8fab; font-size:13px;}
-#pop{position:fixed; inset:0; background:rgba(0,0,0,0.25); backdrop-filter:blur(6px); display:none; align-items:center; justify-content:center; z-index:99;}
-#pop.show{display:flex;}
-.box{background:white; border-radius:28px; padding:28px; width:80%; max-width:320px;}
+.card{background:white; border-radius:24px; padding:12px; text-align:left; border:2px solid #ffe3ea;}
+.card img{width:100%; height:160px; border-radius:16px; object-fit:cover;}
 </style>
 </head>
 <body>
-<h1>Tiny Twirl Cloud</h1>
+<h1 style="color:#e94e8a; font-size:32px; margin-bottom:5px;">Tiny Twirl Cloud</h1>
 <div class="sub">• SOFT • PASTEL • BEGINNER FRIENDLY • HANDMADE •</div>
-<div style="color:#ff8fab; margin-bottom:20px; font-size:14px;">Handmade with love ☁️✨</div>
+<p style="color:#ff8fab; font-size:14px;">Handmade with love ☁️✨</p>
 
+<!-- THIS IS YOUR PIC SECTION -->
 <div class="hero">
-<img src="IMG-20260823-WA0231.jpg">
-<h3 style="margin:10px 0 4px; color:#e94e8a;">Hi, I'm Twirl Girl! 🎀</h3>
-<p style="color:#777; font-size:14px; margin:0;">I make soft, squishy pastel crochet with lots of love. All patterns are beginner friendly & coquette aesthetic 💖</p>
+<img src="IMG-20260823-WA0231.jpg" onerror="this.src='https://via.placeholder.com/110'">
+<h3 style="color:#e94e8a; margin:10px 0 5px;">Hi, I'm Twirl Girl! 🎀</h3>
+<p style="color:#888; font-size:13px; margin:0;">I make soft, squishy pastel crochet with lots of love. All patterns are beginner friendly 💖</p>
 </div>
 
 <div class="grid">
-<div class="card" onclick="openPop('Watermelon Bunny 🍉')">
-<img src="IMG-20260823-WA9459.jpg">
-<h3>Watermelon Bunny</h3><p>Click to view</p>
+<div class="card"><img src="IMG-20260823-WA9459.jpg"><h3>Watermelon Bunny</h3><p style="color:#ff8fab; font-size:12px;">Click to view</p></div>
+<div class="card"><img src="IMG-20260823-WA5906.jpg"><h3>Coquette Bow</h3><p style="color:#ff8fab; font-size:12px;">Click to view</p></div>
+<div class="card"><img src="IMG-20260823-WA9402.jpg"><h3>Lace Headband</h3><p style="color:#ff8fab; font-size:12px;">Click to view</p></div>
+<div class="card"><img src="IMG-20260823-WA3458.jpg"><h3>Cloudy Daisy</h3><p style="color:#ff8fab; font-size:12px;">Click to view</p></div>
 </div>
-<div class="card" onclick="openPop('Coquette Bow 🎀')">
-<img src="IMG-20260823-WA5906.jpg">
-<h3>Coquette Bow</h3><p>Click to view</p>
-</div>
-<div class="card" onclick="openPop('Lace Headband 💜')">
-<img src="IMG-20260823-WA9402.jpg">
-<h3>Lace Headband</h3><p>Click to view</p>
-</div>
-<div class="card" onclick="openPop('Cloudy Daisy ☁️')">
-<img src="IMG-20260823-WA3458.jpg">
-<h3>Cloudy Daisy</h3><p>Click to view</p>
-</div>
-</div>
-
-<div id="pop" onclick="closePop()"><div class="box" onclick="event.stopPropagation()">
-<div style="font-size:40px;">☁️</div>
-<h2 id="popTitle">Pattern</h2>
-<p style="color:#777;">Coming soon! So twirly & soft 💖</p>
-<button onclick="closePop()" style="background:#ff5a8f; color:white; border:0; padding:10px 24px; border-radius:99px; margin-top:12px;">Okay cutie!</button>
-</div></div>
-
-<script>
-function openPop(t){document.getElementById('popTitle').innerText=t; document.getElementById('pop').classList.add('show');}
-function closePop(){document.getElementById('pop').classList.remove('show');}
-</script>
 </body>
 </html>
