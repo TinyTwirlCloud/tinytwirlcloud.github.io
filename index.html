@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tiny Twirl Cloud ☁️</title>
+<title>Tiny Twirl Cloud ☁️ by Diya Sahai</title>
+<meta name="description" content="Tiny Twirl Cloud by Diya Sahai from Gurugram - Handmade crochet patterns, coquette bows, pastel soft toys. Free and Pro patterns for beginners.">
+<meta name="keywords" content="Tiny Twirl Cloud, Diya Sahai, crochet patterns, handmade crochet, coquette bow crochet, free crochet patterns India">
+<meta name="author" content="Diya Sahai">
+<link rel="canonical" href="https://tinytwirlcloud.github.io/">
+<meta property="og:title" content="Tiny Twirl Cloud ☁️">
+<meta property="og:description" content="Handmade crochet patterns by Diya Sahai - Soft pastel, coquette, beginner friendly">
+<meta property="og:url" content="https://tinytwirlcloud.github.io/">
+<meta property="og:type" content="website">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#fffcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#7a4a4a;text-align:center}
@@ -51,7 +60,7 @@ header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-be
 
 <div id="home" class="hero">
 <h1>Handmade Crochet Patterns 🎀</h1>
-<p>Soft pastel • Coquette • Beginner friendly • Made with love</p>
+<p>Soft pastel • Coquette • Beginner friendly • Made with love by Diya</p>
 </div>
 
 <h2 class="section-title">Patterns 💖</h2>
@@ -81,7 +90,6 @@ header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-be
 <div id="fav-empty" class="empty">No favourites yet — tap ♡ to add! 🎀</div>
 </div>
 
-<!-- YOUR BIO - BOLD FOUNDER + DESCRIPTION ABOUT YOU -->
 <div id="you" class="bio">
 <img src="IMG-20260823-WA0231.jpg" alt="Diya">
 <div>
@@ -95,24 +103,10 @@ I started Tiny Twirl Cloud to share my handmade patterns with love, made for beg
 </div>
 </div>
 
-<div style="padding:18px;font-size:10px;opacity:0.5">© 2026 Tiny Twirl Cloud • Made with 🎀</div>
+<div style="padding:18px;font-size:10px;opacity:0.5">© 2026 Tiny Twirl Cloud • Made with 🎀 by Diya Sahai</div>
 
 <script>
 let favs = JSON.parse(localStorage.getItem('tiny_favs') || '["bunny","bow"]');
 function updateUI(){
   document.querySelectorAll('#all-patterns .card').forEach(card=>{
-    let id=card.dataset.id; let type=card.dataset.type; let heart=card.querySelector('.heart'); let isFav=favs.includes(id);
-    if(type==='free'){ heart.textContent = isFav ? '❤️' : '♡'; heart.style.opacity = isFav ? '1' : '0.7'; }
-    else { heart.textContent = '𐙚'; heart.style.opacity = isFav ? '1' : '0.35'; }
-  });
-  document.getElementById('fav-count').textContent = favs.length ? `(${favs.length})` : '';
-  let favGrid=document.getElementById('fav-grid'); let empty=document.getElementById('fav-empty'); favGrid.innerHTML='';
-  if(favs.length===0){empty.style.display='block';} else { empty.style.display='none'; favs.forEach(id=>{ let orig=document.querySelector(`#all-patterns .card[data-id="${id}"]`); if(orig){ let clone=orig.cloneNode(true); clone.querySelector('.heart').onclick=function(){toggleFav(this,id)}; favGrid.appendChild(clone); } }); }
-  localStorage.setItem('tiny_favs',JSON.stringify(favs));
-}
-function toggleFav(el,id){ favs = favs.includes(id) ? favs.filter(f=>f!==id) : [...favs,id]; updateUI(); }
-function showFav(e){ e.preventDefault(); let sec=document.getElementById('fav-section'); sec.classList.toggle('show'); if(sec.classList.contains('show')) sec.scrollIntoView({behavior:'smooth'}); }
-updateUI();
-</script>
-</body>
-</html>
+    let id=card.dataset.id; let type=card.dataset.type; let heart=card.querySelector('.
