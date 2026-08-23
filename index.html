@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tiny Twirl Cloud ☁️ by Diya Sahai</title>
-<meta name="description" content="Tiny Twirl Cloud by Diya Sahai - Handmade crochet patterns">
-<meta name="author" content="Diya Sahai">
-<link rel="canonical" href="https://tinytwirlcloud.github.io/">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiny Twirl Cloud by Diya Sahai</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#fffcf8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#7a4a4a;text-align:center}
-header{padding:9px 12px;background:#fff8f0;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px #0001}
-.logo{display:flex;align-items:center;gap:7px;font-weight:800;font-size:13px;color:#d68a8a;text-decoration:none;cursor:pointer}
-.logo img{width:26px;height:26px;border-radius:50%;border:2px solid #ffdae0;object-fit:cover}
-.nav{display:flex;gap:5px;align-items:center}
-.nav a{font-size:11px;text-decoration:none;color:#b06a6a;font-weight:700;background:#fff;padding:5px 8px;border-radius:12px;box-shadow:0 1px 3px #0001;cursor:pointer}
-.pro{font-size:10px;font-weight:800;background:linear-gradient(90deg,#ffd6e7,#ff9ab2);border:none;padding:6px 10px;border-radius:20px;color:#6a2a3a;cursor:pointer}
-.hero{margin:12px;background:linear-gradient(135deg,#ffdadf,#ffe8ec);border-radius:24px;padding:28px 16px;cursor:pointer}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 12px #0001;text-align:left;position:relative;cursor:pointer;transition:0.2s}
-.card:active{transform:scale(0.97)}
-.card img{width:100%;height:165px;object-fit:cover;background:#fff0f2;display:block}
-.card-body{padding:9px 11px}
-.heart{position:absolute;top:8px;right:8px;background:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px #0002;font-size:16px;z-index:5;cursor:pointer;user-select:none}
-.heart.free-heart{color:#c0a0a0}
-.heart.pro-heart{color:#ff4d7a;font-size:18px}
-.badge{font-size:9px;font-weight:800;padding:3px 7px;border-radius:8px}
-.free{background:#ffe0e5;color:#a04a5a}
-.paid{background:#ff8fab;color:#fff}
-.title{font-weight:700;font-size:12px;margin-top:5px}
-.bio{display:flex;gap:14px;align-items:center;background:#fff0f2;margin:18px 12px;border-radius:22px;padding:18px;text-align:left;border:1px solid #ffdae0;cursor:pointer}
-.bio img{width:72px;height:72px;border-radius:50%;border:3px solid #fff;object-fit:cover}
-#fav-section{display:none;padding:12px}
-#fav-section.show{display:block}
-.empty{padding:28px;color:#c08080;font-size:13px}
-/* Popup */
-#popup{position:fixed;inset:0;background:#0007;display:none;align-items:center;justify-content:center;z-index:999;padding:20px}
-#popup.show{display:flex}
-.popup-box{background:#fff;border-radius:22px;padding:20px;max-width:320px;width:100%;text-align:left}
-.popup-box img{width:100%;border-radius:14px;height:200px;object-fit:cover}
-.close{margin
+body{background:#fffcf8;font-family:sans-serif;color:#7a4a4a;text-align:center}
+header{padding:10px;background:#fff8f0;display:flex;justify-content:space-between;position:sticky;top:0}
+.nav a{font-size:11px;text-decoration:none;color:#b06a6a;background:#fff;padding:6px 10px;border-radius:10px;margin-left:4px}
+.hero{margin:12px;background:#ffdadf;border-radius:20px;padding:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 8px #0001;cursor:pointer;position:relative;text-align:left}
+.card img{width:100%;height:140px;object-fit:cover;background:#ffe0e5}
+.card-body{padding:8px 10px;font-size:12px;font-weight:700}
+.heart{position:absolute;top:6px;right:6px;background:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+#pop{position:fixed;inset:0;background:#0005;display:none;align-items:center;justify-content:center;z-index:99;padding:20px}
+#pop.show{display:flex}.box{background:#fff;border-radius:16px;padding:14px;width:300px}
+</style>
+</head>
+<body>
+<header><a style="font-weight:800;color:#d68a8a;text-decoration:none" href="#home">Tiny Twirl Cloud</a><div class="nav"><a href="#home">Home</a><a href="#pattern">Pattern</a><a href="#you">You</a></div></header>
+<div id="home" class="hero"><h3>Handmade Crochet Patterns 🎀</h3><p style="font-size:11px;margin-top:4px">All buttons clickable now!</p></div>
+<h3 id="pattern">Patterns 💖</h3>
+<div class="grid">
+<div class="card" onclick="openP('bunny')"><span class="heart" onclick="event.stopPropagation();alert('Added to Fav! ❤️')">♡</span><img src="IMG-20260823-WA9459.jpg"><div class="card-body">Watermelon Bunny - FREE</div></div>
+<div class="card" onclick="openP('bow')"><span class="heart" onclick="event.stopPropagation();alert('Added to Fav! ❤️')">♡</span><img src="IMG-20260823-WA5906.jpg"><div class="card-body">Bow Scrunchie - PRO ₹5</div></div>
+<div class="card" onclick="openP('head')"><span class="heart" onclick="event.stopPropagation();alert('Added to Fav! ❤️')">♡</span><img src="IMG-20260823-WA9402.jpg"><div class="card-body">Flower Headband - FREE</div></div>
+<div class="card" onclick="openP('daisy')"><span class="heart" onclick="event.stopPropagation();alert('Added to Fav! ❤️')">♡</span><img src="IMG-20260823-WA3458.jpg"><div class="card-body">Daisy Blanket - PRO ₹5</div></div>
+</div>
+<div id="you" style="background:#fff0f2;margin:12px;border-radius:16px;padding:14px;text-align:left;display:flex;gap:10px"><img src="IMG-20260823-WA0231.jpg" style="width:50px;height:50px;border-radius:50%"><div><b>Tiny Twirl Cloud - Founder</b><br><span style="font-size:11px">Hi! I'm Diya Sahai from Gurugram 💖</span></div></div>
+<div id="pop" onclick="this.classList.remove('show')"><div class="box" onclick="event.stopPropagation()"><h3 id="t"></h3><p id="d" style="font-size:12px;margin-top:6px"></p><button onclick="document.getElementById('pop').classList.remove('show')" style="margin-top:10px;width:100%;padding:8px;background:#ff8fab;border:none;color:#fff;border-radius:8px">Close</button></div></div>
+<script>function openP(n){document.getElementById('t').textContent=n;document.getElementById('d').textContent='Full pattern details coming soon! DM on Insta to buy PRO for ₹5 🎀';document.getElementById('pop').classList.add('show')}</script>
+</body>
+</html>
