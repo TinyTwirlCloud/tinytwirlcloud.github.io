@@ -1,101 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tiny Twirl Cloud ☁️</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  body{background:#fff3f6; margin:0; font-family:'Quicksand', sans-serif; padding:24px;}
-  .title{font-family:'Instrument Serif',serif; font-size:28px; color:#3a2a2a; margin-bottom:20px;}
-  .grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:600px;}
-  .card{background:white; border-radius:32px; padding:12px; cursor:pointer; transition:0.2s; box-shadow:0 2px 10px rgba(0,0,0,0.03);}
-  .card:active{transform:scale(0.97);}
-  .img-box{width:100%; aspect-ratio:0.9; border-radius:26px; overflow:hidden;}
-  .img-box img{width:100%; height:100%; object-fit:cover;}
-  .meta{margin-top:14px; padding:0 6px 6px;}
-  .meta .level{font-size:11px; letter-spacing:1.5px; color:#8a8a8a;}
-  .meta .name{font-size:18px; font-weight:600; color:#222; margin:4px 0;}
-  .meta .by{font-size:13px; color:#999;}
-  /* modal */
-  #modal{position:fixed; inset:0; background:rgba(0,0,0,0.3); backdrop-filter:blur(8px); display:none; align-items:center; justify-content:center; padding:20px; z-index:100;}
-  #modal.show{display:flex;}
-  .modal-box{background:white; border-radius:32px; padding:32px; text-align:center; max-width:340px; width:100%;}
+body{font-family:'Quicksand'; background:#fff5f8; margin:0; padding:20px; text-align:center;}
+h1{color:#e94e8a; font-size:36px; margin:10px 0 0;}
+.sub{color:#ff8fab; margin-bottom:24px;}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:500px; margin:0 auto;}
+.card{background:white; border-radius:28px; padding:12px; text-align:left; cursor:pointer; box-shadow:0 4px 15px rgba(0,0,0,0.05);}
+.card img{width:100%; height:160px; object-fit:cover; border-radius:20px; background:#ffe3ea;}
+.card h3{margin:10px 6px 0; font-size:17px; color:#333;}
+.card p{margin:2px 6px 6px; color:#ff8fab; font-size:13px;}
+#pop{position:fixed; inset:0; background:rgba(0,0,0,0.25); backdrop-filter:blur(6px); display:none; align-items:center; justify-content:center; z-index:99;}
+#pop.show{display:flex;}
+.box{background:white; border-radius:28px; padding:28px; width:80%; max-width:320px;}
 </style>
 </head>
 <body>
-
-<h1 class="title">free patterns •</h1>
+<h1>Tiny Twirl Cloud</h1>
+<div class="sub">Handmade with love ☁️✨</div>
 
 <div class="grid">
-  <!-- 1 WATERMELON BUNNY -->
-  <div class="card" onclick="openModal('watermelon bunny')">
-    <div class="img-box" style="background:#d4f0db;">
-      <img src="watermelon-bunny.jpg" alt="watermelon bunny" onerror="this.style.display='none'">
-    </div>
-    <div class="meta">
-      <div class="level">BEGINNER • 1 HR</div>
-      <div class="name">watermelon bunny •</div>
-      <div class="by">by Diya • soft amigurumi •</div>
-    </div>
-  </div>
-
-  <!-- 2 COQUETTE BOW -->
-  <div class="card" onclick="openModal('coquette bow')">
-    <div class="img-box" style="background:#ffd6de;">
-      <img src="coquette-bow.jpg" alt="coquette bow" onerror="this.style.display='none'">
-    </div>
-    <div class="meta">
-      <div class="level">BEGINNER • 30 MIN</div>
-      <div class="name">coquette bow •</div>
-      <div class="by">by Diya • lace & ribbon •</div>
-    </div>
-  </div>
-
-  <!-- 3 LACE HEADBAND -->
-  <div class="card" onclick="openModal('lace headband')">
-    <div class="img-box" style="background:#dfd3ff;">
-      <img src="lace-headband.jpg" alt="lace headband" onerror="this.style.display='none'">
-    </div>
-    <div class="meta">
-      <div class="level">EASY • 2 HRS</div>
-      <div class="name">lace headband •</div>
-      <div class="by">by Diya • vintage inspired •</div>
-    </div>
-  </div>
-
-  <!-- 4 CLOUDY DAISY -->
-  <div class="card" onclick="openModal('cloudy daisy')">
-    <div class="img-box" style="background:#d6eeff;">
-      <img src="cloudy-daisy.jpg" alt="cloudy daisy" onerror="this.style.display='none'">
-    </div>
-    <div class="meta">
-      <div class="level">EASY • 1 HR</div>
-      <div class="name">cloudy daisy •</div>
-      <div class="by">by Diya • dainty • spring •</div>
-    </div>
-  </div>
+<div class="card" onclick="openPop('Watermelon Bunny 🍉')">
+<img src="watermelon-bunny.jpg">
+<h3>Watermelon Bunny</h3><p>Click to view</p>
+</div>
+<div class="card" onclick="openPop('Coquette Bow 🎀')">
+<img src="coquette-bow.jpg">
+<h3>Coquette Bow</h3><p>Click to view</p>
+</div>
+<div class="card" onclick="openPop('Lace Headband 💜')">
+<img src="lace-headband.jpg">
+<h3>Lace Headband</h3><p>Click to view</p>
+</div>
+<div class="card" onclick="openPop('Cloudy Daisy ☁️')">
+<img src="cloudy-daisy.jpg">
+<h3>Cloudy Daisy</h3><p>Click to view</p>
+</div>
 </div>
 
-<!-- CLICK POPUP -->
-<div id="modal" onclick="closeModal()">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div style="font-size:48px;">☁️</div>
-    <h2 id="modalTitle" style="font-family:'Instrument Serif'; font-size:26px; margin:12px 0;">watermelon bunny</h2>
-    <p style="color:#888; font-size:14px; line-height:1.5;">This free pattern is coming soon! I'm writing the steps for you 💖<br><br>Follow @TinyTwirlCloud for early access!</p>
-    <button onclick="closeModal()" style="margin-top:20px; background:#ff8fab; color:white; border:none; padding:12px 28px; border-radius:999px; font-weight:600; font-family:'Quicksand'; cursor:pointer;">Okay cutie!</button>
-  </div>
-</div>
+<div id="pop" onclick="closePop()"><div class="box" onclick="event.stopPropagation()">
+<div style="font-size:40px;">☁️</div>
+<h2 id="popTitle">Pattern</h2>
+<p style="color:#777;">Coming soon! So twirly & soft 💖</p>
+<button onclick="closePop()" style="background:#ff5a8f; color:white; border:0; padding:10px 24px; border-radius:99px; margin-top:12px;">Okay cutie!</button>
+</div></div>
 
 <script>
-function openModal(name){
-  document.getElementById('modalTitle').innerText = name;
-  document.getElementById('modal').classList.add('show');
-}
-function closeModal(){
-  document.getElementById('modal').classList.remove('show');
-}
+function openPop(t){document.getElementById('popTitle').innerText=t; document.getElementById('pop').classList.add('show');}
+function closePop(){document.getElementById('pop').classList.remove('show');}
 </script>
-
 </body>
 </html>
