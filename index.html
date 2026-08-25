@@ -4,69 +4,130 @@
 <title>Tiny Twirl Cloud ☁️</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#fff6f8;padding:12px}
-header{background:#fff;padding:12px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;position:sticky;top:0;z-index:10;border:2px solid #ffd6de}
-.logo{font-weight:900;color:#ff6b8a}
-.menu button{border:1.5px solid #ffb3c3;background:#fff;color:#ff6b8a;padding:6px 12px;border-radius:20px;font-weight:800;margin-left:4px;font-size:11px}
-.menu button.on{background:#ff6b8a;color:#fff}
-.page{display:none}.page.on{display:block}
-.hero{background:linear-gradient(135deg,#ffd6e8,#e0d0ff);padding:20px;border-radius:20px;text-align:center}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.card{background:#fff;border-radius:16px;text-align:center;padding:0 0 8px;box-shadow:0 4px 10px #0001}
-.card-e{height:100px;display:grid;place-items:center;font-size:45px;background:#fff0f3;border-radius:16px 16px 0 0}
-.card b{font-size:11px;display:block;margin-top:6px}
-.list{background:#fff;border-radius:16px;padding:14px;margin-top:16px;border:2px dashed #ffb3c3}
-.list h3{text-align:center;color:#ff6b8a;margin-bottom:8px;font-size:13px}
-.item{padding:9px 0;border-bottom:1px solid #ffe6ea;display:flex;justify-content:space-between;font-size:12px}
-.item:last-child{border:0}
+body{background:#fff6f8}
+header{position:sticky;top:0;z-index:99;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 8px;border-bottom:2px solid #ffd6de;gap:4px}
+.logo{font-weight:900;color:#ff6b8a;font-size:12px;white-space:nowrap}
+.nav{display:flex;gap:3px}
+.nav button{border:1.5px solid #ffb3c3;background:#fff;color:#ff6b8a;padding:6px 8px;border-radius:20px;font-weight:800;font-size:10px;cursor:pointer}
+.nav button.on{background:#ff6b8a;color:#fff}
+.page{display:none;padding:12px}.page.on{display:block}
+.hero{background:linear-gradient(135deg,#ffd6e8,#e0d0ff);padding:18px;border-radius:20px;text-align:center;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 12px #0001;text-align:center;padding-bottom:8px;cursor:pointer;border:2px solid #fff;position:relative}
+.card-e{height:95px;display:grid;place-items:center;font-size:42px;background:#fff0f3}
+.card b{font-size:10px;margin-top:6px;display:block;padding:0 4px}
+.heart{position:absolute;top:6px;right:6px;background:#fff;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 6px #0002;font-size:14px;z-index:2}
+.coming-title{text-align:center;color:#ff6b8a;font-size:14px;margin:20px 0 10px;font-weight:900}
+.coming-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.coming-card{background:#fff;border-radius:18px;text-align:center;padding:0 0 8px;box-shadow:0 4px 12px #0001;border:2px dashed #ffb3c3;position:relative}
+.coming-card .card-e{background:#fff7f9;font-size:36px;height:85px}
+#pop{position:fixed;inset:0;background:#0008;display:none;place-items:center;z-index:100;padding:20px}
+#pop.on{display:grid}
+#popBox{background:#fff;border-radius:24px;padding:22px;text-align:center;width:100%;max-width:320px;animation:pop .3s}
+@keyframes pop{from{transform:scale(.8)}to{transform:scale(1)}}
+.insta-btn{display:block;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:#fff;padding:12px;border-radius:20px;font-weight:900;text-decoration:none;margin:10px 0;font-size:13px}
 </style>
 </head><body>
 
 <header>
 <div class="logo">☁️ Tiny Twirl Cloud</div>
-<div class="menu">
-<button id="b-home" class="on" onclick="go('home')">Home</button>
-<button id="b-pat" onclick="go('pat')">Patterns</button>
-<button id="b-about" onclick="go('about')">About</button>
+<div class="nav">
+<button id="b-home" class="on" onclick="show('home')">Home</button>
+<button id="b-pat" onclick="show('pat')">Patterns</button>
+<button id="b-fav" onclick="show('fav')">❤️ Fav</button>
+<button id="b-about" onclick="show('about')">About</button>
 </div>
 </header>
 
 <div id="home" class="page on">
-<div class="hero"><div style="font-size:45px">🐰☁️🍓</div><h2>Tiny Twirl Cloud 🎀</h2><p style="font-size:11px">by Diya Sahai • Gurugram</p></div>
-
-<h3 style="margin:14px 0 6px;font-size:13px">🧶 Already Making 💖</h3>
-<div class="grid">
-<div class="card"><div class="card-e">🐰💖</div><b>Bunny Bag Heart</b></div>
-<div class="card"><div class="card-e">🐰</div><b>Watermelon Bunny</b></div>
-<div class="card"><div class="card-e">🎀</div><b>Bow Scrunchie</b></div>
-<div class="card"><div class="card-e">🍓</div><b>Strawberry Scrunchie</b></div>
-<div class="card"><div class="card-e">🌸</div><b>Flower Headband</b></div>
-<div class="card"><div class="card-e">🌼</div><b>Daisy Blanket</b></div>
+<div class="hero"><div style="font-size:44px">🐰☁️🍓</div><h2>Tiny Twirl Cloud 🎀</h2><p style="font-size:11px">by Diya Sahai • Gurugram • 26 Patterns!</p>
+<a href="https://www.instagram.com/tinytwirlcloud" target="_blank" style="display:inline-block;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:#fff;padding:8px 16px;border-radius:20px;font-weight:800;text-decoration:none;margin-top:10px;font-size:11px">📸 @tinytwirlcloud</a>
 </div>
 
-<div class="list">
-<h3>✨ Patterns I Have To Make - 15 ✨</h3>
-<div class="item"><span>🧸 Crochet Bear</span><span>TO MAKE</span></div>
-<div class="item"><span>🐻 Teddy Keychain</span><span>TO MAKE</span></div>
-<div class="item"><span>🐙 Mini Octopus</span><span>TO MAKE</span></div>
-<div class="item"><span>🐱 Cat Beanie</span><span>TO MAKE</span></div>
-<div class="item"><span>🌷 Flower Bag</span><span>TO MAKE</span></div>
-<div class="item"><span>🎀 Big Bow</span><span>TO MAKE</span></div>
-<div class="item"><span>🍒 Cherry Scrunchie</span><span>TO MAKE</span></div>
-<div class="item"><span>☁️ Cloud Pillow</span><span>TO MAKE</span></div>
-<div class="item"><span>💌 Heart Pouch</span><span>TO MAKE</span></div>
-<div class="item"><span>🦋 Butterfly Top</span><span>TO MAKE</span></div>
-<div class="item"><span>🌈 Rainbow Coaster</span><span>TO MAKE</span></div>
-<div class="item"><span>🍄 Mushroom Keychain</span><span>TO MAKE</span></div>
-<div class="item"><span>🌙 Moon Garland</span><span>TO MAKE</span></div>
-<div class="item"><span>🐣 Chick Rattle</span><span>TO MAKE</span></div>
-<div class="item"><span>🧶 Granny Bag</span><span>TO MAKE</span></div>
-</div>
+<h3 style="font-size:12px;margin-bottom:6px">🧶 Already Making 💖 (6)</h3>
+<div class="grid" id="home-grid"></div>
+
+<div class="coming-title">✨ Coming Soon ✨ (20)</div>
+<div class="coming-grid" id="coming-grid"></div>
 </div>
 
-<div id="pat" class="page">
-<h3 style="text-align:center">All Patterns 💖</h3>
-<div class="grid" style="margin-top:10px">
-<div class="card"><div class="card-e">🐰💖</div><b>Bunny Bag Heart</b></div>
-<div class="card"><div class="card-e">🐰</div><b>Watermelon Bunny</b></div>
-<div class="card"><div class="card-e">🎀</div><b>Bow Scrunchie</b></div>
+<div id="pat" class="page"><h3 style="text-align:center">All Patterns 💖 26</h3><div class="grid" id="pat-grid" style="margin-top:10px"></div></div>
+<div id="fav" class="page"><h3 style="text-align:center">❤️ My Favorites</h3><p style="text-align:center;font-size:11px;color:#999;margin:8px">Tap heart to add!</p><div class="grid" id="fav-grid" style="margin-top:10px"></div></div>
+<div id="about" class="page"><div style="background:#fff;border-radius:20px;padding:20px;text-align:center"><div style="font-size:50px">👧🏻</div><h3>Hi I'm Diya 💖</h3><p style="font-size:12px;margin-top:10px;line-height:1.6">Founder of Tiny Twirl Cloud ☁️<br>26 cute patterns! From Gurugram, started at 10 yrs old! 🧶</p><a href="https://www.instagram.com/tinytwirlcloud" target="_blank" class="insta-btn">📸 @tinytwirlcloud</a></div></div>
+
+<div id="pop" onclick="this.classList.remove('on')"><div id="popBox"></div></div>
+
+<script>
+let patterns=[
+{id:1,e:"🐰💖",n:"Bunny Bag Heart"},
+{id:2,e:"🐰",n:"Watermelon Bunny"},
+{id:3,e:"🎀",n:"Bow Scrunchie"},
+{id:4,e:"🍓",n:"Strawberry Scrunchie"},
+{id:5,e:"🌸",n:"Flower Headband"},
+{id:6,e:"🌼",n:"Daisy Blanket"}
+];
+let coming=[
+{id:7,e:"🧸",n:"Crochet Bear"},
+{id:8,e:"🐻",n:"Teddy Keychain"},
+{id:9,e:"🐙",n:"Mini Octopus"},
+{id:10,e:"🐱",n:"Cat Beanie"},
+{id:11,e:"🌷",n:"Flower Bag"},
+{id:12,e:"🎀",n:"Big Bow"},
+{id:13,e:"🍒",n:"Cherry Scrunchie"},
+{id:15,e:"💌",n:"Heart Pouch"},
+{id:17,e:"🌈",n:"Rainbow Coaster"},
+{id:18,e:"🍄",n:"Mushroom Keychain"},
+{id:21,e:"🧶",n:"Granny Bag"},
+{id:22,e:"☁️",n:"2D Cloud"},
+{id:23,e:"🐰",n:"2D Bunny"},
+{id:24,e:"⭐",n:"Star Pouch"},
+{id:25,e:"🐧",n:"Penguin Keychain"},
+{id:26,e:"🌻",n:"Sunflower Coaster"},
+{id:27,e:"🍩",n:"Donut Scrunchie"},
+{id:28,e:"🐸",n:"Frog Headband"},
+{id:29,e:"💜",n:"Bow Bag"},
+{id:30,e:"🦊",n:"Fox Beanie"}
+];
+let all=[...patterns,...coming];
+let favs=JSON.parse(localStorage.getItem('fav')||"[]");
+function cardHTML(p){
+let isFav=favs.includes(p.id);
+return `<div class="${p.id<=6?'card':'coming-card'}" onclick="openPop(${p.id})"><div class="heart" onclick="event.stopPropagation();toggleFav(${p.id})">${isFav?'❤️':'🤍'}</div><div class="card-e">${p.e}</div><b>${p.n}</b></div>`;
+}
+function render(){
+document.getElementById('home-grid').innerHTML=patterns.map(p=>cardHTML(p)).join('');
+document.getElementById('coming-grid').innerHTML=coming.map(p=>cardHTML(p)).join('');
+document.getElementById('pat-grid').innerHTML=all.map(p=>cardHTML(p)).join('');
+let f=all.filter(p=>favs.includes(p.id));
+document.getElementById('fav-grid').innerHTML=f.length?f.map(p=>cardHTML(p)).join(''):`<p style="grid-column:1/3;text-align:center;color:#999;font-size:12px;margin-top:20px">No favorites yet! Tap 🤍 to add ❤️</p>`;
+}
+function toggleFav(id){
+if(favs.includes(id)) favs=favs.filter(x=>x!=id); else favs.push(id);
+localStorage.setItem('fav',JSON.stringify(favs));
+render();
+}
+function show(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('on'));
+document.getElementById(id).classList.add('on');
+document.getElementById('b-'+id).classList.add('on');
+window.scrollTo(0,0);
+}
+function openPop(id){
+let p=all.find(x=>x.id==id);
+document.getElementById('popBox').innerHTML=`
+<div style="font-size:60px">${p.e}</div>
+<h3 style="margin:8px 0">${p.n}</h3>
+<div style="background:#fff0f3;color:#ff6b8a;font-weight:900;padding:10px;border-radius:12px;margin:12px 0;font-size:14px">✨ Coming Soon on Website ✨</div>
+<p style="font-size:11px;color:#666;line-height:1.4">Full free pattern is coming soon here!<br><b>If you need it URGENTLY now:</b></p>
+<a href="https://www.instagram.com/tinytwirlcloud" target="_blank" class="insta-btn">⚡ View Now on Instagram 📸<br>@tinytwirlcloud</a>
+<p style="font-size:10px;color:#999">I post tutorials & quick videos there!</p>
+<div style="margin-top:14px;display:flex;gap:6px;justify-content:center">
+<button onclick="toggleFav(${p.id});document.getElementById('pop').classList.remove('on')" style="background:#ff6b8a;color:#fff;border:0;padding:10px 18px;border-radius:20px;font-weight:800">${favs.includes(id)?'❤️ Favorited':'🤍 Fav'}</button>
+<button onclick="document.getElementById('pop').classList.remove('on')" style="background:#ffe3ea;color:#ff6b8a;border:0;padding:10px 18px;border-radius:20px;font-weight:800">Close</button>
+</div>`;
+document.getElementById('pop').classList.add('on');
+}
+render();
+</script>
+</body></html>
