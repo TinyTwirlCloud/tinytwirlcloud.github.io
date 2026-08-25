@@ -1,103 +1,72 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tiny Twirl Cloud</title>
+<html><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny Twirl Cloud ☁️</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#fff5f7;color:#6b2d3e}
-header{background:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:9;border-bottom:2px solid #ffd6df}
-.logo{font-weight:900;color:#ff6b8a;text-decoration:none}
-.nav button{border:1px solid #ffcad4;background:#fff;color:#ff6b8a;padding:6px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-left:3px}
+body{background:#fff6f8}
+header{position:sticky;top:0;z-index:10;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:2px solid #ffd6de}
+.logo{display:flex;align-items:center;gap:6px;font-weight:900;color:#ff6b8a;text-decoration:none;font-size:14px}
+.logo span{font-size:22px}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:60%}
+.nav button{border:1.5px solid #ffc9d5;background:#fff;color:#ff6b8a;padding:7px 11px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer}
 .nav button.on{background:#ff6b8a;color:#fff}
-.page{display:none;padding:12px}.page.on{display:block}
-.hero{background:linear-gradient(135deg,#ffe0ea,#e8d5ff);padding:24px;border-radius:24px;text-align:center}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 10px #0001;margin-bottom:10px}
-.card img{width:100%;height:150px;object-fit:cover;background:#ffe8ee}
-.badge{position:absolute;top:8px;left:8px;background:#fff;padding:3px 8px;border-radius:20px;font-size:9px;font-weight:800;color:#ff6b8a}
-.heart{position:absolute;top:8px;right:8px;background:#fff;width:30px;height:30px;border-radius:50%;display:grid;place-items:center}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.found{display:inline-block;background:#ffe3e9;border:2px solid #ffb3c3;padding:12px 20px;border-radius:30px;margin-top:12px}
-.found b{color:#ff2d5e;font-size:18px}
+.page{display:none;padding:10px}.page.on{display:block}
+.hero{background:linear-gradient(135deg,#ffe0ec,#e8d8ff);padding:22px;border-radius:22px;text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.card{background:#fff;border-radius:18px;padding:0;overflow:hidden;box-shadow:0 4px 12px #0001;position:relative;cursor:pointer;text-align:center}
+.card-emoji{height:110px;display:grid;place-items:center;font-size:52px;background:#fff0f3}
+.card b{display:block;font-size:12px;padding:8px;color:#4a2040}
+.heart{position:absolute;top:7px;right:7px;width:30px;height:30px;border-radius:50%;background:#fff;border:none;box-shadow:0 2px 6px #0002;font-size:14px;cursor:pointer}
+.tag{position:absolute;top:7px;left:7px;background:#fff;color:#ff6b8a;font-size:8px;font-weight:800;padding:3px 7px;border-radius:20px}
+.coming{background:#fff;border-radius:18px;margin:12px 0;padding:14px;border:2px dashed #ffb3c3}
+.coming h3{text-align:center;color:#ff6b8a;font-size:14px}
+.coming-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #ffe6ea;font-size:12px}
+.coming-item:last-child{border:0}
+.about{background:#fff;border-radius:20px;padding:20px;text-align:center;box-shadow:0 4px 12px #0001}
+#pop{position:fixed;inset:0;background:#0006;display:none;align-items:center;justify-content:center;z-index:99;padding:16px}
+#pop.show{display:flex}
+.popbox{background:#fff;width:100%;max-width:360px;border-radius:20px;padding:20px;text-align:center}
 </style>
-</head>
-<body>
+</head><body>
+
 <header>
-<a class="logo" href="#" onclick="show('home')">☁️ Tiny Twirl Cloud</a>
+<a class="logo" href="#" onclick="show('home')"><span>☁️</span> Tiny Twirl<br>Cloud</a>
 <div class="nav">
-<button id="bh" class="on" onclick="show('home')">Home</button>
-<button id="bp" onclick="show('pat')">Patterns</button>
-<button id="bf" onclick="show('fav')">Fav</button>
-<button id="ba" onclick="show('about')">About</button>
+<button id="b-home" class="on" onclick="show('home')">Home</button>
+<button id="b-pat" onclick="show('pat')">Patterns</button>
+<button id="b-fav" onclick="show('fav')">Fav</button>
+<button id="b-about" onclick="show('about')">About</button>
 </div>
 </header>
 
 <div id="home" class="page on">
 <div class="hero">
-<div style="font-size:60px">🐰☁️🍓</div>
+<div style="font-size:50px">🐰☁️🍓</div>
 <h2>Tiny Twirl Cloud 🎀</h2>
-<p style="font-size:12px;margin-top:6px">Handmade crochet by Diya Sahai from Gurugram</p>
+<p style="font-size:11px;margin-top:4px">Handmade crochet by Diya Sahai from Gurugram</p>
 </div>
-<div class="grid" style="margin-top:12px" id="hg"></div>
+<div class="grid" id="homeG"></div>
+<div class="coming">
+<h3>✨ Coming Soon - 15 Patterns ✨</h3>
+<div id="comingList"></div>
+</div>
 </div>
 
-<div id="pat" class="page"><h3 style="text-align:center">All Patterns 💖</h3><div class="grid" style="margin-top:10px" id="ag"></div></div>
-<div id="fav" class="page"><h3 style="text-align:center">Your Favorites ❤️</h3><div class="grid" style="margin-top:10px" id="fg"></div><p id="nf" style="text-align:center;margin-top:20px;opacity:.6;font-size:12px">No favorites yet - tap ♡</p></div>
+<div id="pat" class="page">
+<h3 style="text-align:center">All Patterns 💖</h3>
+<div class="grid" id="patG"></div>
+<div class="coming"><h3>🧶 Coming Soon</h3><div id="comingList2"></div></div>
+</div>
+
+<div id="fav" class="page">
+<h3 style="text-align:center">Your Favorites ❤️</h3>
+<div class="grid" id="favG"></div>
+<p id="noFav" style="text-align:center;margin-top:30px;font-size:12px;opacity:.6">No fav yet — tap ♡ heart!</p>
+</div>
 
 <div id="about" class="page">
-<div style="background:#fff;border-radius:20px;padding:20px;text-align:center">
+<div class="about">
 <div style="font-size:60px">👧🏻</div>
 <h2>Hi! I'm Diya Sahai 💖</h2>
-<div class="found"><b>Founder of Tiny Twirl Cloud ☁️</b></div>
-<p style="font-size:13px;text-align:left;line-height:1.6;margin-top:14px">
-I'm from <b>Gurugram, Haryana</b> and started crocheting at <b>10 years old</b>! 🧶<br><br>
-My logo is a cloud bunny with strawberries 🍓🐰☁️<br><br>
-✨ 100% FREE patterns<br>✨ Beginner friendly<br>✨ Made with love<br><br>
-Follow me: <b>@tinytwirlcloud</b> on Instagram!
-</p>
-</div>
-</div>
-
-<script>
-const data=[
-{name:'Watermelon Bunny',e:'🐰'},
-{name:'Bow Scrunchie',e:'🎀'},
-{name:'Strawberry Scrunchie',e:'🍓'},
-{name:'Flower Headband',e:'🌸'},
-{name:'Granny Square',e:'🟪'},
-{name:'Daisy Blanket',e:'🌼'}
-];
-let fav=JSON.parse(localStorage.getItem('f2')||'[]');
-function show(id){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
-document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('on'));
-document.getElementById(id).classList.add('on');
-document.getElementById('b'+id[0]).classList.add('on');
-if(id==='fav')drawFav();
-}
-function box(p,i){
-let hf=fav.includes(i);
-return `<div style="position:relative" onclick="like(${i})"><div class="card"><div style="height:150px;display:grid;place-items:center;font-size:50px;background:#ffe8ee">${p.e}</div><div style="padding:8px"><b style="font-size:11px">${p.name}</b></div></div><span class="badge">FREE</span><span class="heart">${hf?'❤️':'♡'}</span></div>`;
-}
-function draw(){
-document.getElementById('hg').innerHTML=data.map(box).join('');
-document.getElementById('ag').innerHTML=data.map(box).join('');
-drawFav();
-}
-function drawFav(){
-let list=data.map((p,i)=>({p,i})).filter(x=>fav.includes(x.i));
-let g=document.getElementById('fg');
-let n=document.getElementById('nf');
-if(list.length==0){g.innerHTML='';n.style.display='block';}
-else{n.style.display='none';g.innerHTML=list.map(x=>box(x.p,x.i)).join('');}
-}
-function like(i){
-if(fav.includes(i))fav=fav.filter(x=>x!==i);else fav.push(i);
-localStorage.setItem('f2',JSON.stringify(fav));
-draw();
-}
-draw();
-</script>
-</body>
-</html>
+<div style="background:#ffe3ea;border:2px solid #ffb3c3;padding:12px 20px;border-radius:30px;margin:12px auto;display:inline-block"><b style="color:#ff2d5e;font-size:16px">
