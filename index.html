@@ -124,4 +124,6 @@ function T(e,i){e.stopPropagation();F=F.includes(i)?F.filter(x=>x!==i):[...F,i];
 function O(i){let p=P.find(x=>x.i===i);document.getElementById('pImg').src=p.m;document.getElementById('pTitle').textContent=p.n;document.getElementById('pDesc').textContent=p.d;document.getElementById('popup').classList.add('show')}
 function closeP(){document.getElementById('popup').classList.remove('show')}
 function showPage(id){document.getElementById('homePage').style.display=id==='home'?'block':'none';document.getElementById('favPage').style.display=id==='fav'?'block':'none';document.getElementById('aboutPage').style.display=id==='about'?'block':'none';window.scrollTo(0,0)}
-function subscribe(){let e=document.getElementById('emailInput').value;if(!e.includes('@')){document.getElementById('notifyMsg').textContent='Please enter valid email 💌';return}localStorage.setItem('notify_email',e);document.getElementById('notifyMsg').textContent='Yay! You
+function subscribe(){let e=document.getElementById('emailInput').value;if(!e.includes('@')){document.getElementById('notifyMsg').textContent='Please enter valid email 💌';return}localStorage.setItem('notify_email',e);document.getElementById('notifyMsg').textContent='Yay! You will be notified 💖🔔 for '+e;if(Notification&&Notification.permission!=='granted'){Notification.requestPermission()}}
+R();
+</script></body></html>
