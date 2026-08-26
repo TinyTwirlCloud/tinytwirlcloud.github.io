@@ -5,7 +5,8 @@
 <title>Tiny Twirl Cloud by Diya Sahai 💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input, textarea, pre{ -webkit-user-select:text !important; user-select:text !important; }
 body{background:#fffcf8;color:#6d3e4a;padding-bottom:90px}
 .page{display:none;padding:12px}.page.active{display:block}
 header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blur(12px);padding:10px 14px;display:flex;gap:8px;border-bottom:1px solid #ffe0e5}
@@ -45,14 +46,12 @@ header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blu
 </style>
 </head>
 <body>
-<header><img class="logo-img" src="IMG-20260823-WA0231.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'"><div class="logo-text">Tiny Twirl Cloud</div></header>
+<header><img class="logo-img" src="IMG-20260823-WA2184.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'"><div class="logo-text">Tiny Twirl Cloud</div></header>
 
 <div id="home" class="page active">
 <div class="hero"><h1>Handmade Crochet Patterns 🎀</h1><p style="font-size:12px;margin-top:6px;opacity:.8">By Diya Sahai • 26 patterns • Soft Pastel ☁️</p></div>
 <div class="coming"><h3 style="font-size:14px">🎬 Coming Soon Tutorials ✧･ﾟ</h3><p style="font-size:11px;margin-top:6px;opacity:.8">╰┈➤ Video tutorials coming! Subscribe 💌</p><div style="margin-top:10px;display:flex;gap:8px"><a href="https://youtube.com/@tinytwirlcloud" target="_blank" style="font-size:11px;background:#ff8fab;color:#fff;padding:7px 14px;border-radius:999px;text-decoration:none">YouTube ▶️</a><a href="https://instagram.com/tinytwirlcloud" target="_blank" style="font-size:11px;background:#fff;color:#ff8fab;border:1px solid #ffd6db;padding:7px 14px;border-radius:999px;text-decoration:none">Instagram 💖</a></div></div>
 <div class="founder"><img src="IMG-20260823-WA0231.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'"><div><b>Founder - Diya Sahai 💖</b><br><span style="font-size:11px;opacity:.8">♡ ⋆｡°✩ Coquette crochet 🧶</span></div></div>
-<div class="white-card" style="margin-top:14px"><h3 style="font-size:14px">💬 Ask a Doubt / Comment ✧･ﾟ</h3><textarea id="commentInput" placeholder="Type your doubt here... ♡" style="width:100%;margin-top:10px;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:12px;font-size:12px;min-height:70px"></textarea><button onclick="addComment()" style="margin-top:8px;width:100%;background:#ff8fab;color:#fff;border:none;padding:10px;border-radius:12px;font-weight:700">Post Comment 💌</button><div id="commentList" style="margin-top:12px"></div></div>
-<div class="white-card" style="margin-top:14px"><h3 style="font-size:14px">⭐ Reviews & Love ♡</h3><div style="margin-top:8px;display:flex;gap:4px;font-size:20px" id="stars"><span onclick="setStar(1)">⭐</span><span onclick="setStar(2)">⭐</span><span onclick="setStar(3)">⭐</span><span onclick="setStar(4)">⭐</span><span onclick="setStar(5)">⭐</span></div><textarea id="reviewInput" placeholder="Write review... ♡" style="width:100%;margin-top:10px;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:12px;font-size:12px;min-height:70px"></textarea><button onclick="addReview()" style="margin-top:8px;width:100%;background:linear-gradient(90deg,#ff8a33,#a259ff);color:#fff;border:none;padding:10px;border-radius:12px;font-weight:700">Post Review ✨</button><div id="reviewList" style="margin-top:12px"></div></div>
 </div>
 
 <div id="pattern" class="page">
@@ -67,16 +66,13 @@ header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blu
 <h2 style="font-size:18px;text-align:center">About Me ☁️</h2>
 <div class="white-card">
 <p style="text-align:center;font-weight:800;font-size:16px">⋆𔓘✦˚｡⋆ About Me ⋆｡˚✦𔓘⋆</p>
-
 <p style="font-size:12.5px;line-height:1.9;margin-top:14px">
 Hi, I'm <i>Diya Sahai</i> from Gurugram! ☁️💖<br>
 ˗ˏˋ I love soft things, pretty colors, and cozy handmade vibes. ˎˊ˗<br>
 I found my love for yarn and crochet and it became my happy place —<br>
 ♡ ⋆｡°✩ where I can create cute little worlds with just a hook and some yarn!
 </p>
-
 <p style="text-align:center;opacity:.6;font-size:12px;margin:12px 0">❥─────────❥</p>
-
 <p style="font-size:12.5px;line-height:1.9">
 I started <i>Tiny Twirl Cloud</i> because I believe handmade things have magic. ✨<br>
 ✧𐙚 I named it Tiny Twirl Cloud — Tiny for my little cute creations,<br>
@@ -88,14 +84,13 @@ Here you'll find 26 aesthetic crochet patterns —<br>
 from watermelon bunnies to bow scrunchies,<br>
 all made with love by me.
 </p>
-
 <p style="text-align:center;opacity:.6;font-size:12px;margin:12px 0">❥─────────❥</p>
-
 <p style="font-size:12.5px;line-height:1.9">
 Thank you for being here and supporting my little cloud! ☁️✨<br>
 ✧･ﾟ You are part of my tiny cloud family now! ♡<br>
 ╰┈➤ <i>With love, Diya Sahai</i> 🎀🧶
 </p>
+<div style="margin-top:16px;text-align:center"><img src="IMG-20260823-WA0231.jpg" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #ffd6db"></div>
 </div>
 </div>
 
@@ -103,7 +98,22 @@ Thank you for being here and supporting my little cloud! ☁️✨<br>
 
 <div class="bottom-nav"><div id="nav-home" class="active" onclick="showPage('home')">🏠<br>Home</div><div id="nav-pattern" onclick="showPage('pattern')">🧶<br>Pattern</div><div id="nav-fav" onclick="showPage('fav')">❤️<br>Fav</div><div id="nav-about" onclick="showPage('about')">☁️<br>About</div><div id="nav-profile" onclick="showPage('profile')">👧<br>Profile</div></div>
 
-<div id="popup" onclick="closeP()"><div class="sheet" onclick="event.stopPropagation()"><div class="close" onclick="closeP()">✕</div><img id="pImg"><div class="sheet-body"><h3 id="pTitle"></h3><p id="pDesc" style="font-size:11px;margin-top:6px;opacity:.8"></p><pre id="pPattern" style="white-space:pre-wrap;font-family:'Poppins',sans-serif;font-size:12px;background:#fff0f3;border:1.5px solid #ffd6de;padding:12px;border-radius:14px;margin-top:12px;line-height:1.8"></pre></div></div></div>
+<div id="popup" onclick="closeP()"><div class="sheet" onclick="event.stopPropagation()"><div class="close" onclick="closeP()">✕</div><img id="pImg"><div class="sheet-body"><h3 id="pTitle"></h3><p id="pDesc" style="font-size:11px;margin-top:6px;opacity:.8"></p><pre id="pPattern" style="white-space:pre-wrap;font-family:'Poppins',sans-serif;font-size:12px;background:#fff0f3;border:1.5px solid #ffd6de;padding:12px;border-radius:14px;margin-top:12px;line-height:1.8"></pre>
+
+<div style="margin-top:18px;border-top:1px solid #ffe0e5;padding-top:14px">
+<h3 style="font-size:13px">💬 Comments for this pattern ✧･ﾟ</h3>
+<textarea id="patCommentInput" placeholder="Ask doubt about this pattern... ♡" style="width:100%;margin-top:10px;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:12px;font-size:12px;min-height:60px"></textarea>
+<button onclick="addPatComment()" style="margin-top:8px;width:100%;background:#ff8fab;color:#fff;border:none;padding:10px;border-radius:12px;font-weight:700">Post Comment 💌</button>
+<div id="patCommentList" style="margin-top:10px"></div>
+
+<h3 style="font-size:13px;margin-top:18px">⭐ Reviews for this pattern ♡</h3>
+<div style="margin-top:8px;display:flex;gap:4px;font-size:20px" id="patStars"><span onclick="setPatStar(1)">⭐</span><span onclick="setPatStar(2)">⭐</span><span onclick="setPatStar(3)">⭐</span><span onclick="setPatStar(4)">⭐</span><span onclick="setPatStar(5)">⭐</span></div>
+<textarea id="patReviewInput" placeholder="Write review for this pattern... ♡" style="width:100%;margin-top:10px;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:12px;font-size:12px;min-height:60px"></textarea>
+<button onclick="addPatReview()" style="margin-top:8px;width:100%;background:linear-gradient(90deg,#ff8a33,#a259ff);color:#fff;border:none;padding:10px;border-radius:12px;font-weight:700">Post Review ✨</button>
+<div id="patReviewList" style="margin-top:10px"></div>
+</div>
+
+</div></div></div>
 
 <script>
 const patterns=[
@@ -186,17 +196,17 @@ function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.
 function render(){let all=document.getElementById('allGrid');all.innerHTML='';patterns.forEach(p=>{let isFav=favs.includes(p.id);let locked=p.isPro&&!isPro();all.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge ${p.isPro?(isPro()?'unlocked':'pro'):''}">${p.isPro?(isPro()?'UNLOCKED':'PRO'):'FREE'}</span><span class="heart" onclick="toggleFav(event,'${p.id}')">${isFav?'❤️':'♡'}</span><img src="${p.img}" class="${locked?'pro-blur':''}"><div class="card-body"><div class="name">${p.name}</div></div>${locked?'<div class="pro-overlay">🔒 PRO</div>':''}</div>`});renderFav();}
 function renderFav(){let g=document.getElementById('favGrid');let n=document.getElementById('noFav');g.innerHTML='';let f=patterns.filter(p=>favs.includes(p.id));if(f.length){n.style.display='none';f.forEach(p=>{g.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge">FREE</span><span class="heart" onclick="toggleFav(event,'${p.id}')">❤️</span><img src="${p.img}"><div class="card-body"><div class="name">${p.name}</div></div></div>`})}else{n.style.display='block'}}
 function toggleFav(e,id){e.stopPropagation();favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];localStorage.setItem('tinyFav',JSON.stringify(favs));render();}
-function openP(id){let p=patterns.find(x=>x.id===id);if(p.isPro&&!isPro()){showPage('pattern');return;}document.getElementById('pImg').src=p.img;document.getElementById('pTitle').innerText=p.name;document.getElementById('pDesc').innerText=p.desc;document.getElementById('pPattern').innerText=p.pattern;document.getElementById('popup').classList.add('show');}
+let curPatId=null, patComments=JSON.parse(localStorage.getItem('tinyPatComments')||'{}'), patReviews=JSON.parse(localStorage.getItem('tinyPatReviews')||'{}'), curPatStar=5;
+function openP(id){let p=patterns.find(x=>x.id===id);if(p.isPro&&!isPro()){showPage('pattern');return;}curPatId=id;document.getElementById('pImg').src=p.img;document.getElementById('pTitle').innerText=p.name;document.getElementById('pDesc').innerText=p.desc;document.getElementById('pPattern').innerText=p.pattern;renderPatComments();renderPatReviews();setPatStar(5);document.getElementById('popup').classList.add('show');}
 function closeP(){document.getElementById('popup').classList.remove('show');}
 function unlock(){let v=document.getElementById('proInput').value.trim().toUpperCase();if(PRO_CODES.includes(v)){localStorage.setItem('isPro','true');document.getElementById('msg').innerText='👑 PRO Active!';document.getElementById('msg').style.color='green';render();}else{document.getElementById('msg').innerText='❌ Wrong code';document.getElementById('msg').style.color='red';}}
-let curStar=5,comments=JSON.parse(localStorage.getItem('tinyComments')||'[]'),reviews=JSON.parse(localStorage.getItem('tinyReviews')||'[]');
-function setStar(n){curStar=n;document.querySelectorAll('#stars span').forEach((s,i)=>{s.style.opacity=i<n?'1':'0.3'})}
-function addComment(){let t=document.getElementById('commentInput').value.trim();if(!t)return;comments.unshift({text:t,time:new Date().toLocaleString()});localStorage.setItem('tinyComments',JSON.stringify(comments));document.getElementById('commentInput').value='';renderComments();}
-function addReview(){let t=document.getElementById('reviewInput').value.trim();if(!t)return;reviews.unshift({text:t,star:curStar,time:new Date().toLocaleString()});localStorage.setItem('tinyReviews',JSON.stringify(reviews));document.getElementById('reviewInput').value='';renderReviews();}
-function renderComments(){let c=document.getElementById('commentList');c.innerHTML='';comments.forEach(x=>{c.innerHTML+=`<div style="background:#fff8fa;border:1px solid #ffe0e5;border-radius:12px;padding:10px;margin-top:8px;font-size:12px"><b>💬</b> ${x.text}<br><small style="opacity:.5">${x.time}</small></div>`})}
-function renderReviews(){let c=document.getElementById('reviewList');c.innerHTML='';reviews.forEach(x=>{c.innerHTML+=`<div style="background:#fff8fa;border:1px solid #ffe0e5;border-radius:12px;padding:10px;margin-top:8px;font-size:12px">${'⭐'.repeat(x.star)}<br>${x.text}<br><small style="opacity:.5">${x.time}</small></div>`})}
+function setPatStar(n){curPatStar=n;document.querySelectorAll('#patStars span').forEach((s,i)=>{s.style.opacity=i<n?'1':'0.3'})}
+function addPatComment(){let t=document.getElementById('patCommentInput').value.trim();if(!t||!curPatId)return;if(!patComments[curPatId])patComments[curPatId]=[];patComments[curPatId].unshift({text:t,time:new Date().toLocaleString()});localStorage.setItem('tinyPatComments',JSON.stringify(patComments));document.getElementById('patCommentInput').value='';renderPatComments();}
+function renderPatComments(){let c=document.getElementById('patCommentList');c.innerHTML='';let arr=patComments[curPatId]||[];arr.forEach(x=>{c.innerHTML+=`<div style="background:#fff8fa;border:1px solid #ffe0e5;border-radius:12px;padding:10px;margin-top:8px;font-size:12px"><b>💬</b> ${x.text}<br><small style="opacity:.5">${x.time}</small></div>`})}
+function addPatReview(){let t=document.getElementById('patReviewInput').value.trim();if(!t||!curPatId)return;if(!patReviews[curPatId])patReviews[curPatId]=[];patReviews[curPatId].unshift({text:t,star:curPatStar,time:new Date().toLocaleString()});localStorage.setItem('tinyPatReviews',JSON.stringify(patReviews));document.getElementById('patReviewInput').value='';renderPatReviews();}
+function renderPatReviews(){let c=document.getElementById('patReviewList');c.innerHTML='';let arr=patReviews[curPatId]||[];arr.forEach(x=>{c.innerHTML+=`<div style="background:#fff8fa;border:1px solid #ffe0e5;border-radius:12px;padding:10px;margin-top:8px;font-size:12px">${'⭐'.repeat(x.star)}<br>${x.text}<br><small style="opacity:.5">${x.time}</small></div>`})}
 if(isPro()){document.getElementById('msg').innerText='👑 PRO Active!';document.getElementById('msg').style.color='green';}
-render();renderComments();renderReviews();setStar(5);showPage('home');
+render();showPage('home');
 </script>
 </body>
 </html>
