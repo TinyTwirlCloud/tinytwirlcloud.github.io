@@ -1,389 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tiny Twirl Cloud by Diya Sahai 💖</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crochet by You</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-input, textarea, pre{ -webkit-user-select:text !important; user-select:text !important; }
-body{background:#fffcf8;color:#6d3e4a;padding-bottom:90px}
-.page{display:none;padding:12px}.page.active{display:block}
-header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blur(12px);padding:10px 14px;display:flex;gap:8px;border-bottom:1px solid #ffe0e5}
-.logo-img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #ffd6db}
-.logo-text{font-weight:800;color:#d68a8a;font-size:16px}
-.hero{background:linear-gradient(135deg,#ffd6db,#ffe8ec);border-radius:24px;padding:28px 20px;text-align:center}
-.vip-box{background:linear-gradient(135deg,#ff7eb3 0%,#ff65a3 30%,#7f00ff 100%);border-radius:24px;padding:20px;color:#fff}
-.vip-badge{background:#ffe082;color:#5a3a00;border-radius:20px;padding:6px 12px;font-weight:900;font-size:12px;display:inline-block}
-.vip-title{font-size:36px;font-weight:900;margin:14px 0 6px}
-.follow-btn{margin-top:14px;width:100%;background:linear-gradient(90deg,#ff8a33,#a259ff);border:none;color:#fff;font-weight:800;padding:14px;border-radius:18px;font-size:15px}
-.code-box{background:#fff;border-radius:18px;padding:16px;margin-top:14px;box-shadow:0 6px 20px #00000010}
-.code-row{display:flex;gap:8px;margin-top:10px}
-.code-row input{flex:1;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:13px}
-.unlock{background:#f06292;color:#fff;border:none;border-radius:12px;padding:13px 18px;font-weight:800}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #5a2a3512;position:relative;cursor:pointer}
-.card img{width:100%;height:155px;object-fit:cover;background:#ffe0e5}
-.badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;background:#fff;color:#ff8fab;border:1px solid #ffd6db}
-.badge.pro{background:#e9dcff;color:#6a4abf}.badge.unlocked{background:#d4f5d4;color:#2e7d32}
-.heart{position:absolute;top:8px;right:8px;background:#ffffffee;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;z-index:2}
-.card-body{padding:10px 12px}.name{font-size:12px;font-weight:700}
-.pro-blur{filter:blur(6px)}.pro-overlay{position:absolute;inset:0;background:#ffffffb8;display:flex;align-items:center;justify-content:center;font-weight:800;color:#6a4abf}
-.white-card{background:#fff;border-radius:20px;padding:18px;margin-top:12px;box-shadow:0 4px 12px #00000008}
-.founder{background:#fff0f2;border-radius:22px;padding:16px;display:flex;gap:12px;align-items:center;margin-top:14px}
-.founder img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff}
-.coming{background:#fff0f2;border:1px dashed #ffb3c0;border-radius:18px;padding:14px;margin-top:14px}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:10px 0 14px;z-index:50;box-shadow:0 -4px 24px #ffd6db66;border-radius:18px 18px 0 0}
-.bottom-nav div{font-size:10px;text-align:center;color:#bba0b5;cursor:pointer;position:relative}
-.bottom-nav div.active{color:#f06292;font-weight:800}
-.bottom-nav div.active::after{content:'•';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);color:#f06292;font-size:14px}
-#popup{position:fixed;inset:0;background:#00000066;backdrop-filter:blur(6px);display:none;align-items:end;justify-content:center;z-index:99;padding:12px}
-#popup.show{display:flex}
-.sheet{background:#fff;width:100%;max-width:420px;border-radius:26px 26px 20px 20px;overflow:hidden;position:relative;max-height:90vh;overflow-y:auto}
-.sheet img{width:100%;height:240px;object-fit:cover}
-.sheet-body{padding:16px}
-.close{position:absolute;top:10px;right:14px;background:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px #00000020}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;background:#fff8fb;padding-bottom:90px}
+h1{text-align:center;margin:15px 0;font-size:22px;color:#ff5a9a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;padding:0 14px}
+.card{background:white;border-radius:16px;padding:8px;box-shadow:0 4px 12px rgba(0,0,0,0.07);cursor:pointer;position:relative}
+.card img{width:100%;border-radius:12px;aspect-ratio:1;object-fit:cover;background:#ffe4ec}
+.card h3{font-size:12px;margin-top:5px}
+.card p{font-size:10px;color:#888}
+.badge{position:absolute;top:6px;right:6px;font-size:8px;padding:3px 6px;border-radius:20px;color:white}
+.badge.free{background:#ff7eb6}.badge.pro{background:#7c3aed}.badge.soon{background:#aaa}
+.section{display:none;padding:12px}.section.active{display:block}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:8px 0 12px;box-shadow:0 -2px 12px rgba(0,0,0,0.08);z-index:1000;border-radius:18px 18px 0 0}
+.nav-item{text-align:center;font-size:10px;color:#999;cursor:pointer}
+.nav-item.active{color:#ff7eb6;font-weight:bold}
+.nav-item span{font-size:20px;display:block}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}
+#overlay.show{display:flex}
+#modal{background:white;border-radius:20px;max-width:500px;width:100%;max-height:90vh;overflow-y:auto;padding:18px}
+.pattern{white-space:pre-wrap;background:#fdf2f8;padding:14px;border-radius:12px;margin-top:10px;line-height:1.6;font-size:13px}
+.logoBox{text-align:center;margin:10px 0 15px}
+.logoBox img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #ff7eb6}
+.aboutPic{width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #ff7eb6;margin:0 auto 12px;display:block}
 </style>
 </head>
 <body>
-<header><img class="logo-img" src="IMG-20260823-WA2184.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'"><div class="logo-text">Tiny Twirl Cloud</div></header>
 
-<div id="home" class="page active">
-<div class="hero"><h1>Handmade Crochet Patterns 🎀</h1><p style="font-size:12px;margin-top:6px;opacity:.8">By Diya Sahai • 26 patterns • Soft Pastel ☁️</p></div>
-<div class="coming"><h3 style="font-size:14px">🎬 Coming Soon Tutorials ✧･ﾟ</h3><p style="font-size:11px;margin-top:6px;opacity:.8">╰┈➤ Video tutorials coming! Subscribe 💌</p><div style="margin-top:10px;display:flex;gap:8px"><a href="https://youtube.com/@tinytwirlcloud" target="_blank" style="font-size:11px;background:#ff8fab;color:#fff;padding:7px 14px;border-radius:999px;text-decoration:none">YouTube ▶️</a><a href="https://instagram.com/tinytwirlcloud" target="_blank" style="font-size:11px;background:#fff;color:#ff8fab;border:1px solid #ffd6db;padding:7px 14px;border-radius:999px;text-decoration:none">Instagram 💖</a></div></div>
-<div class="founder"><img src="IMG-20260823-WA0231.jpg" onerror="this.src='https://i.imgur.com/8Km9tLL.jpg'"><div><b>Founder - Diya Sahai 💖</b><br><span style="font-size:11px;opacity:.8">♡ ⋆｡°✩ Coquette crochet 🧶</span></div></div>
+<div id="home" class="section active">
+<div class="logoBox">
+<img src="logo.jpg" alt="Logo">
+<h1 style="margin:5px 0 0">Crochet World 🧶</h1>
+<p style="font-size:12px;color:#888">Handmade with love 💖</p>
+</div>
+<div class="grid" id="homeGrid"></div>
 </div>
 
-<div id="pattern" class="page">
-<div class="vip-box"><span class="vip-badge">⭐ VIP • PRO 👑</span><div class="vip-title">TWIRL PRO ✨</div><div style="font-size:13px">Want PRO? Follow @tinytwirlcloud + DM PRO</div><button class="follow-btn" onclick="window.open('https://instagram.com/tinytwirlcloud','_blank')">📸 Follow on Instagram</button></div>
-<div class="code-box"><b>🔑 Enter PRO Code</b><div class="code-row"><input id="proInput" type="password" placeholder="••••"><button class="unlock" onclick="unlock()">Unlock</button></div><p id="msg" style="font-weight:800;font-size:13px;margin-top:8px"></p></div>
-<div class="grid" id="allGrid"></div>
-</div>
-
-<div id="fav" class="page"><h2 style="font-size:18px;text-align:center">Your Favorites ❤️</h2><div class="grid" id="favGrid"></div><p id="noFav" style="text-align:center;margin-top:30px;font-size:12px;opacity:.6">No favourites yet! Tap ♡ to add 💖</p></div>
-
-<div id="about" class="page">
-<h2 style="font-size:18px;text-align:center">About Me ☁️</h2>
-<div class="white-card">
-<p style="text-align:center;font-weight:800;font-size:16px">⋆𔓘✦˚｡⋆ About Me ⋆｡˚✦𔓘⋆</p>
-<p style="font-size:12.5px;line-height:1.9;margin-top:14px">
-Hi, I'm <i>Diya Sahai</i> from Gurugram! ☁️💖<br>
-˗ˏˋ I love soft things, pretty colors, and cozy handmade vibes. ˎˊ˗<br>
-I found my love for yarn and crochet and it became my happy place —<br>
-♡ ⋆｡°✩ where I can create cute little worlds with just a hook and some yarn!
-</p>
-<p style="text-align:center;opacity:.6;font-size:12px;margin:12px 0">❥─────────❥</p>
-<p style="font-size:12.5px;line-height:1.9">
-I started <i>Tiny Twirl Cloud</i> because I believe handmade things have magic. ✨<br>
-✧𐙚 I named it Tiny Twirl Cloud — Tiny for my little cute creations,<br>
-Twirl for how yarn twirls into something beautiful,<br>
-and Cloud because every piece feels soft, fluffy and dreamy like a cloud! ☁️<br>
-⋆｡°✩ Every stitch has love, every pattern has a story,<br>
-and every creation brings a little more softness to the world. ♡<br>
-Here you'll find 26 aesthetic crochet patterns —<br>
-from watermelon bunnies to bow scrunchies,<br>
-all made with love by me.
-</p>
-<p style="text-align:center;opacity:.6;font-size:12px;margin:12px 0">❥─────────❥</p>
-<p style="font-size:12.5px;line-height:1.9">
-Thank you for being here and supporting my little cloud! ☁️✨<br>
-✧･ﾟ You are part of my tiny cloud family now! ♡<br>
-╰┈➤ <i>With love, Diya Sahai</i> 🎀🧶
-</p>
-<div style="margin-top:16px;text-align:center"><img src="IMG-20260823-WA0231.jpg" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #ffd6db"></div>
+<div id="pattern" class="section"><h1>🧶 All Patterns (26)</h1><div class="grid" id="patternGrid"></div></div>
+<div id="fav" class="section"><h1>❤️ Fav</h1><div class="grid" id="favGrid"></div></div>
+<div id="about" class="section">
+<h1>💌 About Me</h1>
+<div style="background:white;border-radius:20px;padding:20px;margin:16px;text-align:center">
+<img src="profile.jpg" class="aboutPic">
+<h2 style="color:#ff7eb6">Hi, I'm Crochet Queen! 👑</h2>
+<p style="font-size:13px;color:#555;margin-top:8px">Handmade with love 💖</p>
 </div>
 </div>
+<div id="profile" class="section"><h1>👤 Profile</h1><div style="background:white;border-radius:20px;padding:20px;margin:16px;text-align:center">Crochet Queen</div></div>
 
-<div id="profile" class="page"><h2 style="font-size:18px;text-align:center">Profile 👧</h2><div class="white-card" style="text-align:center"><div style="width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#ffd6e8,#c084fc);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:40px">👧</div><b>Diya Sahai ♡</b><br><small>@tinytwirlcloud ✨</small><br><br><p id="proStatus" style="font-size:12px">Free Member • Upgrade to PRO 👑</p></div></div>
-
-<div class="bottom-nav"><div id="nav-home" class="active" onclick="showPage('home')">🏠<br>Home</div><div id="nav-pattern" onclick="showPage('pattern')">🧶<br>Pattern</div><div id="nav-fav" onclick="showPage('fav')">❤️<br>Fav</div><div id="nav-about" onclick="showPage('about')">☁️<br>About</div><div id="nav-profile" onclick="showPage('profile')">👧<br>Profile</div></div>
-
-<div id="popup" onclick="closeP()"><div class="sheet" onclick="event.stopPropagation()"><div class="close" onclick="closeP()">✕</div><img id="pImg"><div class="sheet-body"><h3 id="pTitle"></h3><p id="pDesc" style="font-size:11px;margin-top:6px;opacity:.8"></p><pre id="pPattern" style="white-space:pre-wrap;font-family:'Poppins',sans-serif;font-size:12px;background:#fff0f3;border:1.5px solid #ffd6de;padding:12px;border-radius:14px;margin-top:12px;line-height:1.8"></pre>
-
-<div style="margin-top:18px;border-top:1px solid #ffe0e5;padding-top:14px">
-<h3 style="font-size:13px">💬 Comments for this pattern ✧･ﾟ</h3>
-<textarea id="patCommentInput" placeholder="Ask doubt about this pattern... ♡" style="width:100%;margin-top:10px;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:12px;font-size:12px;min-height:60px"></textarea>
-<button onclick="addPatComment()" style="margin-top:8px;width:100%;background:#ff8fab;color:#fff;border:none;padding:10px;border-radius:12px;font-weight:700">Post Comment 💌</button>
-<div id="patCommentList" style="margin-top:10px"></div>
-
-<h3 style="font-size:13px;margin-top:18px">⭐ Reviews for this pattern ♡</h3>
-<div style="margin-top:8px;display:flex;gap:4px;font-size:20px" id="patStars"><span onclick="setPatStar(1)">⭐</span><span onclick="setPatStar(2)">⭐</span><span onclick="setPatStar(3)">⭐</span><span onclick="setPatStar(4)">⭐</span><span onclick="setPatStar(5)">⭐</span></div>
-<textarea id="patReviewInput" placeholder="Write review for this pattern... ♡" style="width:100%;margin-top:10px;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:12px;padding:12px;font-size:12px;min-height:60px"></textarea>
-<button onclick="addPatReview()" style="margin-top:8px;width:100%;background:linear-gradient(90deg,#ff8a33,#a259ff);color:#fff;border:none;padding:10px;border-radius:12px;font-weight:700">Post Review ✨</button>
-<div id="patReviewList" style="margin-top:10px"></div>
+<div class="bottom-nav">
+<div class="nav-item active" onclick="showTab('home',this)"><span>🏠</span>Home</div>
+<div class="nav-item" onclick="showTab('pattern',this)"><span>🧶</span>Pattern</div>
+<div class="nav-item" onclick="showTab('fav',this)"><span>❤️</span>Fav</div>
+<div class="nav-item" onclick="showTab('about',this)"><span>💌</span>About</div>
+<div class="nav-item" onclick="showTab('profile',this)"><span>👤</span>Profile</div>
 </div>
 
-</div></div></div>
+<div id="overlay"><div id="modal">
+<img id="pImg" src="" style="width:100%;border-radius:12px">
+<h2 id="pName" style="font-size:16px;margin-top:8px"></h2>
+<p id="pDesc" style="background:#ffe4ec;color:#ff2e7a;padding:4px 8px;border-radius:20px;font-size:10px;display:inline-block;margin-top:4px"></p>
+<div class="pattern" id="pPat"></div>
+<div id="proBox" style="display:none;margin-top:12px"></div>
+<button onclick="closePop()" style="width:100%;padding:10px;margin-top:10px;border:none;background:#ff7eb6;color:white;border-radius:10px;font-weight:bold">Close</button>
+</div></div>
 
 <script>
-const patterns=[
-{id:'bunny',name:'Watermelon Bunny',img:'IMG-20260823-WA9459.jpg',desc:'Pink watermelon ears bunny 🍉🐰 FREE',isPro:false,pattern:`🍉🐰 WATERMELON BUNNY - EXACT AS PHOTO!
-Size: ~12cm sitting | Hook: 3.5mm
-
-Materials: Baby Pink yarn, Dark Green, Light Green, Black thread, 10mm safety eyes, stuffing
-
-Abbr: MR=magic ring, sc=single crochet, inc=increase, dec=decrease
-
-☁️ HEAD (Baby Pink):
-R1: MR 6
-R2: inc x6 (12)
-R3: (sc, inc)x6 (18)
-R4: (2sc, inc)x6 (24)
-R5: (3sc, inc)x6 (30)
-R6: (4sc, inc)x6 (36)
-R7: (5sc, inc)x6 (42)
-R8-13: sc 42 (6 rounds)
-R14: (5sc, dec)x6 (36)
-R15: (4sc, dec)x6 (30)
-R16: (3sc, dec)x6 (24) - Place 10mm eyes between R11-R12, 8 sts apart! Stuff firmly!
-R17: (2sc, dec)x6 (18)
-R18: (sc, dec)x6 (12)
-R19: dec x6 (6) FO close
-
-☁️ BODY (Baby Pink):
-R1: MR 6
-R2: inc x6 (12)
-R3: (sc, inc)x6 (18)
-R4: (2sc, inc)x6 (24)
-R5-7: sc 24 (3 rounds)
-R8: (2sc, dec)x6 (18)
-R9-10: sc 18 (2 rounds)
-R11: (sc, dec)x6 (12) Stuff! FO long tail
-
-☁️ EARS - WATERMELON (Make 2):
-R1: Light Green - MR 6
-R2: inc x6 (12)
-R3: (sc, inc)x6 (18)
-R4: Dark Green - sc 18
-R5: Light Green - (2sc, inc)x6 (24)
-R6: Dark Green - sc 24
-R7: Light Green - (3sc, inc)x6 (30)
-R8: Dark Green - sc 30
-R9: Light Green - sc 30
-R10: Dark Green - sc 30
-R11: Light Green - sc 30
-R12: Dark Green - sc 30
-R13: (3sc, dec)x6 (24)
-R14: (2sc, dec)x6 (18)
-R15: (sc, dec)x6 (12) - Don't stuff, flatten! FO
-Seeds: Embroider 5-6 small black lines per ear!
-
-🌱 SPROUT ON TOP:
-Circle: MR 6, inc x6 (12), sc 12 FO
-Curl: Ch8, sc in 2nd ch, hdc, dc, hdc, sc, sl st - curl it!
-Sew curl on circle
-
-☁️ HANDS (Make 2 - Pink):
-R1: MR 6
-R2: (sc, inc)x3 (9)
-R3-7: sc 9 Light stuff FO
-
-☁️ LEGS (Make 2 - Pink):
-R1: MR 6
-R2: inc x6 (12)
-R3: (sc, inc)x6 (18)
-R4-5: sc 18
-R6: (sc, dec)x6 (12)
-R7: sc 12 Stuff FO
-
-✧･ﾟ FACE DETAILS:
-Eyes: 10mm between R11-R12, 8 sts apart
-Eyelashes: Black thread 2 lashes outer corner
-Nose: Pink thread small line 2 rows below eyes
-Smile: Pink 'w' below nose
-Blush: Pink blush on cheeks
-
-✧･ﾟ ASSEMBLY:
-1. Sew BODY to HEAD centre bottom
-2. EARS on top sides R3-R5, 6 sts apart pointing up
-3. HANDS on side of body top
-4. LEGS on front bottom for sitting - pointing forward!
-5. SPROUT circle on top centre between ears
-
-Ready! 🍉🐰💖`}
-  
-  {id:'bow',name:'Bow Scrunchie',img:'IMG-20260823-WA5906.jpg',desc:'Bow scrunchie 🎀 FREE',isPro:false,pattern:`🎀 BOW SCRUNCHIE WITH TAILS 🎀
-
-Materials: Pink yarn, hair elastic, 4mm hook
-
-☁️ Scrunchie Base:
-1. Attach yarn to elastic with sl st
-2. sc 50 around elastic fully covering it
-3. sl st to join
-
-🎀 Bow (Main Part):
-Ch 16
-R1-10: sc 15, ch1 turn (makes rectangle 15 x 10 rows)
-FO long tail
-Pinch middle to make bow shape, wrap yarn 5 times tightly around centre
-
-🎀 Bow Tails (2 Tails - Important!):
-Ch 10
-R1: sc in 2nd ch, sc 9 (9)
-R2-12: ch1, turn, sc 9
-For pointed tail end:
-R13: sc2tog, sc5, sc2tog (7)
-R14: sc2tog, sc3, sc2tog (5)
-R15: sc2tog, sc1, sc2tog (3) FO
-
-Make 2 tails same!
-
-✧･ﾟ Assembly:
-1. Sew bow onto scrunchie
-2. Sew 2 tails behind bow hanging down - like real bow! ♡
-3. Tails length ~8cm cute!
-
-Now it looks like proper coquette bow with tails! 🎀✨`}
-{id:'scrunchie',name:'Strawberry Scrunchie',img:'IMG-20260823-WA8603.jpg',desc:'Strawberry 🍓 PRO 👑',isPro:true,pattern:`🍓 STRAWBERRY SCRUNCHIE PRO 👑
-Materials: Red, Green yarn, elastic
-☁️ Base: Same as Bow Scrunchie (50 sc around elastic)
-🍓 Strawberries (Make 3):
-Red yarn:
-R1: MR 6sc
-R2: (sc,inc)x3 (9)
-R3-5: sc 9
-R6: (sc,dec)x3 (6) stuff lightly
-Green top: MR 5sc, (ch3 picot, sl st) x5
-Sew top on strawberry
-Sew strawberries on scrunchie ♡
-PRO pattern - super cute!`},
-  {id:'head',name:'Flower Headband',img:'IMG-20260823-WA9402.jpg',desc:'Flower headband 🌸 PRO 👑',isPro:true,pattern:`🌸 FLOWER HEADBAND PRO 👑 - As in Photo!
-
-Materials: Lavender pastel yarn, 2.5mm hook, small pearls, satin ribbon
-Hook: 2.5mm for lace look
-
-☁️ LACE HEADBAND BASE:
-This is a delicate lace band - not plain sc!
-Ch 12
-R1: dc in 4th ch from hook, ch1, skip 1, dc, ch1, skip 1, dc... (lace mesh)
-R2: ch3, turn, (dc in ch1-space, ch1) repeat across
-R3: ch3, turn, 2dc in first space, ch2, (3dc cluster in next space, ch2) repeat for scallop edge
-Repeat R2-R3 until length = 22 inches / fits head comfortably (about 70 rows)
-Make it slightly stretchy!
-
-🌸 SMALL FLOWERS (Make 8-9):
-For that full look as in photo:
-MR 6sc
-R1: (sl st, ch2, 2dc, ch2, sl st in same st) x5 petals
-FO - sew pearl bead in centre
-Make 4 lavender, 2 white, 2 purple for aesthetic mix
-
-🎀 ASSEMBLY (Important!):
-1. Sew 7-8 flowers evenly across full headband - not just 3!
-2. Sew small pearls on lace gaps as in photo
-3. Middle: Tie lavender satin ribbon bow + sew pearl cluster in centre
-4. Ends: Sew ribbon tails for tying
-This will look EXACTLY like your photo - full, dreamy, coquette! ♡
-Finished: ~22 inches + tie ribbon
-PRO tip: Use 2.5mm hook for that delicate lace look as in pic!`}
-
-  🌸 Flower (Make 3):
-Magic ring
-(Petal: ch2, 2dc, ch2, sl st) x5
-Make in different colors!
-Sew flowers on band + pearl centre ♡`},
-
-{{id:'granny',name:'Classic Granny Square',img:'IMG-20260823-WA4483.jpg',desc:'Granny square - full detailed FREE',isPro:false,pattern:`☁️ CLASSIC GRANNY SQUARE - Full Detailed Pattern
-Size: ~6 inch | Hook: 4mm | Yarn: Any 2-3 colors
-
-Abbr: ch=chain, dc=double crochet, sl st=slip stitch, st=stitch, sp=space
-Special: Cluster = 3dc in same space
-
-🧶 START:
-Ch 4, sl st in 1st ch to form ring
-OR MR (magic ring) - better!
-
-R1 - First Round (Make centre):
-Ch 3 (counts as 1 dc), 2dc into ring, ch 2,
-(3dc into ring, ch 2) x3 times
-Sl st to top of starting ch3 to join (12 dc total, 4 ch2 corners)
-FO if changing color OR continue same color
-
-R2 - Second Round (Corners form):
-If changing color: Join new color in any ch2 corner space
-Ch 3 (counts as 1 dc), 2dc ch2 3dc in same corner space (first corner made!)
-Ch 1,
-(3dc ch2 3dc in next ch2 space - corner, ch1) x3 times
-Sl st to top of ch3 to join
-You have 4 corners, 4 ch1 side spaces
-
-R3 - Third Round (Square grows):
-Sl st into next 2 dc and into ch2 corner space (to get to corner)
-Ch 3, 2dc ch2 3dc in same corner
-Ch1, 3dc in next ch1 side space, ch1,
-(3dc ch2 3dc in next corner, ch1, 3dc in side space, ch1) x3
-Sl st to join
-
-R4 - Fourth Round:
-Sl st to corner space
-Ch3, 2dc ch2 3dc in corner
-(Ch1, 3dc in next side space) x2 times, ch1,
-(Corner 3dc ch2 3dc, ch1, 3dc in side space, ch1, 3dc in side space, ch1) x3
-Sl st to join
-
-R5 to R8 - Keep Growing Same Logic:
-Each round: 
-- In every CORNER space: (3dc, ch2, 3dc)
-- In every SIDE space: 3dc
-- Between clusters: ch1
-
-So R5 will have: corner, 3 side clusters, corner, 3 side clusters... etc
-R6 will have: corner, 4 side clusters, etc
-Continue until you want size!
-
-For 6 inch square: Make 6-7 rounds total
-
-R9 - Border Round (Straight edge - Optional but neat):
-Ch1, sc in each dc around, (sc ch1 sc) in each corner ch2 space
-This makes edge straight for joining!
-
-✧･ﾟ HOW TO CHANGE COLORS (As in photo):
-R1: White
-R2: Pink
-R3: White
-R4: Green etc - any pastel mix!
-
-✧･ﾟ FINISHING:
-Weave in all ends with needle
-Block square with steam for flat perfect square!
-
-✧･ﾟ TIPS:
-- Always ch1 between clusters (except corners ch2)
-- Count clusters: R2=8 clusters, R3=12 clusters, R4=16 clusters...
-- Keep tension loose for soft granny
-- Sl st to corner at start of each round for invisible join
-
-Your perfect granny square ready! Can make blanket, bag, cardigan by joining many! ♡`},
-{id:'daisy',name:'Daisy Blanket',img:'IMG-20260823-WA3458.jpg',desc:'Daisy blanket 🌼 FREE',isPro:false,pattern:`🌼 DAISY BLANKET
-Materials: White, Yellow, Green yarn
-🌼 Daisy (Make 12):
-Yellow centre: MR 6sc, sl st
-White petals: Attach white, (ch5, sl st in same st) x10
-FO
-☁️ Join:
-With green yarn, sc around each daisy joining together
-Border: White sc all around blanket edge
-Size: 60x80cm approx ♡
-Super soft aesthetic!`}
+const main=[
+{id:'1',name:"Classic Granny Square",img:"IMG-20260827-WA4483.jpg",desc:"FREE",type:"free",pattern:"☁️ Classic Granny - FREE PATTERN\n\nFull pattern here..."},
+{id:'2',name:"Sunflower Granny",img:"IMG-20260827-WA4483.jpg",desc:"FREE",type:"free",pattern:"🌻 Sunflower Granny - FREE..."},
+{id:'3',name:"Heart Granny",img:"IMG-20260827-WA4483.jpg",desc:"FREE",type:"free",pattern:"💖 Heart Granny - FREE..."},
+{id:'4',name:"Daisy Granny - BEST ⭐",img:"IMG-20260827-WA4483.jpg",desc:"PRO BEST",type:"pro",pattern:"🌼 DAISY GRANNY - UNLOCKED!\n\nRow 1: Magic ring 6sc..."},
+{id:'5',name:"Strawberry Granny - BEST ⭐",img:"IMG-20260827-WA4483.jpg",desc:"PRO BEST",type:"pro",pattern:"🍓 STRAWBERRY - UNLOCKED!\n\nFull pattern..."},
+{id:'6',name:"Coquette Bow - BEST ⭐",img:"IMG-20260827-WA4483.jpg",desc:"PRO BEST",type:"pro",pattern:"🎀 COQUETTE BOW - UNLOCKED!\n\nFull pattern..."}
 ];
-let favs=JSON.parse(localStorage.getItem('tinyFav')||'[]');
-const PRO_CODES=["TWIRLCLOUD","DIYA","TINY"];
-function isPro(){return localStorage.getItem('isPro')==='true'}
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.bottom-nav div').forEach(d=>d.classList.remove('active'));document.getElementById('nav-'+id).classList.add('active');if(id==='fav')renderFav();if(id==='profile')document.getElementById('proStatus').innerText=isPro()?'👑 PRO Member ♡':'Free Member • Upgrade to PRO 👑';}
-function render(){let all=document.getElementById('allGrid');all.innerHTML='';patterns.forEach(p=>{let isFav=favs.includes(p.id);let locked=p.isPro&&!isPro();all.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge ${p.isPro?(isPro()?'unlocked':'pro'):''}">${p.isPro?(isPro()?'UNLOCKED':'PRO'):'FREE'}</span><span class="heart" onclick="toggleFav(event,'${p.id}')">${isFav?'❤️':'♡'}</span><img src="${p.img}" class="${locked?'pro-blur':''}"><div class="card-body"><div class="name">${p.name}</div></div>${locked?'<div class="pro-overlay">🔒 PRO</div>':''}</div>`});renderFav();}
-function renderFav(){let g=document.getElementById('favGrid');let n=document.getElementById('noFav');g.innerHTML='';let f=patterns.filter(p=>favs.includes(p.id));if(f.length){n.style.display='none';f.forEach(p=>{g.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge">FREE</span><span class="heart" onclick="toggleFav(event,'${p.id}')">❤️</span><img src="${p.img}"><div class="card-body"><div class="name">${p.name}</div></div></div>`})}else{n.style.display='block'}}
-function toggleFav(e,id){e.stopPropagation();favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id];localStorage.setItem('tinyFav',JSON.stringify(favs));render();}
-let curPatId=null, patComments=JSON.parse(localStorage.getItem('tinyPatComments')||'{}'), patReviews=JSON.parse(localStorage.getItem('tinyPatReviews')||'{}'), curPatStar=5;
-function openP(id){let p=patterns.find(x=>x.id===id);if(p.isPro&&!isPro()){showPage('pattern');return;}curPatId=id;document.getElementById('pImg').src=p.img;document.getElementById('pTitle').innerText=p.name;document.getElementById('pDesc').innerText=p.desc;document.getElementById('pPattern').innerText=p.pattern;renderPatComments();renderPatReviews();setPatStar(5);document.getElementById('popup').classList.add('show');}
-function closeP(){document.getElementById('popup').classList.remove('show');}
-function unlock(){let v=document.getElementById('proInput').value.trim().toUpperCase();if(PRO_CODES.includes(v)){localStorage.setItem('isPro','true');document.getElementById('msg').innerText='👑 PRO Active!';document.getElementById('msg').style.color='green';render();}else{document.getElementById('msg').innerText='❌ Wrong code';document.getElementById('msg').style.color='red';}}
-function setPatStar(n){curPatStar=n;document.querySelectorAll('#patStars span').forEach((s,i)=>{s.style.opacity=i<n?'1':'0.3'})}
-function addPatComment(){let t=document.getElementById('patCommentInput').value.trim();if(!t||!curPatId)return;if(!patComments[curPatId])patComments[curPatId]=[];patComments[curPatId].unshift({text:t,time:new Date().toLocaleString()});localStorage.setItem('tinyPatComments',JSON.stringify(patComments));document.getElementById('patCommentInput').value='';renderPatComments();}
-function renderPatComments(){let c=document.getElementById('patCommentList');c.innerHTML='';let arr=patComments[curPatId]||[];arr.forEach(x=>{c.innerHTML+=`<div style="background:#fff8fa;border:1px solid #ffe0e5;border-radius:12px;padding:10px;margin-top:8px;font-size:12px"><b>💬</b> ${x.text}<br><small style="opacity:.5">${x.time}</small></div>`})}
-function addPatReview(){let t=document.getElementById('patReviewInput').value.trim();if(!t||!curPatId)return;if(!patReviews[curPatId])patReviews[curPatId]=[];patReviews[curPatId].unshift({text:t,star:curPatStar,time:new Date().toLocaleString()});localStorage.setItem('tinyPatReviews',JSON.stringify(patReviews));document.getElementById('patReviewInput').value='';renderPatReviews();}
-function renderPatReviews(){let c=document.getElementById('patReviewList');c.innerHTML='';let arr=patReviews[curPatId]||[];arr.forEach(x=>{c.innerHTML+=`<div style="background:#fff8fa;border:1px solid #ffe0e5;border-radius:12px;padding:10px;margin-top:8px;font-size:12px">${'⭐'.repeat(x.star)}<br>${x.text}<br><small style="opacity:.5">${x.time}</small></div>`})}
-if(isPro()){document.getElementById('msg').innerText='👑 PRO Active!';document.getElementById('msg').style.color='green';}
-render();showPage('home');
+
+const soon=[
+{n:"Bear Beanie 🐻",e:"🐻",d:"Fluffy bear ears, super cozy!"},
+{n:"Heart Pouch 💌",e:"💌",d:"Mini heart pouch for airpods"},
+{n:"Kitty Ear Muffs 😺",e:"😺",d:"Warm ear muffs with kitty ears"},
+{n:"Mini Tote 👜",e:"👜",d:"Tiny tote for everyday"},
+{n:"Bow Clips 🎀",e:"🎀",d:"Small crochet bows - super easy!"},
+{n:"Pastel Mittens 🧤",e:"🧤",d:"Soft pastel mittens - easy!"},
+{n:"Star Keychain ⭐",e:"⭐",d:"Little star keychain - 5 min!"},
+{n:"Sunflower Coaster 🌻",e:"🌻",d:"Sunny coasters - easy flat!"},
+{n:"Twirl Scarf 🧣",e:"🧣",d:"Twirly scarf with ruffles"},
+{n:"Cupcake Coaster 🧁",e:"🧁",d:"Cupcake coasters - easy!"},
+{n:"Cherry Bag 🍒",e:"🍒",d:"Cherry bag viral - easy!"},
+{n:"Flower Bag 🌷",e:"🌷",d:"Granny flower tote"},
+{n:"Bear Face 🐻",e:"🐻",d:"Flat bear face - super easy 2D!"},
+{n:"Bunny Face 🐰",e:"🐰",d:"Flat bunny face - super easy 2D!"},
+{n:"Cloud Coaster ☁️",e:"☁️",d:"Flat cloud coaster - easy!"},
+{n:"Heart Coaster ❤️",e:"❤️",d:"Flat heart - easiest ever!"},
+{n:"Cat 🐱",e:"🐱",d:"Flat cat face - easy 2D!"},
+{n:"Smiley Face 🙂",e:"🙂",d:"Smiley face - super easy!"},
+{n:"Circle Coaster ⭕",e:"⭕",d:"Simple circle coaster - beginner!"},
+{n:"Star Coaster ⭐",e:"⭐",d:"Flat star - easiest 2D!"}
+];
+
+const soonData = soon.map((s,i)=>({id:'s'+i, name:s.n, img:"IMG-20260827-WA4483.jpg", desc:s.d, type:"soon", pattern:`${s.e} ${s.n}\n\n${s.d}\n\n✨ Coming Soon!`}));
+const data = [...main, ...soonData];
+
+function makeCard(i){
+let b=i.type==='free'?'<span class="badge free">FREE</span>':i.type==='pro'?'<span class="badge pro">PRO</span>':'<span class="badge soon">SOON</span>';
+return `<div class="card" onclick="openPop('${i.id}')">${b}<img src="${i.img}"><h3>${i.name}</h3><p>${i.desc}</p></div>`;
+}
+function render(){
+document.getElementById('homeGrid').innerHTML=data.slice(0,6).map(makeCard).join('');
+document.getElementById('patternGrid').innerHTML=data.map(makeCard).join('');
+}
+function showTab(id,el){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+el.classList.add('active');
+}
+function openPop(id){
+const it=data.find(d=>d.id===id);
+document.getElementById('pImg').src=it.img;
+document.getElementById('pName').innerText=it.name;
+document.getElementById('pDesc').innerText=it.desc;
+const box=document.getElementById('proBox');
+if(it.type==='pro'){
+document.getElementById('pPat').innerText= "🔒 Locked! Enter code below to unlock 👇";
+box.style.display='block';
+box.innerHTML=`
+<div style="background:linear-gradient(135deg,#ff7eb6,#7c3aed);padding:2px;border-radius:16px;box-shadow:0 0 20px rgba(255,126,182,0.6)">
+<div style="background:linear-gradient(135deg,#ff8cc6,#8a5cf6);border-radius:14px;padding:16px;text-align:center;color:white">
+<h3 style="font-size:16px">🔒 VIP Access Only 👑</h3>
+<p style="font-size:12px;margin:8px 0">Enter secret code to unlock ✨</p>
+<input id="codeInp" type="password" placeholder="Enter code..." style="width:100%;padding:12px;border-radius:20px;border:none;text-align:center;margin:8px 0;font-weight:bold;background:white;color:black;letter-spacing:2px">
+<button onclick="checkCode('${id}')" style="width:100%;padding:11px;background:white;color:#d62976;border:none;border-radius:20px;font-weight:bold;margin-top:4px">🔓 Unlock Pattern</button>
+</div>
+</div>
+`;
+} else if(it.type==='soon'){
+document.getElementById('pPat').innerText= `⏳ ${it.name} hasn't been released yet!\n\nStay tuned! ✨`;
+box.style.display='block';
+box.innerHTML=`
+<div style="background:linear-gradient(135deg,#ff7eb6,#ffb86a);padding:2px;border-radius:16px">
+<div style="background:white;border-radius:14px;padding:16px;text-align:center">
+<h3 style="font-size:15px;color:#ff5a9a">⏳ Coming Soon! 🧶</h3>
+<p style="font-size:12px;color:#555;margin:8px 0">This pattern hasn't been released yet!<br>Check my Instagram for updates 💖</p>
+<a href="https://instagram.com/YOURHANDLE" target="_blank" style="background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:white;padding:10px 18px;border-radius:25px;text-decoration:none;display:inline-block;margin-top:8px;font-weight:bold">📸 Go to Instagram</a>
+</div>
+</div>
+`;
+} else {
+document.getElementById('pPat').innerText= it.pattern;
+box.style.display='none';
+}
+document.getElementById('overlay').classList.add('show');
+}
+function closePop(){document.getElementById('overlay').classList.remove('show')}
+function checkCode(id){
+let inp = document.getElementById('codeInp').value.trim();
+if(inp === "CLOUD26"){
+const it=data.find(d=>d.id===id);
+document.getElementById('pPat').innerText = it.pattern;
+document.getElementById('proBox').style.display='none';
+alert("Unlocked! 🎉 Welcome VIP!");
+} else {
+alert("Wrong code! ❌ Try again");
+}
+}
+render();
 </script>
 </body>
 </html>
