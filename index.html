@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tiny Twirl Cloud ☁️ By Diya</title>
+<title>Tiny Twirl Cloud ☁️</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Nunito,sans-serif}
@@ -13,15 +13,15 @@ header{position:sticky;top:0;z-index:99;background:#ffffffee;backdrop-filter:blu
 .logo b{color:#ff6b8a}
 nav{display:flex;gap:5px}
 nav button{border:0;background:#fff0f4;color:#ff6b8a;padding:7px 11px;border-radius:999px;font-weight:800;font-size:11px;cursor:pointer}
-nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 10px #ff6b8a44}
+nav button.active{background:#ff6b8a;color:#fff}
 .page{padding:12px;max-width:600px;margin:auto}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{background:#fff;border-radius:16px;overflow:hidden;border:1.5px solid #ffe0e7;cursor:pointer;transition:.2s}
-.card:active{transform:scale(.97)}
-.card img{width:100%;height:135px;object-fit:cover;display:block}
+.card{background:#fff;border-radius:16px;overflow:hidden;border:1.5px solid #ffe0e7;position:relative}
+.card img{width:100%;height:135px;object-fit:cover;display:block;cursor:pointer}
 .card-body{padding:8px 8px 10px;text-align:center}
-.card-body b{font-size:11px;display:block;line-height:1.3}
-.card-body span{font-size:10px;font-weight:800}
+.card-body b{font-size:11px;display:block;cursor:pointer}
+.heart{position:absolute;top:6px;right:6px;background:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px #00000015;font-size:14px;z-index:2}
+.badge{position:absolute;top:6px;left:6px;background:#fff;color:#ff6b8a;font-size:8px;font-weight:800;padding:3px 7px;border-radius:999px;border:1px solid #ffd6db;z-index:2}
 #modal{display:none;position:fixed;inset:0;background:#00000080;z-index:999;padding:14px;overflow:auto}
 #box{background:#fff;border-radius:22px;padding:18px;max-width:420px;margin:20px auto;border:2px solid #ffb3c6;position:relative}
 #box img{width:100%;height:180px;object-fit:cover;border-radius:14px;margin-bottom:10px}
@@ -30,28 +30,27 @@ nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 10px #ff6b8a44}
 <body>
 
 <header>
-<div class="logo"><img src="IMG-20260823-WA2184.jpg" alt="logo"><b>Tiny Twirl Cloud</b></div>
+<div class="logo"><img src="IMG-20260823-WA2184.jpg"><b>Tiny Twirl Cloud</b></div>
 <nav>
 <button id="bh" class="active" onclick="show('home')">Home</button>
 <button id="bp" onclick="show('pattern')">Pattern</button>
-<button id="bf" onclick="show('fav')">Fav</button>
+<button id="bf" onclick="show('fav')">Fav (<span id="fc">0</span>)</button>
 <button id="ba" onclick="show('about')">About</button>
 </nav>
 </header>
 
 <div id="home" class="page">
 <div style="background:linear-gradient(135deg,#fff,#ffe4ea);border-radius:20px;padding:16px;text-align:center;border:1.5px solid #ffe0e7">
-<h2 style="color:#ff6b8a">Welcome to Tiny Twirl Cloud! 🎀</h2>
-<p style="font-size:12px;color:#8a5a66;font-weight:700;margin-top:4px">By Diya Sahai • 26 Aesthetic Patterns ☁️</p>
-<button onclick="show('pattern')" style="margin-top:12px;background:#ff6b8a;border:0;color:#fff;padding:11px 20px;border-radius:999px;font-weight:800;cursor:pointer">View All 26 Patterns 🧶</button>
+<h2 style="color:#ff6b8a">Welcome! 🎀</h2>
+<p style="font-size:12px;color:#8a5a66;font-weight:700">By Diya Sahai • 26 Patterns</p>
+<button onclick="show('pattern')" style="margin-top:10px;background:#ff6b8a;border:0;color:#fff;padding:11px 20px;border-radius:999px;font-weight:800">View All 26 🧶</button>
 </div>
-<h3 style="margin:16px 0 10px;font-size:14px">✨ Already Making — Tap to see How To Make!</h3>
+<h3 style="margin:16px 0 10px;font-size:14px">✨ Tap photo to see How To Make!</h3>
 <div class="grid" id="homeGrid"></div>
 </div>
 
 <div id="pattern" class="page" style="display:none">
-<h3>🧶 All 26 Patterns</h3>
-<p style="font-size:11px;color:#8a5a66;margin:6px 0 12px;font-weight:700">6 Already Making + 20 Coming Soon — All Aesthetic!</p>
+<h3>🧶 All 26</h3>
 <h4 style="color:#ff6b8a;margin:10px 0 8px">✨ Already Making (6)</h4>
 <div class="grid" id="aGrid"></div>
 <h4 style="color:#8b7aa8;margin:18px 0 8px">⏳ Coming Soon (20)</h4>
@@ -59,49 +58,62 @@ nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 10px #ff6b8a44}
 </div>
 
 <div id="fav" class="page" style="display:none">
-<div style="background:#fff;border-radius:20px;padding:40px;text-align:center;border:1.5px solid #ffe0e7">
-<div style="font-size:40px">💖</div><h3 style="color:#ff6b8a;margin-top:6px">Your Favorites</h3><p style="font-size:11px;color:#8a5a66;margin-top:6px">Tap heart to save here!</p>
-</div>
+<h3 style="text-align:center">❤️ Favorites</h3>
+<p style="text-align:center;font-size:11px;color:#8a5a66;margin:6px 0 12px">Your hearted patterns</p>
+<div class="grid" id="favGrid"></div>
+<p id="noFav" style="text-align:center;font-size:12px;color:#8a5a66;margin-top:20px">No favorites yet! Tap ♡ on patterns 💔</p>
 </div>
 
 <div id="about" class="page" style="display:none">
 <div style="background:#fff;border-radius:22px;padding:20px;border:1.5px solid #ffe0e7;text-align:center">
-<img src="IMG-20260823-WA0231.jpg" style="width:78px;height:78px;border-radius:50%;border:3px solid #ffb3c6;object-fit:cover;margin:0 auto 10px;display:block">
-<h3 style="color:#ff6b8a">⋆𔓘✦˚｡⋆ About Me ⋆｡˚✦𔓘⋆</h3>
-<p style="font-size:11px;color:#8a5a66;font-weight:800;margin-top:2px">Diya Sahai • Gurugram ☁️</p>
-
-<div style="text-align:left;background:#fff8fa;padding:14px;border-radius:14px;border:1.5px dashed #ffb3c6;margin-top:14px;font-size:13px;line-height:1.9;color:#5a3440">
+<img src="IMG-20260823-WA0231.jpg" style="width:110px;height:110px;border-radius:50%;border:4px solid #ffb3c6;object-fit:cover;margin:0 auto 10px;display:block">
+<h3 style="color:#ff6b8a">About Me</h3>
+<p style="font-size:11px;color:#8a5a66;font-weight:800">Diya Sahai • Gurugram ☁️</p>
+<div style="text-align:left;background:#fff8fa;padding:14px;border-radius:14px;border:1.5px dashed #ffb3c6;margin-top:14px;font-size:13px;line-height:1.9">
 Hi, I'm <b>Diya Sahai</b> from Gurugram! ☁️💖<br><br>
-I love soft things, pretty colors, and cozy handmade vibes. I found my love for yarn and crochet and it became my happy place — where I can create cute little worlds with just a hook and some yarn!<br><br>
-I started <b>Tiny Twirl Cloud</b> because I believe handmade things have magic. Every stitch has love, every pattern has a story, and every creation brings a little more softness to the world. ♡<br><br>
-Here you'll find 26 aesthetic crochet patterns — from watermelon bunnies to bow scrunchies, all made with love by me.<br><br>
-Thank you for being here and supporting my little cloud! ☁️✨<br><br>
-╰┈➤ <b>With love, Diya Sahai</b> 🎀🧶
+I love soft things, pretty colors, and cozy handmade vibes. I found my love for yarn and crochet and it became my happy place.<br><br>
+I started <b>Tiny Twirl Cloud</b> because handmade things have magic. Every stitch has love! ♡<br><br>
+Here you'll find 26 aesthetic patterns — all made with love by me.<br><br>Thank you for supporting my little cloud! ☁️✨<br><br>╰┈➤ <b>With love, Diya</b> 🎀
 </div>
-
-<button onclick="show('home')" style="margin-top:16px;background:#ff6b8a;border:0;color:#fff;padding:12px 22px;border-radius:999px;font-weight:800;cursor:pointer">Back Home 🏠</button>
 </div>
 </div>
 
-<div id="modal" onclick="if(event.target==this)closeM()"><div id="box"><button onclick="closeM()" style="position:absolute;top:10px;right:10px;background:#fff0f4;border:0;padding:6px 12px;border-radius:999px;color:#ff6b8a;font-weight:800;cursor:pointer">✕</button><div id="mC"></div></div></div>
+<div id="modal" onclick="if(event.target==this)closeM()"><div id="box"><button onclick="closeM()" style="position:absolute;top:10px;right:10px;background:#fff0f4;border:0;padding:6px 12px;border-radius:999px;color:#ff6b8a;font-weight:800">✕</button><div id="mC"></div></div></div>
 
 <script>
 const already=[
-{n:"Watermelon Bunny 🍉🐰",m:"IMG-20260823-WA9459.jpg",t:"<b>Yarn:</b> Green, White, Pink, Black<br><b>Hook:</b> 3.5mm<br><br><b>Body:</b><br>R1: MR 6 sc [6]<br>R2: Inc x6 [12]<br>R3: (sc,inc)x6 [18]<br>R4: (2sc,inc)x6 [24]<br>R5-7: Green sc [24]<br>R8: White sc [24]<br>R9-13: Pink sc [24]<br>R14: (2sc,dec)x6 [18] Stuff<br>R15: (sc,dec)x6 [12]<br>R16: Dec x6 [6] FO<br><br><b>Ears x2:</b> Ch10, sc 9 down<br><br><b>Seeds:</b> Black yarn V stitches<br><br><span style='color:#ff6b8a;font-weight:800'>Done! So cute 🎀</span>"},
-{n:"Bow Scrunchie 🎀",m:"IMG-20260823-WA5906.jpg",t:"Yarn: Cream + Satin<br>40 sc around elastic<br>2nd round: hdc inc<br>Bow: Ch20, sc 8 rows, tie middle"},
-{n:"Strawberry Scrunchie 🍓",m:"IMG-20260823-WA8603.jpg",t:"Red yarn 40 sc around elastic + 5 small green leaves on top"},
-{n:"Flower Headband 🌸",m:"IMG-20260823-WA9402.jpg",t:"Chain to head size, flower: MR 5sc, (sl st, ch2, 2dc, ch2) x5"},
-{n:"Classic Granny Square 🟩",m:"IMG-20260823-WA4084.jpg",t:"MR, Ch3, 2dc, ch2, (3dc,ch2)x3, join"},
-{n:"Daisy Blanket 🌼",m:"IMG-20260823-WA3458.jpg",t:"Make 12 daisy granny squares and join with white sc border"}
+{n:"Watermelon Bunny 🍉🐰",m:"IMG-20260823-WA9459.jpg",id:"bunny",t:"R1 MR 6 sc<br>R2 Inc x6 (12)<br>R3 (sc,inc)x6 (18)<br>R4 (2sc,inc)x6 (24)<br>R5-7 Green<br>R8 White<br>R9-13 Pink<br>Stuff & close<br>Ears Ch10 sc9<br>Seeds Black Vs"},
+{n:"Bow Scrunchie 🎀",m:"IMG-20260823-WA5906.jpg",id:"bow",t:"40 sc around elastic + bow Ch20"},
+{n:"Strawberry Scrunchie 🍓",m:"IMG-20260823-WA8603.jpg",id:"straw",t:"Red 40sc around + green leaves"},
+{n:"Flower Headband 🌸",m:"IMG-20260823-WA9402.jpg",id:"head",t:"Chain to head size + flowers"},
+{n:"Granny Square 🟩",m:"IMG-20260823-WA4084.jpg",id:"granny",t:"3dc clusters"},
+{n:"Daisy Blanket 🌼",m:"IMG-20260823-WA3458.jpg",id:"daisy",t:"12 daisy grannies joined"}
 ];
 const soon=["Bear Beanie 🐻","Cloud Bag ☁️","Heart Pouch 💌","Kitty Ear Muffs 😺","Mini Tote 👜","Bow Clips 🎀","Pastel Mittens 🧤","Star Keychain ⭐","Sunflower Coaster 🌻","Bunny Ear Bonnet 🐰","Ruffle Socks 🧦","Twirl Scarf 🧣","Cupcake Coaster 🧁","Cherry Bag 🍒","Lacy Choker 💖","Pompom Hat 🎨","Flower Bag 🌷","Cute Pillow ☁️","Letter Patch 💌","Mushroom Buddy 🍄"];
-let hg=document.getElementById("homeGrid"),ag=document.getElementById("aGrid"),sg=document.getElementById("sGrid");
-already.forEach((p,i)=>{let c=`<div class="card" onclick="openA(${i})"><img src="${p.m}" onerror="this.src='IMG-20260823-WA2184.jpg'"><div class="card-body"><b>${p.n}</b><span style="color:#ff6b8a">✨ Already Making</span></div></div>`;hg.innerHTML+=c;ag.innerHTML+=c;});
-soon.forEach((n,i)=>{sg.innerHTML+=`<div class="card" onclick="openS(${i})"><div style="height:135px;background:#f5f0ff;display:flex;align-items:center;justify-content:center;font-size:38px">⏳</div><div class="card-body"><b>${n}</b><span style="color:#8b7aa8">⏳ Coming Soon</span></div></div>`;});
+let F=JSON.parse(localStorage.getItem('tinyFav')||'[]');
+function render(){
+let hg=document.getElementById("homeGrid"), ag=document.getElementById("aGrid"), sg=document.getElementById("sGrid"), fg=document.getElementById("favGrid");
+hg.innerHTML='';ag.innerHTML='';sg.innerHTML='';fg.innerHTML='';
+already.forEach((p,i)=>{
+let fav=F.includes(p.id);
+let card=`<div class="card"><span class="badge">FREE</span><span class="heart" onclick="toggle(event,'${p.id}')">${fav?'❤️':'♡'}</span><img src="${p.m}" onclick="openA(${i})" onerror="this.src='IMG-20260823-WA2184.jpg'"><div class="card-body" onclick="openA(${i})"><b>${p.n}</b><span style="color:#ff6b8a">✨ Already Making</span></div></div>`;
+hg.innerHTML+=card;ag.innerHTML+=card;
+if(fav) fg.innerHTML+=card;
+});
+soon.forEach((n,i)=>{
+let card=`<div class="card" onclick="openS(${i})"><div style="height:135px;background:#f5f0ff;display:flex;align-items:center;justify-content:center;font-size:38px">⏳</div><div class="card-body"><b>${n}</b><span style="color:#8b7aa8">⏳ Coming Soon</span></div></div>`;
+sg.innerHTML+=card;
+});
+document.getElementById("fc").textContent=F.length;
+document.getElementById("noFav").style.display=F.length?'none':'block';
+localStorage.setItem('tinyFav',JSON.stringify(F));
+}
+function toggle(e,id){e.stopPropagation();F=F.includes(id)?F.filter(x=>x!==id):[...F,id];render();}
 function openA(i){let p=already[i];document.getElementById("mC").innerHTML=`<img src="${p.m}"><h3>${p.n}</h3><div style="font-size:12px;line-height:1.9;margin-top:8px">${p.t}</div><button onclick="closeM()" style="width:100%;margin-top:14px;background:#ff6b8a;border:0;color:#fff;padding:12px;border-radius:999px;font-weight:800">Close 💖</button>`;document.getElementById("modal").style.display="block";}
-function openS(i){document.getElementById("mC").innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:48px">⏳</div><h3>${soon[i]}</h3><p style="font-size:12px;margin-top:8px;color:#8a5a66">This cutie is coming soon! Making with love ☁️💌</p><button onclick="closeM()" style="width:100%;margin-top:14px;background:#8b7aa8;border:0;color:#fff;padding:12px;border-radius:999px;font-weight:800">Okay! 💖</button></div>`;document.getElementById("modal").style.display="block";}
+function openS(i){document.getElementById("mC").innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:48px">⏳</div><h3>${soon[i]}</h3><p style="font-size:12px;margin-top:8px">Coming soon! ☁️</p><button onclick="closeM()" style="width:100%;margin-top:14px;background:#8b7aa8;border:0;color:#fff;padding:12px;border-radius:999px;font-weight:800">Okay 💌</button></div>`;document.getElementById("modal").style.display="block";}
 function closeM(){document.getElementById("modal").style.display="none";}
 function show(p){["home","pattern","fav","about"].forEach(x=>document.getElementById(x).style.display=x==p?"block":"none");document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));document.getElementById("b"+p[0]).classList.add("active");window.scrollTo(0,0);}
+render();
 </script>
 </body>
 </html>
