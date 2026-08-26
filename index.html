@@ -3,35 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tiny Twirl Cloud ☁️ - Diya Sahai</title>
+<title>Tiny Twirl Cloud ☁️</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Nunito,sans-serif}
 body{background:#fff8f9;color:#5a2a35}
-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#ffffffee;border-bottom:2px solid #ffe0e6;position:sticky;top:0;z-index:900;backdrop-filter:blur(10px)}
-header .left{display:flex;align-items:center;gap:8px}
-header .left img{width:38px;height:38px;border-radius:50%;border:2px solid #ffb3c3;object-fit:cover}
-header .left b{color:#ff6b8a;font-size:15px}
+header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#fff;border-bottom:2px solid #ffe0e6;position:sticky;top:0;z-index:900}
+header.left{display:flex;align-items:center;gap:8px}
+header.left img{width:38px;height:38px;border-radius:50%;border:2px solid #ffb3c3;object-fit:cover}
+header.left b{color:#ff6b8a;font-size:15px}
 nav{display:flex;gap:5px}
 nav button{border:0;background:#fff0f3;color:#ff6b8a;padding:7px 11px;border-radius:999px;font-weight:800;font-size:11px;cursor:pointer}
-nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 12px #ff6b8a55}
+nav button.active{background:#ff6b8a;color:#fff}
 .card{background:#fff;border-radius:20px;padding:14px;border:1.5px solid #ffe0e6;box-shadow:0 6px 18px #5a2a350d}
 .pattern-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pattern{border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid #ffe0e6;text-align:center;padding-bottom:8px;cursor:pointer}
-.pattern img{width:100%;height:115px;object-fit:cover;background:#fff5f6}
+.pattern{border-radius:16px;overflow:hidden;background:#fff;border:1.5px solid #ffe0e6;text-align:center;padding-bottom:8px;cursor:pointer;transition:.2s}
+.pattern:active{transform:scale(.97)}
+.pattern.imgbox{width:100%;height:115px;display:flex;align-items:center;justify-content:center;font-size:42px;background:#fff5f6}
+.pattern.already.imgbox{background:#fff0f3}
+.pattern.soon.imgbox{background:#f3f0ff;opacity:.9}
 .pattern h4{font-size:11px;color:#5a2a35;margin:7px 4px 2px;line-height:1.3}
 .pattern p{font-size:10px;color:#8a5a64;font-weight:700}
 .find-wrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.find-box{padding:22px 14px;background:#fff;border-radius:22px;border:1.5px solid #ffe0e6;text-align:center;box-shadow:0 6px 18px #5a2a350d}
-.find-box img{width:100px;height:100px;border-radius:50%;border:4px solid #ffb3c3;object-fit:cover;display:block;margin:0 auto 10px;background:#fff}
-.find-box h4{font-size:15px;color:#5a2a35;font-weight:800}
-.find-btn{display:block;margin-top:14px;background:#ff6b8a;color:#fff;padding:12px;border-radius:999px;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 4px 12px #ff6b8a44}
+.find-box{padding:22px 14px;background:#fff;border-radius:22px;border:1.5px solid #ffe0e6;text-align:center}
+.find-btn{display:block;margin-top:14px;background:#ff6b8a;color:#fff;padding:12px;border-radius:999px;font-size:13px;font-weight:800;text-decoration:none}
 </style>
 </head>
 <body>
 
 <header>
-<div class="left"><img src="IMG-20260823-WA2184.jpg"><b>Tiny Twirl Cloud ☁️</b></div>
+<div class="left"><img src="https://i.imgur.com/8QJ4sQe.png" onerror="this.src='IMG-20260823-WA2184.jpg'"><b>Tiny Twirl Cloud</b></div>
 <nav>
 <button id="b-home" class="active" onclick="showPage('home')">Home</button>
 <button id="b-pattern" onclick="showPage('pattern')">Pattern</button>
@@ -42,39 +43,25 @@ nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 12px #ff6b8a55}
 
 <!-- HOME -->
 <div id="homePage" style="padding:12px">
-<div class="card" style="text-align:center;background:linear-gradient(135deg,#ffffff,#ffe4ea 80%)">
-<img src="IMG-20260823-WA0231.jpg" style="width:92px;height:92px;border-radius:50%;border:4px solid #fff;object-fit:cover;margin:0 auto 10px;display:block">
+<div class="card" style="text-align:center;background:linear-gradient(135deg,#fff,#ffe4ea 80%)">
 <h2 style="color:#ff6b8a;font-size:18px">Welcome to Tiny Twirl Cloud! 🎀</h2>
-<p style="font-size:12px;color:#8a5a64;margin-top:6px;font-weight:600">By Diya Sahai from Gurugram • 26 Cute Patterns ☁️</p>
-<p style="font-size:11px;color:#8a5a64;margin-top:4px">6 Already Making + 20 Coming Soon</p>
-<button onclick="showPage('pattern')" style="margin-top:14px;background:#ff6b8a;border:0;color:#fff;padding:11px 20px;border-radius:999px;font-weight:800">View All Patterns 🧶</button>
+<p style="font-size:12px;color:#8a5a64;margin-top:6px;font-weight:600">By Diya Sahai • 26 Patterns ☁️</p>
+<button onclick="showPage('pattern')" style="margin-top:14px;background:#ff6b8a;border:0;color:#fff;padding:11px 20px;border-radius:999px;font-weight:800">View All 26 Patterns 🧶</button>
 </div>
-
 <h3 style="margin:18px 0 10px;color:#5a2a35;font-size:15px">✨ Tap to see How To Make!</h3>
 <div class="pattern-grid" id="homePatterns"></div>
-
-<h3 style="margin:20px 0 10px;color:#5a2a35;font-size:15px">💌 Find Me On</h3>
-<div class="find-wrap">
-<div class="find-box">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-<h4>Instagram</h4>
-<p style="font-size:11px;color:#8a5a64">@tinytwirlcloud</p>
-<a class="find-btn" href="https://instagram.com/tinytwirlcloud" target="_blank">Follow Me 💖</a>
-</div>
-<div class="find-box">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg">
-<h4>YouTube</h4>
-<p style="font-size:11px;color:#8a5a64">Tiny Twirl Cloud</p>
-<a class="find-btn" href="https://youtube.com/@tinytwirlcloud" target="_blank">Subscribe ✨</a>
-</div>
-</div>
 </div>
 
-<!-- PATTERN PAGE -->
+<!-- PATTERN PAGE - THIS IS THE FIX -->
 <div id="patternPage" style="display:none;padding:12px">
 <h3 style="color:#5a2a35">🧶 All 26 Patterns</h3>
-<p style="font-size:11px;color:#8a5a64;margin:6px 0 12px;font-weight:700">Tap any card to see How To Make ☁️</p>
-<div class="pattern-grid" id="allPatterns"></div>
+<p style="font-size:11px;color:#8a5a64;margin:6px 0 12px;font-weight:700">6 Already Making + 20 Coming Soon</p>
+
+<h4 style="margin:14px 0 8px;color:#ff6b8a;font-size:13px">✨ Already Making (6)</h4>
+<div class="pattern-grid" id="alreadyGrid"></div>
+
+<h4 style="margin:18px 0 8px;color:#8b7aa0;font-size:13px">⏳ Coming Soon (20)</h4>
+<div class="pattern-grid" id="soonGrid"></div>
 </div>
 
 <!-- FAV -->
@@ -82,33 +69,23 @@ nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 12px #ff6b8a55}
 <div class="card" style="text-align:center;padding:34px 14px">
 <div style="font-size:38px">💖</div>
 <h3 style="color:#ff6b8a;margin-top:8px">Your Favorites</h3>
-<p style="font-size:12px;color:#8a5a64;margin-top:8px">Tap ♡ on patterns to save here!</p>
 </div>
 </div>
 
-<!-- ABOUT WITH YOUR SYMBOLS -->
+<!-- ABOUT -->
 <div id="aboutPage" style="display:none;padding:12px">
-<div style="background:#fff;border-radius:24px;padding:22px;text-align:center;border:1.5px solid #ffe0e6;box-shadow:0 8px 24px #5a2a3512">
-<img src="IMG-20260823-WA0231.jpg" style="width:115px;height:115px;border-radius:50%;border:4px solid #ffb3c3;object-fit:cover;display:block;margin:0 auto 12px">
-<h3 style="color:#ff6b8a;font-size:16px">⋆𔓘✦˚｡⋆𐙚✧ About Me ✧𐙚⋆｡˚✦𔓘⋆</h3>
-<p style="font-size:12px;color:#8a5a64;font-weight:700;margin-top:4px">Diya Sahai • Gurugram ☁️</p>
-<div style="margin-top:16px;background:linear-gradient(135deg,#fffafb,#f3e8ff);border-radius:18px;padding:18px 16px;border:1.5px dashed #ffb3c3;text-align:left">
-<p style="font-size:12.5px;line-height:2;color:#6d3e4a;white-space:pre-line;font-weight:500">
-⋆𔓘✦˚｡⋆𐙚✧♡✧･ﾟ˗ˏˋ ☁️ ˎˊ˗
-✧･ﾟ 
-♡ ⋆｡°✩ Hi, I'm Diya Sahai from Gurugram, I'm someone who loves soft things, pretty colors and cozy handmade vibes. I found my love for yarn and crochet and it became my happy place. I love how a simple thread can turn into something cute and full of love. Making things with my own hands makes me feel calm and happy. I enjoy creating bunnies, bows, bags and little things that make people smile. I believe handmade things have a special kind of magic in them. I'm a dreamer who loves imagining new designs and ideas all the time. I love pastel shades, fluffy textures and cloud-like softness. I'm someone who gets excited about tiny details and little twirls. I love learning new stitches and trying new patterns. For me, creating is not just a hobby, it's my happy little world. I love sharing what I make and seeing others smile because of it. I'm creative, curious and always ready to try something new. I love quiet time where I can just sit and make something beautiful. I'm from Gurugram and I carry my love for making wherever I go. I'm a maker at heart who loves turning dreams into real things. I believe kindness and creativity can make the world softer. I love being me — simple, soft and full of creative dreams. And that's a little about me — Diya, the girl who loves to make magic with yarn!
-
-❥─────────❥
-♡ ⋆｡°✩
-⋆｡°✩
-╰┈➤ Diya Sahai
+<div style="background:#fff;border-radius:24px;padding:22px;text-align:center;border:1.5px solid #ffe0e6">
+<h3 style="color:#ff6b8a">⋆𔓘✦˚｡⋆𐙚✧ About Me ✧𐙚⋆｡˚✦𔓘⋆</h3>
+<p style="font-size:12px;color:#8a5a64;margin-top:6px">Diya Sahai • Gurugram ☁️</p>
+<p style="font-size:12px;line-height:1.9;margin-top:14px;text-align:left;background:#fffafb;padding:14px;border-radius:14px;border:1.5px dashed #ffb3c3">
+Hi, I'm Diya Sahai from Gurugram, I love soft things, pretty colors and cozy handmade vibes. I found my love for yarn and crochet and it became my happy place. I believe handmade things have magic! ♡
+<br><br>╰┈➤ Diya Sahai
 </p>
-</div>
-<button onclick="showPage('home')" style="margin-top:18px;background:#ff6b8a;border:0;color:#fff;padding:11px 22px;border-radius:999px;font-weight:800">⬅️ Back Home 🏠</button>
+<button onclick="showPage('home')" style="margin-top:16px;background:#ff6b8a;border:0;color:#fff;padding:11px 22px;border-radius:999px;font-weight:800">Back Home 🏠</button>
 </div>
 </div>
 
-<!-- PATTERN DETAIL POPUP -->
+<!-- MODAL -->
 <div id="patternModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#00000088;z-index:9999;overflow:auto;padding:14px">
 <div style="background:#fff;border-radius:22px;padding:18px;max-width:420px;margin:20px auto;border:2px solid #ffb3c3;position:relative">
 <button onclick="closeModal()" style="position:absolute;top:10px;right:10px;background:#fff0f3;border:0;color:#ff6b8a;padding:6px 12px;border-radius:999px;font-weight:800">✕</button>
@@ -117,80 +94,41 @@ nav button.active{background:#ff6b8a;color:#fff;box-shadow:0 4px 12px #ff6b8a55}
 </div>
 
 <script>
-let patternData=[
-{ name:"Watermelon Bunny 🍉🐰", status:"Already Making", img:"IMG-20260823-WA2184.jpg", 
-tutorial:`
-<h3 style="color:#ff6b8a">🍉 Watermelon Bunny - Full Pattern</h3>
-<div style="font-size:12px;line-height:1.9;color:#5a2a35;margin-top:10px">
-<b>⋆𔓘 Materials:</b><br>
-• Green, Light Pink, White yarn<br>
-• 3.5mm hook, Safety eyes 6mm<br>
-• Stuffing, Black thread for seeds<br><br>
-
-<b>╰┈➤ Body (Watermelon):</b><br>
-R1: Magic ring 6 sc [6]<br>
-R2: Inc x6 [12]<br>
-R3: (sc, inc) x6 [18]<br>
-R4: (2 sc, inc) x6 [24]<br>
-R5-7: sc around in GREEN [24]<br>
-R8: Switch to WHITE - sc around [24]<br>
-R9-13: Switch to PINK - sc around [24]<br>
-Stuff, close<br><br>
-
-<b>╰┈➤ Ears x2 (White):</b><br>
-Ch 10, sc in 2nd ch, 8 sc, turn<br>
-Make 2, sew on top<br><br>
-
-<b>╰┈➤ Seeds:</b><br>
-Embroider with black yarn - tiny V shapes<br><br>
-
-<b>✧･ﾟ Final:</b> Add bow 🎀 and blush!<br>
-<span style="color:#ff6b8a;font-weight:800">You made a cutie!</span>
-</div>`},
-
-{ name:"Bow Scrunchie 🎀", status:"Already Making", img:"IMG-20260823-WA2184.jpg",
-tutorial:`<h3 style="color:#ff6b8a">🎀 Bow Scrunchie</h3><p style="font-size:12px;line-height:1.8"><b>Materials:</b> Velvet yarn, elastic tie, 4mm hook<br><br>R1: Sc 40 around elastic<br>R2: Hdc around<br>R3: Make bow - Ch 20, sc row 10, tie in middle<br>Sew bow on scrunchie 💖</p>`},
-
-{ name:"Strawberry Scrunchie 🍓", status:"Already Making", img:"IMG-20260823-WA2184.jpg", tutorial:`<h3 style="color:#ff6b8a">🍓 Strawberry Scrunchie</h3><p style="font-size:12px;line-height:1.8">Red + Green yarn<br>Sc around elastic with red, add green leaves on top as strawberry top!</p>`},
-{ name:"Flower Headband 🌸", status:"Already Making", img:"IMG-20260823-WA2184.jpg", tutorial:`<h3 style="color:#ff6b8a">🌸 Flower Headband</h3><p style="font-size:12px">Make chain to head size, add 5-petal flowers and sew!</p>`},
-{ name:"Granny Square 🟩", status:"Already Making", img:"IMG-20260823-WA2184.jpg", tutorial:`<h3 style="color:#ff6b8a">🟩 Granny Square</h3><p style="font-size:12px">Classic 3dc cluster pattern - 4 rounds with color change!</p>`},
-{ name:"Daisy Blanket 🌼", status:"Already Making", img:"IMG-20260823-WA2184.jpg", tutorial:`<h3 style="color:#ff6b8a">🌼 Daisy Blanket</h3><p style="font-size:12px">White + Yellow daisy grannies joined together!</p>`},
-
-// Coming soon
-{ name:"Bear Beanie 🐻", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"<div style='text-align:center;padding:20px'><div style='font-size:40px'>⏳</div><h3>Coming Soon!</h3><p style='font-size:12px'>This pattern is still being made with love ☁️</p></div>"},
-{ name:"Cloud Bag ☁️", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon! ☁️"},
-{ name:"Heart Pouch 💌", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon! 💌"},
-{ name:"Kitty Ear Muffs 😺", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Mini Tote 👜", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Bow Clips 🎀", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Pastel Mittens 🧤", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Star Keychain ⭐", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Sunflower Coaster 🌻", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Bunny Ear Bonnet 🐰", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Ruffle Socks 🧦", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Twirl Scarf 🧣", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Cupcake Coaster 🧁", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Cherry Bag 🍒", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Lacy Choker 💖", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Pompom Hat 🎀", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Flower Bag 🌷", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Cute Pillow ☁️", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Letter Patch 💌", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
-{ name:"Mushroom Buddy 🍄", status:"Coming Soon", img:"IMG-20260823-WA2184.jpg", tutorial:"⏳ Coming Soon!"},
+let alreadyPatterns=[
+{name:"Watermelon Bunny 🍉🐰", emoji:"🐰", color:"#ffe4e6", tutorial:"<h3 style='color:#ff6b8a'>🍉 Watermelon Bunny - Full Pattern</h3><p style='font-size:12px;line-height:1.9;margin-top:10px'><b>Materials:</b> Green, Pink, White yarn, 3.5mm hook, safety eyes<br><br><b>Body:</b><br>R1: MR 6 sc<br>R2: Inc x6 (12)<br>R3: (sc, inc) x6 (18)<br>R4: (2sc, inc) x6 (24)<br>R5-7: sc Green (24)<br>R8: White (24)<br>R9-13: Pink (24)<br>Stuff + close<br><br><b>Ears x2:</b> Ch10, sc 8<br><br><b>Seeds:</b> Black V embroidery<br><br><span style='color:#ff6b8a;font-weight:800'>Done! Add bow 🎀</span></p>"},
+{name:"Bow Scrunchie 🎀", emoji:"🎀", color:"#ffe4f1", tutorial:"<h3 style='color:#ff6b8a'>🎀 Bow Scrunchie</h3><p style='font-size:12px;line-height:1.8'>Velvet yarn + elastic tie<br>Sc 40 around elastic, hdc row, make bow Ch20</p>"},
+{name:"Strawberry Scrunchie 🍓", emoji:"🍓", color:"#ffeaea", tutorial:"<h3>🍓 Strawberry Scrunchie</h3><p style='font-size:12px'>Red yarn around elastic + green leaves</p>"},
+{name:"Flower Headband 🌸", emoji:"🌸", color:"#f3e8ff", tutorial:"<h3>🌸 Flower Headband</h3><p style='font-size:12px'>Chain head size + 5 petal flowers</p>"},
+{name:"Granny Square 🟩", emoji:"🟩", color:"#e8ffe8", tutorial:"<h3>🟩 Granny Square</h3><p style='font-size:12px'>Classic 3dc clusters</p>"},
+{name:"Daisy Blanket 🌼", emoji:"🌼", color:"#fff8dc", tutorial:"<h3>🌼 Daisy Blanket</h3><p style='font-size:12px'>Daisy grannies joined</p>"},
 ];
 
-let grid=document.getElementById("allPatterns");
+let soonPatterns=[
+"Bear Beanie 🐻","Cloud Bag ☁️","Heart Pouch 💌","Kitty Ear Muffs 😺","Mini Tote 👜","Bow Clips 🎀","Pastel Mittens 🧤","Star Keychain ⭐","Sunflower Coaster 🌻","Bunny Ear Bonnet 🐰","Ruffle Socks 🧦","Twirl Scarf 🧣","Cupcake Coaster 🧁","Cherry Bag 🍒","Lacy Choker 💖","Pompom Hat 🎀","Flower Bag 🌷","Cute Pillow ☁️","Letter Patch 💌","Mushroom Buddy 🍄"
+];
+
 let homeGrid=document.getElementById("homePatterns");
-patternData.forEach((p,i)=>{
-let dot=i<6?"#ff6b8a":"#a88d93";
-let statusText=i<6?"✨ Already Making":"⏳ Coming Soon";
-let card=`<div class="pattern" onclick="openPattern(${i})"><img src="${p.img}"><h4>${p.name}</h4><p style="color:${dot}">${statusText}</p></div>`;
-grid.innerHTML+=card;
-if(i<6) homeGrid.innerHTML+=card;
+let alreadyGrid=document.getElementById("alreadyGrid");
+let soonGrid=document.getElementById("soonGrid");
+
+alreadyPatterns.forEach((p,i)=>{
+let card=`<div class="pattern already" onclick="openAlready(${i})"><div class="imgbox" style="background:${p.color}">${p.emoji}</div><h4>${p.name}</h4><p style="color:#ff6b8a">✨ Already Making</p></div>`;
+homeGrid.innerHTML+=card;
+alreadyGrid.innerHTML+=card;
 });
 
-function openPattern(i){
-document.getElementById("modalContent").innerHTML=`<img src="${patternData[i].img}" style="width:100%;height:180px;object-fit:cover;border-radius:14px;margin-bottom:12px"><div>${patternData[i].tutorial}</div><button onclick="closeModal()" style="margin-top:16px;background:#ff6b8a;border:0;color:#fff;padding:12px;border-radius:999px;font-weight:800;width:100%">Close 💖</button>`;
+soonPatterns.forEach((name,i)=>{
+let card=`<div class="pattern soon" onclick="openSoon(${i})"><div class="imgbox">⏳</div><h4>${name}</h4><p style="color:#8b7aa0">⏳ Coming Soon</p></div>`;
+soonGrid.innerHTML+=card;
+});
+
+function openAlready(i){
+let p=alreadyPatterns[i];
+document.getElementById("modalContent").innerHTML=`<div style="width:100%;height:140px;background:${p.color};border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:60px;margin-bottom:12px">${p.emoji}</div>${p.tutorial}<button onclick="closeModal()" style="margin-top:16px;background:#ff6b8a;border:0;color:#fff;padding:12px;border-radius:999px;font-weight:800;width:100%">Close 💖</button>`;
+document.getElementById("patternModal").style.display="block";
+}
+function openSoon(i){
+document.getElementById("modalContent").innerHTML=`<div style="text-align:center;padding:20px"><div style="font-size:50px">⏳</div><h3>${soonPatterns[i]}</h3><p style="font-size:12px;margin-top:8px;color:#8a5a64">This cutie is coming soon! I'm still making it with love ☁️ Stay tuned!</p><button onclick="closeModal()" style="margin-top:16px;background:#8b7aa0;border:0;color:#fff;padding:12px;border-radius:999px;font-weight:800;width:100%">Okay! 💌</button></div>`;
 document.getElementById("patternModal").style.display="block";
 }
 function closeModal(){document.getElementById("patternModal").style.display="none";}
