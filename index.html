@@ -12,7 +12,7 @@ header{position:sticky;top:0;z-index:99;background:#ffffffee;backdrop-filter:blu
 .logo img{width:36px;height:36px;border-radius:50%;border:2px solid #ffb3c6;object-fit:cover}
 .logo b{color:#ff6b8a}
 nav{display:flex;gap:5px}
-nav button{border:0;background:#fff0f4;color:#ff6b8a;padding:7px 11px;border-radius:999px;font-weight:800;font-size:11px}
+nav button{border:0;background:#fff0f4;color:#ff6b8a;padding:7px 11px;border-radius:999px;font-weight:800;font-size:11px;cursor:pointer}
 nav button.active{background:#ff6b8a;color:#fff}
 .page{padding:12px;max-width:600px;margin:auto}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -27,6 +27,7 @@ nav button.active{background:#ff6b8a;color:#fff}
 </style>
 </head>
 <body>
+
 <header>
 <div class="logo"><img src="IMG-20260823-WA2184.jpg"><b>Tiny Twirl Cloud</b></div>
 <nav>
@@ -39,17 +40,19 @@ nav button.active{background:#ff6b8a;color:#fff}
 
 <div id="home" class="page">
 <div style="background:linear-gradient(135deg,#fff,#ffe4ea);border-radius:20px;padding:16px;text-align:center;border:1.5px solid #ffe0e7">
-<h2 style="color:#ff6b8a">Welcome! 🎀</h2><p style="font-size:12px;color:#8a5a66;font-weight:700">By Diya Sahai • 26 Patterns</p>
+<h2 style="color:#ff6b8a">Welcome! 🎀</h2>
+<p style="font-size:12px;color:#8a5a66;font-weight:700">By Diya Sahai • Gurugram • 26 Patterns</p>
 <button onclick="show('pattern')" style="margin-top:10px;background:#ff6b8a;border:0;color:#fff;padding:11px 20px;border-radius:999px;font-weight:800">View All 26 🧶</button>
 </div>
-<h3 style="margin:16px 0 10px;font-size:14px">✨ Already Making — Full Pattern Inside</h3>
+<h3 style="margin:16px 0 10px;font-size:14px">✨ Already Making — Tap for full tutorial</h3>
 <div class="grid" id="homeGrid"></div>
 </div>
 
 <div id="pattern" class="page" style="display:none">
-<h3>🧶 All 26</h3><h4 style="color:#ff6b8a;margin:10px 0 8px">✨ Already Making (6) — Clickable</h4>
+<h3>🧶 All 26 Patterns</h3>
+<h4 style="color:#ff6b8a;margin:10px 0 8px">✨ Already Making (6)</h4>
 <div class="grid" id="aGrid"></div>
-<h4 style="color:#8b7aa8;margin:18px 0 8px">⏳ Coming Soon (20) — Now Clickable!</h4>
+<h4 style="color:#8b7aa8;margin:18px 0 8px">⏳ Coming Soon (20) — Clickable!</h4>
 <div class="grid" id="sGrid"></div>
 </div>
 
@@ -62,10 +65,23 @@ nav button.active{background:#ff6b8a;color:#fff}
 
 <div id="about" class="page" style="display:none">
 <div style="background:#fff;border-radius:22px;padding:20px;border:1.5px solid #ffe0e7;text-align:center">
-<img src="IMG-20260823-WA0231.jpg" style="width:110px;height:110px;border-radius:50%;border:4px solid #ffb3c6;object-fit:cover;margin:0 auto 10px;display:block">
-<h3 style="color:#ff6b8a">About Me</h3>
-<p style="font-size:11px;color:#8a5a66;font-weight:800">Diya Sahai • Gurugram ☁️</p>
-<div style="text-align:left;background:#fff8fa;padding:14px;border-radius:14px;border:1.5px dashed #ffb3c6;margin-top:14px;font-size:13px;line-height:1.9">Hi, I'm <b>Diya Sahai</b> from Gurugram! I love soft things and crochet is my happy place. I started <b>Tiny Twirl Cloud</b> because handmade has magic! ♡<br><br>╰┈➤ <b>With love, Diya</b> 🎀</div>
+<img src="IMG-20260823-WA0231.jpg" style="width:120px;height:120px;border-radius:50%;border:4px solid #ffb3c6;object-fit:cover;margin:0 auto 12px;display:block;box-shadow:0 8px 24px #ffb3c644">
+<h2 style="color:#ff6b8a;font-size:20px">⋆ About Me ⋆</h2>
+<p style="font-size:12px;color:#8a5a66;font-weight:800;margin-top:6px">Diya Sahai • Gurugram, India ☁️<br>Founder of Tiny Twirl Cloud</p>
+<div style="text-align:left;background:#fff8fa;padding:16px;border-radius:14px;border:1.5px dashed #ffb3c6;margin-top:16px;font-size:13.5px;line-height:2;color:#5a3440">
+Hi, I'm <b>Diya Sahai</b> from Gurugram! ☁️💖<br><br>
+I love soft things, pretty colors, and cozy handmade vibes. I found my love for yarn and crochet and it became my happy place — where I can create cute little worlds with just a hook and some yarn! 🧶✨<br><br>
+I started <b>Tiny Twirl Cloud</b> because I believe handmade things have magic. Every stitch has love, every pattern has a story, and every creation brings a little more softness to the world. ♡<br><br>
+Here you'll find <b>26 aesthetic crochet patterns</b> — from watermelon bunnies 🍉🐰 to bow scrunchies 🎀, flower headbands 🌸, granny squares, daisy blankets and many more cuties that I'm still making with so much love!<br><br>
+<b>Why Tiny Twirl Cloud?</b><br>
+Tiny because every creation is small and precious.<br>
+Twirl because yarn twirls like clouds.<br>
+Cloud because I want my little corner to feel soft, dreamy and comforting — like a cloud! ☁️<br><br>
+This website is my little dream. I made it myself to share my patterns with you in the cutest way. You can tap hearts ♡ to favorite, tap any pattern to see full step-by-step tutorial (body, ears, face, hands — everything!), and explore coming soon patterns too!<br><br>
+Thank you for being here and supporting my little cloud. It means the world to me! If you make anything, please tag me — I would LOVE to see! 💌<br><br>
+╰┈➤ <b>With love,</b><br><b>Diya Sahai</b> 🎀🧶<br>Founder, Tiny Twirl Cloud<br><br>
+<span style="font-size:11px;color:#8a5a66">📍 Gurugram • 📸 @tinytwirlcloud • ▶️ @tinytwirlcloud</span>
+</div>
 </div>
 </div>
 
@@ -73,41 +89,61 @@ nav button.active{background:#ff6b8a;color:#fff}
 let lastPage='home';
 const already=[
 {id:"bunny",n:"Watermelon Bunny 🍉🐰",m:"IMG-20260823-WA9459.jpg",
-full:`<img class="detail-img" src="IMG-20260823-WA9459.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Watermelon Bunny 🍉🐰 — Full</h2>
-<div class="step"><b>Materials:</b> Green, White, Pink, Cream, Black yarn, 3.5mm hook, 6mm eyes, stuffing</div>
-<div class="step"><span class="stepHead">1. BODY (Watermelon)</span><br>R1 MR 6 [6]<br>R2 inc x6 [12]<br>R3 (sc,inc)x6 [18]<br>R4 (2sc,inc)x6 [24]<br>R5-6 Green sc [24]<br>R7 White sc [24]<br>R8-13 Pink sc [24]<br>R14 (2sc,dec)x6 [18] stuff<br>R15 (sc,dec)x6 [12]<br>R16 dec x6 [6] FO</div>
-<div class="step"><span class="stepHead">2. HEAD (Cream)</span><br>R1 MR 6 [6]<br>R2 inc x6 [12]<br>R3 (sc,inc)x6 [18]<br>R4 (2sc,inc)x6 [24]<br>R5 (3sc,inc)x6 [30]<br>R6-9 sc [30]<br>R10 (3sc,dec)x6 [24]<br>R11 (2sc,dec)x6 [18] eyes R7-8<br>R12 (sc,dec)x6 [12] stuff<br>R13 dec x6 FO — Sew on body</div>
-<div class="step"><span class="stepHead">3. EARS x2</span><br>R1 MR 6 [6]<br>R2 (sc,inc)x3 [9]<br>R3 (2sc,inc)x3 [12]<br>R4-8 sc [12]<br>R9 (2sc,dec)x3 [9] FO flat — Sew on head</div>
-<div class="step"><span class="stepHead">4. HANDS x2</span><br>R1 MR 6 [6]<br>R2 (sc,inc)x3 [9]<br>R3-6 sc [9] stuff light FO — Sew on sides</div>
-<div class="step"><span class="stepHead">5. LEGS x2</span><br>R1 MR 6 [6]<br>R2 inc x6 [12]<br>R3-4 sc [12]<br>R5 (sc,dec)x4 [8]<br>R6 sc [8] FO — Sew bottom</div>
-<div class="step"><span class="stepHead">6. FACE</span><br>Embroider nose pink Y, black seeds V stitches, blush cheeks. Done! 🎀</div>`},
-{id:"bow",n:"Bow Scrunchie 🎀",m:"IMG-20260823-WA5906.jpg",full:`<img class="detail-img" src="IMG-20260823-WA5906.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Bow Scrunchie 🎀 — Full</h2><div class="step"><span class="stepHead">1. BASE</span>40 sc around elastic, R2 (hdc,hdc inc) around [60]</div><div class="step"><span class="stepHead">2. BOW</span>Ch20, sc 8 rows, pinch middle, wrap 10 times</div><div class="step"><span class="stepHead">3. ASSEMBLY</span>Sew bow on scrunchie. Done! 🎀</div>`},
-{id:"straw",n:"Strawberry Scrunchie 🍓",m:"IMG-20260823-WA8603.jpg",full:`<img class="detail-img" src="IMG-20260823-WA8603.jpg"><h2>Strawberry Scrunchie</h2><div class="step"><span class="stepHead">1. BODY</span>Red 40 sc around elastic</div><div class="step"><span class="stepHead">2. LEAVES</span>Green MR 5 leaves</div><div class="step"><span class="stepHead">3. ASSEMBLY</span>Sew crown on top 🍓</div>`},
-{id:"head",n:"Flower Headband 🌸",m:"IMG-20260823-WA9402.jpg",full:`<img class="detail-img" src="IMG-20260823-WA9402.jpg"><h2>Flower Headband</h2><div class="step"><span class="stepHead">1. BASE</span>Ch 55-60, hdc 2 rows</div><div class="step"><span class="stepHead">2. FLOWERS x3</span>MR 6, petals (sl st,ch2,2dc,ch2)</div><div class="step"><span class="stepHead">3. ASSEMBLY</span>Sew flowers on band 🌸</div>`},
-{id:"granny",n:"Classic Granny Square 🟩",m:"IMG-20260823-WA4084.jpg",full:`<img class="detail-img" src="IMG-20260823-WA4084.jpg"><h2>Granny Square</h2><div class="step"><span class="stepHead">1. CENTER</span>MR Ch3 2dc ch2 (3dc ch2)x3</div><div class="step"><span class="stepHead">2. ROUNDS</span>(3dc ch2 3dc) in corners, 3dc in sides</div>`},
-{id:"daisy",n:"Daisy Blanket 🌼",m:"IMG-20260823-WA3458.jpg",full:`<img class="detail-img" src="IMG-20260823-WA3458.jpg"><h2>Daisy Blanket</h2><div class="step"><span class="stepHead">1. SQUARE x12</span>Yellow MR 6, white petals, green square it</div><div class="step"><span class="stepHead">2. JOIN</span>Join 3x4, border sc hdc</div>`}
+full:`<img class="detail-img" src="IMG-20260823-WA9459.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Watermelon Bunny 🍉🐰 — Full Pattern</h2>
+<div class="step"><b>Materials:</b> Green, White, Pink, Cream, Black yarn, 3.5mm hook, 6mm safety eyes, stuffing, needle</div>
+<div class="step"><b>Abbreviations:</b> MR=Magic Ring, sc=single crochet, inc=increase, dec=decrease, FO=Fasten off</div>
+<div class="step"><span class="stepHead">1. BODY (Watermelon)</span><br>R1 MR 6 sc [6]<br>R2 inc x6 [12]<br>R3 (sc,inc)x6 [18]<br>R4 (2sc,inc)x6 [24]<br>R5-6 Green sc around [24]<br>R7 White sc around [24]<br>R8-13 Pink sc around [24]<br>R14 (2sc,dec)x6 [18] — stuff firmly<br>R15 (sc,dec)x6 [12]<br>R16 dec x6 [6] FO close</div>
+<div class="step"><span class="stepHead">2. HEAD (Cream)</span><br>R1 MR 6 [6]<br>R2 inc x6 [12]<br>R3 (sc,inc)x6 [18]<br>R4 (2sc,inc)x6 [24]<br>R5 (3sc,inc)x6 [30]<br>R6-9 sc around [30] (4 rounds)<br>R10 (3sc,dec)x6 [24]<br>R11 (2sc,dec)x6 [18] — Add eyes between R7-8, 6 sts apart<br>R12 (sc,dec)x6 [12] — stuff<br>R13 dec x6 [6] FO — Sew on top of body</div>
+<div class="step"><span class="stepHead">3. EARS x2 (Cream)</span><br>R1 MR 6 [6]<br>R2 (sc,inc)x3 [9]<br>R3 (2sc,inc)x3 [12]<br>R4-8 sc around [12] (5 rounds)<br>R9 (2sc,dec)x3 [9] FO — Flatten, don't stuff, sew on head floppy</div>
+<div class="step"><span class="stepHead">4. HANDS / ARMS x2</span><br>R1 MR 6 [6]<br>R2 (sc,inc)x3 [9]<br>R3-6 sc around [9] (4 rounds) — Stuff lightly FO — Sew on sides of body</div>
+<div class="step"><span class="stepHead">5. LEGS / FEET x2</span><br>R1 MR 6 [6]<br>R2 inc x6 [12]<br>R3-4 sc around [12]<br>R5 (sc,dec)x4 [8]<br>R6 sc [8] FO — Stuff & sew at bottom</div>
+<div class="step"><span class="stepHead">6. FACE & FINISHING</span><br>- Cheeks: Pink blush / yarn<br>- Nose: Embroider small pink Y<br>- Seeds: Black yarn V stitches all over pink part<br>- Assembly: Head→Body, Ears→Head, Hands & Legs→Body<br><br><span style="color:#ff6b8a;font-weight:800">✨ Done! Your watermelon bunny with body, head, ears, hands, legs & face is ready! 🍉🐰🎀</span></div>`},
+{id:"bow",n:"Bow Scrunchie 🎀",m:"IMG-20260823-WA5906.jpg",
+full:`<img class="detail-img" src="IMG-20260823-WA5906.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Bow Scrunchie 🎀 — Full</h2>
+<div class="step"><b>Materials:</b> Cream yarn, elastic, 4mm hook</div>
+<div class="step"><span class="stepHead">1. BASE</span>40 sc around elastic, R2 (hdc, hdc inc) around [60] — ruffle, FO</div>
+<div class="step"><span class="stepHead">2. BOW</span>Ch20, Row1-8 sc 20, FO long tail, pinch middle, wrap 10 times</div>
+<div class="step"><span class="stepHead">3. ASSEMBLY</span>Sew bow on scrunchie. Done! 🎀</div>`},
+{id:"straw",n:"Strawberry Scrunchie 🍓",m:"IMG-20260823-WA8603.jpg",
+full:`<img class="detail-img" src="IMG-20260823-WA8603.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Strawberry Scrunchie 🍓 — Full</h2>
+<div class="step"><span class="stepHead">1. BODY</span>Red: 40 sc around elastic, R2 (sc,inc) [60]</div>
+<div class="step"><span class="stepHead">2. LEAVES CROWN</span>Green MR 6, make 5 leaves: (ch6, sc,hdc,dc,hdc, sl st)</div>
+<div class="step"><span class="stepHead">3. ASSEMBLY</span>Sew crown on top, yellow dots for seeds 🍓</div>`},
+{id:"head",n:"Flower Headband 🌸",m:"IMG-20260823-WA9402.jpg",
+full:`<img class="detail-img" src="IMG-20260823-WA9402.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Flower Headband 🌸 — Full</h2>
+<div class="step"><span class="stepHead">1. BASE</span>Ch 55-60, Row1-2 hdc</div>
+<div class="step"><span class="stepHead">2. FLOWERS x3</span>Yellow MR 6, white petals: (sl st,ch2,2dc,ch2,sl st) x6</div>
+<div class="step"><span class="stepHead">3. LEAVES x2</span>Green Ch7 sc hdc dc hdc sc, sew flowers & leaves 🌸</div>`},
+{id:"granny",n:"Classic Granny Square 🟩",m:"IMG-20260823-WA4084.jpg",
+full:`<img class="detail-img" src="IMG-20260823-WA4084.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Granny Square 🟩 — Full</h2>
+<div class="step"><span class="stepHead">1. CENTER</span>MR Ch3 2dc ch2 (3dc ch2)x3</div>
+<div class="step"><span class="stepHead">2. ROUNDS</span>Sl to ch2, (3dc ch2 3dc) corners, 3dc sides, change color each round</div>`},
+{id:"daisy",n:"Daisy Blanket 🌼",m:"IMG-20260823-WA3458.jpg",
+full:`<img class="detail-img" src="IMG-20260823-WA3458.jpg"><h2 style="color:#ff6b8a;margin-top:12px">Daisy Blanket 🌼 — Full</h2>
+<div class="step"><span class="stepHead">1. SQUARE x12</span>Yellow MR 6, white petals, green square</div>
+<div class="step"><span class="stepHead">2. JOIN & BORDER</span>Join 3x4 with sc, border sc hdc 🌼</div>`}
 ];
 const soon=[
-{n:"Bear Beanie 🐻",e:"🐻",d:"Fluffy bear ears, super cozy! Perfect winter beanie with cute ears."},
-{n:"Cloud Bag ☁️",e:"☁️",d:"Puffy cloud shaped bag, aesthetic and spacious."},
-{n:"Heart Pouch 💌",e:"💌",d:"Mini heart pouch for airpods, lip balm — so cute!"},
-{n:"Kitty Ear Muffs 😺",e:"😺",d:"Warm ear muffs with kitty ears, kawaii!"},
-{n:"Mini Tote 👜",e:"👜",d:"Tiny tote for everyday cuteness."},
-{n:"Bow Clips 🎀",e:"🎀",d:"Small crochet bows for hair clips."},
-{n:"Pastel Mittens 🧤",e:"🧤",d:"Soft pastel mittens, cozy hands."},
-{n:"Star Keychain ⭐",e:"⭐",d:"Little star keychain, quick make!"},
-{n:"Sunflower Coaster 🌻",e:"🌻",d:"Sunny coasters for your desk."},
-{n:"Bunny Ear Bonnet 🐰",e:"🐰",d:"Baby bonnet with long bunny ears."},
-{n:"Ruffle Socks 🧦",e:"🧦",d:"Frilly ruffle socks — Pinteresty!"},
-{n:"Twirl Scarf 🧣",e:"🧣",d:"Twirly scarf with ruffles."},
-{n:"Cupcake Coaster 🧁",e:"🧁",d:"Cupcake shaped coasters."},
-{n:"Cherry Bag 🍒",e:"🍒",d:"Cherry bag with stems — viral!"},
-{n:"Lacy Choker 💖",e:"💖",d:"Soft lace choker, coquette core."},
+{n:"Bear Beanie 🐻",e:"🐻",d:"Fluffy bear ears beanie, cozy winter must-have!"},
+{n:"Cloud Bag ☁️",e:"☁️",d:"Puffy cloud shaped bag, aesthetic & spacious."},
+{n:"Heart Pouch 💌",e:"💌",d:"Mini heart pouch for airpods & lip balm."},
+{n:"Kitty Ear Muffs 😺",e:"😺",d:"Warm muffs with kitty ears, kawaii!"},
+{n:"Mini Tote 👜",e:"👜",d:"Tiny everyday tote."},
+{n:"Bow Clips 🎀",e:"🎀",d:"Small crochet bow clips."},
+{n:"Pastel Mittens 🧤",e:"🧤",d:"Soft pastel mittens."},
+{n:"Star Keychain ⭐",e:"⭐",d:"Little star keychain, quick make."},
+{n:"Sunflower Coaster 🌻",e:"🌻",d:"Sunny coasters for desk."},
+{n:"Bunny Ear Bonnet 🐰",e:"🐰",d:"Baby bonnet with long ears."},
+{n:"Ruffle Socks 🧦",e:"🧦",d:"Frilly Pinteresty socks."},
+{n:"Twirl Scarf 🧣",e:"🧣",d:"Twirly ruffle scarf."},
+{n:"Cupcake Coaster 🧁",e:"🧁",d:"Cupcake coasters."},
+{n:"Cherry Bag 🍒",e:"🍒",d:"Cherry bag viral!"},
+{n:"Lacy Choker 💖",e:"💖",d:"Soft coquette choker."},
 {n:"Pompom Hat 🎨",e:"🎨",d:"Colorful pompom beanie."},
-{n:"Flower Bag 🌷",e:"🌷",d:"Granny flower tote bag."},
-{n:"Cute Pillow ☁️",e:"☁️",d:"Cloud pillow, super soft."},
-{n:"Letter Patch 💌",e:"💌",d:"Alphabet patches to customize."},
-{n:"Mushroom Buddy 🍄",e:"🍄",d:"Tiny mushroom friend, so tiny!"}
+{n:"Flower Bag 🌷",e:"🌷",d:"Granny flower tote."},
+{n:"Cute Pillow ☁️",e:"☁️",d:"Cloud pillow soft."},
+{n:"Letter Patch 💌",e:"💌",d:"Alphabet patches."},
+{n:"Mushroom Buddy 🍄",e:"🍄",d:"Tiny mushroom friend."}
 ];
 let F=JSON.parse(localStorage.getItem('tinyFav')||'[]');
 function render(){
@@ -120,8 +156,7 @@ hg.innerHTML+=card;ag.innerHTML+=card;
 if(fav) fg.innerHTML+=card;
 });
 soon.forEach((s,i)=>{
-let card=`<div class="card" onclick="openSoon(${i})"><span class="badge" style="color:#8b7aa8;border-color:#d8d0f0">SOON</span><div style="height:135px;background:#f5f0ff;display:flex;align-items:center;justify-content:center;font-size:42px">${s.e}</div><div class="card-body"><b style="font-size:11px">${s.n}</b><span style="font-size:10px;color:#8b7aa8;font-weight:800">Tap to see sneak peek →</span></div></div>`;
-sg.innerHTML+=card;
+sg.innerHTML+=`<div class="card" onclick="openSoon(${i})"><span class="badge" style="color:#8b7aa8;border-color:#d8d0f0">SOON</span><div style="height:135px;background:#f5f0ff;display:flex;align-items:center;justify-content:center;font-size:42px">${s.e}</div><div class="card-body"><b style="font-size:11px">${s.n}</b><span style="font-size:10px;color:#8b7aa8;font-weight:800">Tap for sneak peek →</span></div></div>`;
 });
 document.getElementById("fc").textContent=F.length;
 document.getElementById("noFav").style.display=F.length?'none':'block';
@@ -135,7 +170,7 @@ document.getElementById("detailContent").innerHTML=p.full+`<button onclick="goBa
 show('detail');
 }
 function openSoon(i){
-lastPage=document.querySelector('.page[style*="block"]:not(#detail)')?.id || 'pattern';
+lastPage='pattern';
 let s=soon[i];
 document.getElementById("detailContent").innerHTML=`
 <div style="text-align:center;padding:20px 10px">
@@ -143,14 +178,13 @@ document.getElementById("detailContent").innerHTML=`
 <h2 style="color:#8b7aa8;margin-top:10px">${s.n}</h2>
 <span style="background:#f5f0ff;color:#8b7aa8;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:800;border:1px solid #e8e0ff">⏳ COMING SOON</span>
 <div class="step" style="text-align:left;margin-top:16px">
-<b>💌 Sneak Peek:</b><br>
-${s.d}<br><br>
+<b>💌 Sneak Peek:</b><br>${s.d}<br><br>
 <b>What you'll learn:</b><br>
 - Materials needed<br>
-- Step-by-step rounds<br>
+- Step-by-step rounds (body, ears, hands etc)<br>
 - Assembly & finishing<br>
 - Pro tips from Diya<br><br>
-<span style="color:#8b7aa8;font-weight:800">I'm currently crocheting this cutie with lots of love! Pattern will be added soon — stay tuned on Instagram @tinytwirlcloud ☁️✨</span>
+<span style="color:#8b7aa8;font-weight:800">I'm currently making this with lots of love! Pattern will be added soon — stay tuned @tinytwirlcloud ☁️✨</span>
 </div>
 </div>
 <button onclick="goBack()" style="width:100%;margin-top:18px;background:#8b7aa8;border:0;color:#fff;padding:14px;border-radius:999px;font-weight:800">Back 💌</button>`;
