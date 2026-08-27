@@ -1,432 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tiny Twirl Cloud by Diya Sahai 💖</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiny Twirl Cloud ☁️</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fffcf8;color:#6d3e4a;padding-bottom:90px}
-.page{display:none;padding:12px}.page.active{display:block}
-header{position:sticky;top:0;z-index:20;background:#fff8f0f2;backdrop-filter:blur(12px);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #ffe0e5}
-.logo-img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #ffd6db}
-.logo-text{font-weight:800;color:#d68a8a;font-size:17px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #5a2a3512;cursor:pointer;position:relative}
-.card img{width:100%;height:155px;object-fit:cover;background:#ffe0e5;display:block}
-.emojiBoxSoon{background:#ffe4ec;height:155px;display:flex;align-items:center;justify-content:center;font-size:60px}
-.badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;background:#fff;color:#ff8fab;border:1px solid #ffd6db;z-index:3}
-.badge.pro{background:#e9dcff;color:#6a4abf}.badge.soon{background:#aaa;color:white;border:none}
-.heart{position:absolute;top:8px;right:8px;background:#ffffffee;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:4;cursor:pointer}
-.card-body{padding:10px 12px}.name{font-size:12px;font-weight:700}
-.hero{background:linear-gradient(135deg,#ffd6db,#ffe8ec);border-radius:24px;padding:28px 20px;text-align:center}
-.coming{margin-top:18px;background:#fff0f2;border:1px dashed #ffb3c0;border-radius:18px;padding:14px}
-.founder{background:#fff0f2;border-radius:22px;padding:16px;display:flex;gap:12px;align-items:center;margin-top:14px}
-.founder img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff}
-.white-card{background:white;border-radius:20px;padding:18px;margin-top:12px;box-shadow:0 4px 12px #0001}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:white;display:flex;justify-content:space-around;padding:8px 0 12px;border-top:1px solid #ffe0e5;z-index:50}
-.bottom-nav div{font-size:10px;text-align:center;color:#bba0b5;cursor:pointer;padding:6px 12px;border-radius:12px}
-.bottom-nav div.active{color:#f06292;font-weight:800;background:#fff0f3}
-#popup{position:fixed;inset:0;background:#00000099;display:none;align-items:center;justify-content:center;z-index:99;padding:12px}
-#popup.show{display:flex}
-.sheet{background:#fff;width:100%;max-width:420px;border-radius:26px;overflow:hidden;max-height:90vh;overflow-y:auto;position:relative}
-.sheet img{width:100%;height:240px;object-fit:cover;display:block}
-.sheet-body{padding:16px}
-.patternBox{background:#fff8f8;border:1px solid #ffd6de;border-radius:14px;padding:12px;margin-top:12px;white-space:pre-wrap;font-size:11px;line-height:1.7;max-height:400px;overflow-y:auto}
-.close{position:absolute;top:10px;right:14px;background:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;box-shadow:0 2px 8px #0003}
-.vip-box{background:linear-gradient(135deg,#ff7eb3 0%,#ff65a3 30%,#7f00ff 100%);border-radius:24px;padding:20px;color:white;box-shadow:0 12px 32px #c084fc88}
-.code-box{background:white;border-radius:18px;padding:16px;margin-top:14px;box-shadow:0 6px 20px #00000010}
-.code-row{display:flex;gap:8px;margin-top:10px}
-.code-row input{flex:1;border:1.5px solid #ffd6de;border-radius:12px;padding:13px;letter-spacing:3px}
-.unlock{background:#f06292;color:white;border:none;border-radius:12px;padding:13px 18px;font-weight:800;cursor:pointer}
-.pro-blur{filter:blur(6px)} .pro-overlay{position:absolute;inset:0;background:#ffffffb8;display:flex;align-items:center;justify-content:center;font-weight:800;color:#6a4abf;z-index:2}
-.actionRow{display:flex;gap:10px;margin-top:14px}
-.likeBtn{flex:1;background:#fff0f3;border:1.5px solid #ffd6de;border-radius:14px;padding:10px;font-weight:800;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
-.likeBtn.liked{background:#ff8fab;color:white;border-color:#ff8fab}
-.commentBox{margin-top:14px;background:#fff0f3;border-radius:16px;padding:12px}
-.commentInput{width:100%;border:1.5px solid #ffd6de;border-radius:12px;padding:10px;font-size:11px;resize:none}
-.commentBtn{margin-top:8px;background:#ff8fab;color:white;border:none;border-radius:10px;padding:8px 16px;font-weight:700;font-size:11px;cursor:pointer}
-.commentItem{background:white;border-radius:10px;padding:8px 10px;margin-top:6px;font-size:11px;box-shadow:0 2px 6px #0001}
+body{background:#fff5f8;color:#5a2d3f}
+.white-card{background:white;border-radius:22px;padding:16px;margin:14px;box-shadow:0 4px 15px rgba(255,100,150,.1)}
+.page{display:none}.page.active{display:block}
+.nav{position:fixed;bottom:0;width:100%;background:white;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #ffe0e8;z-index:99}
+.nav b{font-size:11px;display:block}.nav div{text-align:center;opacity:.5}.nav div.active{opacity:1;color:#ff5fad}
+.founder{display:flex;align-items:center;gap:12px;background:white;border-radius:20px;padding:14px;margin:14px}
+.founder img{width:55px;height:55px;border-radius:50%;object-fit:cover}
 </style>
 </head>
 <body>
 
-<header>
-<img class="logo-img" src="IMG-20260823-WA2184.jpg">
-<div class="logo-text">Tiny Twirl Cloud</div>
-</header>
-
+<!-- HOME PAGE -->
 <div id="home" class="page active">
-<div class="vip-box">
-<div style="font-weight:900;font-size:24px">TWIRL PRO ✨ 👑</div>
-<div style="font-size:13px;margin-top:6px;line-height:1.4">Want all patterns unlocked?<br>Code is <b>CLOUD26</b> 💌</div>
-<button style="margin-top:12px;width:100%;background:linear-gradient(90deg,#ff8a33 0%,#a259ff 100%);border:none;color:white;font-weight:800;padding:12px;border-radius:14px;cursor:pointer" onclick="window.open('https://instagram.com/tinytwirlcloud','_blank')">📸 Follow @tinytwirlcloud</button>
-<div class="code-box" style="margin-top:12px">
-<b style="color:#6d3e4a;font-size:12px">🔑 Enter PRO Code</b>
-<div class="code-row"><input id="proInputHome" type="password" placeholder="••••"><button class="unlock" onclick="unlockHome()">Unlock</button></div>
-<p id="msgHome" style="font-weight:800;font-size:12px;margin-top:8px;color:#6d3e4a"></p>
-</div>
-</div>
-<div class="hero" style="margin-top:14px"><h1>Handmade Crochet Patterns 🎀</h1><p style="font-size:12px;margin-top:6px;opacity:.8">By Diya Sahai • Soft • Pastel • Coquette</p></div>
-<div class="white-card" style="text-align:center;margin-top:14px"><h3>Welcome to Tiny Twirl Cloud ☁️💖</h3><p style="font-size:11px;margin-top:6px;opacity:.8">Cute patterns handmade with love by me! Tap Pattern to start ✨</p></div>
-<div class="coming"><h3 style="font-size:14px">🎬 Coming Soon Tutorials</h3><p style="font-size:11px;margin-top:6px;opacity:.8">Video tutorials coming on YouTube! 💌</p><div style="margin-top:10px;display:flex;gap:8px"><a href="https://youtube.com/@tinytwirlcloud" target="_blank" style="font-size:11px;background:#ff8fab;color:#fff;padding:7px 14px;border-radius:999px;text-decoration:none">YouTube ▶️</a><a href="https://www.instagram.com/tinytwirlcloud/" target="_blank" style="font-size:11px;background:#fff;color:#ff8fab;border:1px solid #ffd6db;padding:7px 14px;border-radius:999px;text-decoration:none">Instagram 💖</a></div></div>
-<div class="founder"><img src="IMG-20260823-WA0231.jpg"><div><b>Founder - Diya Sahai 💖</b><br><span style="font-size:11px;opacity:.8">Gurugram • Handmade with love 🧶✨</span></div></div>
+
+<!-- 1. Handmade Crochet Patterns ON TOP NOW -->
+<div class="white-card" style="text-align:center;padding:20px">
+<h2 style="font-size:24px;line-height:1.3">Handmade<br>Crochet Patterns 🎀</h2>
+<p style="font-size:11px;margin-top:6px;opacity:.6;letter-spacing:1px">By Diya Sahai • Soft • Pastel • Coquette</p>
 </div>
 
-<div id="pattern" class="page">
-<h3 style="margin:8px 0;font-size:14px">🧶 Main Patterns - 6 Patterns</h3>
-<div class="grid" id="allGrid"></div>
-<h3 style="margin:25px 0 10px;font-size:16px;text-align:center">⏳ Coming Soon - 20 Patterns</h3>
-<div class="grid" id="soonGrid"></div>
+<!-- 2. TWIRL PRO BELOW - NO CODE LEAK -->
+<div style="background:linear-gradient(135deg,#ff5fad,#a56bff);border-radius:22px;padding:20px;margin:14px;text-align:center;color:white">
+<h2 style="margin:0;font-size:20px">TWIRL PRO ✨ 👑</h2>
+<p style="font-size:13px;margin:8px 0;line-height:1.5">Want all patterns unlocked?<br>Follow @tinytwirlcloud<br>DM me for the code 💌</p>
+<a href="https://instagram.com/tinytwirlcloud" target="_blank" style="display:block;background:linear-gradient(90deg,#ff9a3c,#a56bff);padding:12px;border-radius:30px;color:white;font-weight:700;text-decoration:none;margin:12px 0">📸 Follow @tinytwirlcloud</a>
+<div style="background:white;border-radius:16px;padding:14px;color:#5a2d3f">
+<p style="font-weight:800;margin:0 0 8px;font-size:13px">🔑 Enter PRO Code</p>
+<input id="proInput" type="password" placeholder="••••••" style="width:90%;padding:12px;border-radius:12px;border:2px solid #333;text-align:center;font-weight:700">
+<p id="proMsg" style="font-size:12px;margin-top:8px;display:none;font-weight:700"></p>
+</div>
 </div>
 
-<div id="fav" class="page"><h2 style="text-align:center">Your Favorites ❤️</h2><div class="grid" id="favGrid"></div><p id="noFav" style="text-align:center;margin-top:30px;font-size:12px;opacity:.6">No favourites yet! Tap ♡ to add 💖</p></div>
+<!-- 3. Welcome Box -->
+<div class="white-card" style="text-align:center">
+<h3 style="font-size:18px">Welcome to Tiny Twirl Cloud ☁️💖</h3>
+<p style="font-size:13px;margin-top:8px;opacity:.7;line-height:1.6">Soft pastel crochet patterns, bows, scrunchies & coquette magic made with love in Gurugram! 🎀🧶</p>
+</div>
 
-<<div id="about" class="page">
+<div class="white-card" style="text-align:center">
+<p style="font-size:14px">✨ 25+ Free Patterns ✨</p>
+<p style="font-size:12px;opacity:.6;margin-top:4px">Bunnies, bows, scrunchies & more!</p>
+</div>
+
+</div>
+
+<!-- ABOUT PAGE - 3 BIG PARAS (10 lines = 1 para) -->
+<div id="about" class="page">
 <div class="white-card" style="text-align:center; padding:28px 22px">
 <p style="font-size:18px;font-weight:800">⋆𔓘✦˚｡⋆𐙚✧♡✧･ﾟ˗ˏˋ ☁️ ˎˊ˗</p>
 <h2 style="margin:10px 0;font-size:26px;color:#d68a8a">⋆𔓘✦˚｡⋆ About Me ⋆｡˚✦𔓘⋆</h2>
 <p style="font-size:12px;letter-spacing:3px;margin:10px 0">❥─────────❥</p>
-
 <div style="font-size:14.5px;line-height:2.3;margin-top:20px;text-align:left">
-
 <p style="margin-bottom:22px">
 ♡ ⋆｡°✩ Hiii besties!! I'm Diya Sahai from Gurugram and welcome to my little cloud! ☁️💖 I'm literally obsessed with soft things, pastel colors, coquette bows and all things cozy! 🎀 If you love soft girl era, pink clouds and handmade magic, we are already besties! I found crochet one day scrolling and saw a cute bunny and thought omg I NEED to make it! My first project was a total mess but I fell in LOVE with stitching little worlds! 🧶 Just me, my hook, soft yarn, music, and making cute things became my happy place! I started making scrunchies and bows for myself and my friends said teach us please! So I started sharing tutorials in my bedroom with yarn everywhere and fairy lights! 💌 That's how Tiny Twirl Cloud was born - just a girl who loves crochet sharing love! And now you're here in my cloud and I'm so so happy you found me! ✨
 </p>
-
 <p style="margin-bottom:22px">
 ⋆｡°✩ I made Tiny Twirl Cloud because handmade has MAGIC that nothing else has! ♡ Every stitch has love, every pattern has a story, every creation adds softness to world! ☁️ I wanted a cozy corner that feels like a soft pink cloud - pretty, warm, aesthetic! 💖 Here I share my favorite patterns I design myself in my room in Gurugram with love! Like my watermelon bunnies 🍉🐰, bow scrunchies 🎀 with pearls, strawberry scrunchies 🍓! And flower headbands 🌸, classic granny squares, daisy blanket 🌼 and so much more! I'm also working on 20 more patterns to share for free - bear beanies, heart pouches! Kitty ear muffs 😺, mini totes 👜, bow clips, coasters, bags, scarves, everything cute! I test each pattern 3-4 times to make it super easy even for complete beginners! 🧶 I don't sell anything, I just love sharing patterns and seeing you make them! 💖
 </p>
-
 <p style="margin-bottom:10px">
 ✧･ﾟ Thank you SO much for being here and supporting my little dream cloud! 🥹💖 Every follow on @tinytwirlcloud, every like, every "so cute!" comment makes my day! Every time you make my pattern and tag me I literally smile for hours! ✨ I never thought my hobby would become this beautiful community of soft souls! You all are my twirl family and I love you so much for being here from start! ♡ My dream is to make this a cozy place to learn crochet and make cute things together! I want to share free YouTube tutorials soon and lots more free patterns for you all! This is just for fun and for sharing crochet love, not for selling anything at all! Let's make the world softer together, one stitch, one bow, one scrunchie at a time! Stay soft, stay cozy, stay twirly and keep crocheting! Love you! ☁️🎀🧶💖
 </p>
-
 </div>
-
 <p style="font-size:12px;letter-spacing:3px;margin:20px 0">❥─────────❥</p>
 <p style="font-size:16px;font-weight:700">╰┈➤ <i>With lots of love, yarn and bows,</i> 🎀🧶</p>
 <p style="font-size:18px;font-weight:800;margin-top:6px;color:#ff8fab">Diya Sahai 💖</p>
 <p style="font-size:13px;margin-top:4px;opacity:.7">Founder, Tiny Twirl Cloud ☁️</p>
-<p style="font-size:12px;margin-top:12px;opacity:.6">⋆｡°✩ ♡ ⋆｡°✩ • @tinytwirlcloud • ♡ ⋆｡°✩</p>
+</div>
 </div>
 
-<div class="founder" style="margin-top:20px;padding:20px"><img src="IMG-20260823-WA0231.jpg" style="width:70px;height:70px"><div><b style="font-size:14px">Tiny Twirl Cloud ☁️</b><br><span style="font-size:12px;line-height:1.8">📧 tinytwirlcloud@gmail.com<br>📸 @tinytwirlcloud<br>📍 Gurugram, India 🇮🇳<br>💖 Made with love!</span></div></div>
+<!-- PROFILE PAGE - GREY ICON + SIGN IN -->
+<div id="profile" class="page">
+<div class="white-card" style="padding:20px;text-align:center">
+<h2 style="margin:0;color:#5a2d3f">Profile 👧</h2>
+<!-- NOT SIGNED IN -->
+<div id="guestView" style="margin-top:18px">
+<div style="width:90px;height:90px;border-radius:50%;background:#e0e0e0;margin:0 auto;display:flex;align-items:center;justify-content:center;border:2px solid #ccc">
+<svg width="60" height="60" viewBox="0 0 24 24" fill="#9e9e9e"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+</div>
+<p style="font-weight:800;margin:12px 0 4px;font-size:18px">Welcome Twirler! ☁️</p>
+<p style="font-size:12px;opacity:.6;margin-bottom:14px">Sign in to save your favourites</p>
+<div style="background:#fff0f5;border-radius:16px;padding:14px;text-align:left">
+<p style="font-weight:800;margin:0 0 8px;font-size:13px">👤 Enter Your Name</p>
+<input id="userNameInput" placeholder="Your name..." style="width:92%;padding:12px;border-radius:12px;border:2px solid #333;text-align:center;font-weight:600">
+<button onclick="signIn()" style="width:100%;margin-top:10px;padding:12px;border-radius:30px;border:none;background:linear-gradient(90deg,#ff5fad,#a56bff);color:white;font-weight:800;font-size:14px">✨ Sign In ✨</button>
+</div>
+</div>
+<!-- SIGNED IN -->
+<div id="userView" style="display:none;margin-top:18px">
+<div id="userAvatar" style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#ffc8dd,#c8b6ff);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:white">T</div>
+<p id="displayName" style="font-weight:800;margin:12px 0 4px;font-size:18px;color:#5a2d3f">Twirler</p>
+<p style="font-size:12px;opacity:.6;margin-bottom:14px">📍 @tinytwirlcloud family 💖</p>
+<div style="background:#fff0f5;border-radius:16px;padding:14px;text-align:left;font-size:13px;line-height:2">
+<p>👑 Status: <span id="proStatus">Free Member</span></p>
+<p>💖 Favourites: <span id="favCount">0</span> patterns</p>
+</div>
+<button onclick="signOut()" style="width:100%;margin-top:14px;padding:11px;border-radius:30px;border:2px solid #ffb3c6;background:white;color:#ff5fad;font-weight:800">Sign Out</button>
+</div>
+<div id="proBadge" style="display:none;margin-top:14px;background:linear-gradient(90deg,#ff5fad,#a56bff);color:white;border-radius:30px;padding:8px 14px;font-weight:800;font-size:13px">👑 PRO Member ✨</div>
+</div>
 </div>
 
-<div id="profile" class="page"><h2>Profile 👧</h2><div class="white-card" style="text-align:center"><img src="IMG-20260823-WA0231.jpg" style="width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #ffd6db;margin:0 auto 12px;display:block"><b>Diya Sahai ♡</b><br><small>📍 Gurugram • @tinytwirlcloud ✨</small><br><br><p id="proStatus" style="font-size:12px">Status: Free Member</p></div></div>
-
-<div class="bottom-nav">
-<div id="nav-home" class="active" onclick="showPage('home')">🏠<br>Home</div>
-<div id="nav-pattern" onclick="showPage('pattern')">🧶<br>Pattern</div>
-<div id="nav-fav" onclick="showPage('fav')">❤️<br>Fav</div>
-<div id="nav-about" onclick="showPage('about')">☁️<br>About</div>
-<div id="nav-profile" onclick="showPage('profile')">👧<br>Profile</div>
+<!-- NAVIGATION -->
+<div class="nav">
+<div class="active" onclick="showPage('home',this)">☁️<b>Home</b></div>
+<div onclick="showPage('about',this)">💖<b>About</b></div>
+<div onclick="showPage('profile',this)">👧<b>Profile</b></div>
 </div>
-
-<div id="popup" onclick="closeP()"><div class="sheet" onclick="event.stopPropagation()"><div class="close" onclick="closeP()">✕</div><img id="pImg"><div id="pEmojiBox" style="display:none;background:#ffe4ec;height:240px;align-items:center;justify-content:center;font-size:80px"></div><div class="sheet-body"><h3 id="pTitle"></h3><p id="pDesc" style="font-size:11px;margin-top:6px;opacity:.8"></p><div id="pPattern" class="patternBox"></div>
-<div class="actionRow">
-<button id="likeBtn" class="likeBtn" onclick="toggleLike()">🤍 Like (<span id="likeCount">0</span>)</button>
-<button class="likeBtn" style="flex:0.6" onclick="document.getElementById('commentInput').focus()">💬 Comment</button>
-</div>
-<div class="commentBox">
-<b style="font-size:12px">💬 Comments</b>
-<textarea id="commentInput" class="commentInput" placeholder="Write your comment... so cute! 💖" rows="2"></textarea>
-<button class="commentBtn" onclick="postComment()">Post Comment ✨</button>
-<div id="commentList"></div>
-</div>
-</div></div></div>
 
 <script>
-const patterns=[
-{
-id:'bunny',name:'Watermelon Bunny 🍉🐰 - BEST ⭐',img:'IMG-20260823-WA9459.jpg',desc:'Super soft watermelon bunny with sprout ears! 🍉🐰',isPro:true,
-pattern:`🍉🐰 WATERMELON BUNNY - FULL PATTERN
-By Diya Sahai | Tiny Twirl Cloud
-Difficulty: Intermediate | Hook: 4mm | Yarn: Pink, Green, White, Black
-
-✧ MATERIALS:
-- Pink (body), Green (leaf), White, Black embroidery thread
-- 4mm hook, stuffing, safety eyes 8mm
-
-❥ HEAD + BODY (Pink):
-R1: Magic ring 6 sc
-R2: inc x6 (12)
-R3: (1sc, inc) x6 (18)
-R4: (2sc, inc) x6 (24)
-R5: (3sc, inc) x6 (30)
-R6-9: sc around (30) - 4 rounds
-R10: (3sc, dec) x6 (24)
-R11: (2sc, dec) x6 (18) - add eyes between R7-8
-R12: (1sc, dec) x6 (12)
-R13: inc x12 (24) - start body
-R14-18: sc around (24) - 5 rounds
-R19: (2sc, dec) x6 (18)
-R20: (1sc, dec) x6 (12) - stuff!
-R21: dec x6 (6) - close
-
-♡ EARS x2 (Pink):
-R1: MR 4 sc
-R2: inc x4 (8)
-R3: (1sc, inc) x4 (12)
-R4-7: sc 12 (4 rounds)
-Flatten and sew to head
-
-⋆｡°✩ WATERMELON HAT (Green):
-R1: MR 6 sc
-R2: inc x6 (12)
-R3: (1sc, inc) x6 (18)
-R4: (2sc, inc) x6 (24)
-R5: (3sc, inc) x6 (30)
-R6: sc 30 with white stripe: 2sc pink, 1sc white repeat
-
-♡ SPROUT 🌱 (Green small):
-MR 6, sc 6 for 3 rounds, sew on top
-
-Finishing: Embroider seeds with black, blush cheeks! 🍉✨`
-},
-{
-id:'bow',name:'Bow Scrunchie 🎀 - BEST ⭐',img:'IMG-20260823-WA5906.jpg',desc:'Viral bow scrunchie with pearls! 🤍',isPro:true,
-pattern:`🎀 BOW SCRUNCHIE - FULL PATTERN
-By Diya Sahai | Tiny Twirl Cloud
-Difficulty: Beginner | Hook: 4.5mm
-
-✧ MATERIALS:
-- White chunky yarn, hair tie, pearls, needle
-
-❥ SCRUNCHIE BASE:
-1. Take hair elastic
-2. R1: sc 40 around elastic (cover fully)
-3. R2: (hdc inc) x40 (80) - makes ruffle!
-4. Fasten off, weave ends
-
-♡ BOW:
-Chain 20
-R1: sc in 2nd ch, sc 19 (19)
-R2-12: ch1 turn, sc 19 (11 rows)
-Fasten off long tail
-Wrap yarn around center 8 times to make bow shape
-Sew bow onto scrunchie seam
-
-⋆｡°✩ PEARL DETAIL:
-Sew 3 pearls in center of bow with needle
-
-✧･ﾟ Styling: Perfect for coquette aesthetic!
-Wash gentle! 🤍🎀`
-},
-{
-id:'scrunchie',name:'Strawberry Scrunchie 🍓 - BEST ⭐',img:'IMG-20260823-WA8603.jpg',desc:'Cute strawberry scrunchie 🍓',isPro:true,
-pattern:`🍓 STRAWBERRY SCRUNCHIE - FULL PATTERN
-By Diya Sahai | Tiny Twirl Cloud
-Difficulty: Beginner | Hook: 4mm
-
-✧ MATERIALS:
-- Red yarn, green yarn, hair elastic
-
-❥ BASE (Red):
-R1: sc 30 around elastic
-R2: (1sc, hdc inc) x15 = 45 - ruffle start
-R3: sc around 45
-
-♡ LEAVES x5 (Green):
-*Small leaf pattern:*
-Ch 6, sl st in 2nd ch, sc, hdc, dc, sc
-Fasten, sew 5 leaves around scrunchie top
-
-⋆｡°✩ SEEDS (optional):
-Embroider small white dots with white yarn: 6-8 seeds scattered
-
-✧･ﾟ FINISHING:
-Weave all ends, fluff it!
-Super cute for summer 🍓💖`
-},
-{
-id:'head',name:'Flower Headband 🌸',img:'IMG-20260823-WA9402.jpg',desc:'Elegant lace headband 🌸',isPro:false,
-pattern:`🌸 FLOWER HEADBAND - FREE PATTERN
-By Diya Sahai | Tiny Twirl Cloud
-Difficulty: Beginner | Hook: 3.5mm
-
-✧ MATERIALS:
-- White + Yellow + Pink yarn
-
-❥ HEADBAND BASE:
-Chain 70 (measure head)
-R1: hdc in 2nd ch, hdc across (69)
-R2-3: ch1 turn, hdc across
-Fasten off
-
-♡ FLOWERS x3:
-Yellow center: MR 6 sc
-Switch to pink/white: (sl st, ch1, 2dc, ch1, sl st) x5 petals
-
-⋆｡°✩ ASSEMBLY:
-Sew 3 flowers evenly on headband
-Weave ends
-
-✧･ﾟ FREE PATTERN - Enjoy! 🌸
-Tag @tinytwirlcloud if you make it!`
-},
-{
-id:'granny',name:'Classic Granny Square',img:'IMG-20260827-WA4483.jpg',desc:'Classic granny square 🌈 - FREE',isPro:false,
-pattern:`🟦 CLASSIC GRANNY SQUARE - FREE PATTERN
-By Diya Sahai | Tiny Twirl Cloud
-Difficulty: Beginner | Hook: 4mm
-
-✧ MATERIALS:
-- Any 3 colors! Pastel recommended
-
-❥ PATTERN:
-R1: MR, ch3 (counts as dc), 2dc, ch2, (3dc, ch2) x3, sl st to ch3 top
-
-R2: sl st to ch2 space, ch3, 2dc, ch2, 3dc in same space, 
-*ch1, (3dc, ch2, 3dc) in next ch2 space* x3, ch1, sl st
-
-R3: sl st to ch2 space, ch3, 2dc, ch2, 3dc,
-*ch1, 3dc in ch1 space, ch1, (3dc, ch2, 3dc) in corner* x3,
-ch1, 3dc in ch1 space, ch1, sl st
-
-R4-6: Repeat increasing: (3dc in each side space, (3dc,ch2,3dc) in corners)
-
-⋆｡°✩ COLOR CHANGE:
-Change color every 2 rounds for pastel cloud look!
-
-♡ FINISHING:
-Fasten, weave ends, block if needed
-
-✧･ﾟ Use for blankets, bags, coasters! 🌈`
-},
-{
-id:'daisy',name:'Daisy Blanket 🌼',img:'IMG-20260823-WA3458.jpg',desc:'Cozy daisy blanket ☁️ - FREE',isPro:false,
-pattern:`🌼 DAISY BLANKET - FREE PATTERN
-By Diya Sahai | Tiny Twirl Cloud
-Difficulty: Easy | Hook: 5mm
-
-✧ MATERIALS:
-- White, yellow, light green yarn - chunky
-
-❥ DAISY GRANNY SQUARE x12:
-Center (Yellow): MR 6 sc
-R2: inc x6 (12) white petals: (ch3, 2dc in same st, ch3 sl st in next) x6 = 6 petals
-R3: Join green: sc around with (3sc in petal top)
-R4-5: Granny style: 3dc clusters
-
-♡ JOINING SQUARES:
-Layout 3x4 grid
-Whip stitch with white yarn
-
-⋆｡°✩ BORDER:
-R1: sc around entire blanket, 3sc in corners
-R2: (sc, ch1 skip 1) around for dainty border
-R3: sc around
-
-✧･ﾟ SIZE: ~ 90cm x 120cm baby blanket
-Super soft cloud blanket! ☁️🌼
-
-❥─────────❥
-Free pattern - tag me! @tinytwirlcloud`
+function showPage(id,el){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.nav div').forEach(d=>d.classList.remove('active'));
+ el.classList.add('active');
+ window.scrollTo(0,0);
+ if(id==='profile') showProfile();
 }
-];
-const soonList=[
-{n:"Bear Beanie 🐻",e:"🐻"},{n:"Heart Pouch 💌",e:"💌"},{n:"Kitty Ear Muffs 😺",e:"😺"},{n:"Mini Tote 👜",e:"👜"},{n:"Bow Clips 🎀",e:"🎀"},
-{n:"Pastel Mittens 🧤",e:"🧤"},{n:"Star Keychain ⭐",e:"⭐"},{n:"Sunflower Coaster 🌻",e:"🌻"},{n:"Twirl Scarf 🧣",e:"🧣"},{n:"Cupcake Coaster 🧁",e:"🧁"},
-{n:"Cherry Bag 🍒",e:"🍒"},{n:"Flower Bag 🌷",e:"🌷"},{n:"Bear Face 🐻",e:"🐻"},{n:"Bunny Face 🐰",e:"🐰"},{n:"Cloud Coaster ☁️",e:"☁️"},
-{n:"Heart Coaster ❤️",e:"❤️"},{n:"Cat 🐱",e:"🐱"},{n:"Smiley Face 🙂",e:"🙂"},{n:"Circle Coaster ⭕",e:"⭕"},{n:"Star Coaster ⭐",e:"⭐"}
-];
-let favs=JSON.parse(localStorage.getItem('tinyFav')||'[]');
-let currentPatternId=null;
-function isPro(){return localStorage.getItem('isPro')==='true'}
-function showPage(id){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.querySelectorAll('.bottom-nav div').forEach(d=>d.classList.remove('active'));
-document.getElementById('nav-'+id).classList.add('active');
-if(id==='fav') renderFav();
-if(id==='profile') document.getElementById('proStatus').innerText = isPro() ? '👑 PRO Member - CLOUD26' : 'Status: Free Member';
-window.scrollTo(0,0);
+const proInput = document.getElementById('proInput');
+const proMsg = document.getElementById('proMsg');
+if(proInput){
+ proInput.addEventListener('input', ()=>{
+  if(proInput.value.toUpperCase().trim() === 'CLOUD26'){
+    proMsg.style.display='block';proMsg.style.color='#b6004c';
+    proMsg.innerHTML='👑 PRO Active! ✨ All Unlocked!';
+    localStorage.setItem('twirlPro','yes');
+  } else if(proInput.value.length > 2){
+    proMsg.style.display='block';proMsg.style.color='#ff6b6b';
+    proMsg.innerHTML='❌ Wrong code! DM me on Insta 💌';
+  } else { proMsg.style.display='none'; }
+ });
+ if(localStorage.getItem('twirlPro')==='yes'){
+  proMsg.style.display='block';proMsg.style.color='#b6004c';
+  proMsg.innerHTML='👑 PRO Active! ✨ All Unlocked!';
+ }
 }
-function render(){
-let all=document.getElementById('allGrid'); all.innerHTML='';
-patterns.forEach(p=>{
-let isFav=favs.includes(p.id);
-let locked = p.isPro && !isPro();
-let likes=JSON.parse(localStorage.getItem('likes_'+p.id)||'{"count":0,"liked":false}');
-all.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge ${p.isPro ? (isPro() ? '' : 'pro') : ''}">${p.isPro ? (isPro() ? 'UNLOCKED' : 'PRO') : 'FREE'}</span><span class="heart" onclick="toggleFav(event,'${p.id}')">${isFav?'❤️':'♡'}</span><img src="${p.img}" class="${locked ? 'pro-blur' : ''}"><div class="card-body"><div class="name">${p.name}</div><div style="font-size:9px;opacity:.6">❤️ ${likes.count} • 💬 ${JSON.parse(localStorage.getItem('comments_'+p.id)||'[]').length}</div></div>${locked ? '<div class="pro-overlay">🔒 CLOUD26</div>' : ''}</div>`;
-});
-let g=document.getElementById('soonGrid'); g.innerHTML='';
-soonList.forEach(s=>{
-let likes=JSON.parse(localStorage.getItem('likes_soon_'+s.n)||'{"count":0,"liked":false}');
-g.innerHTML+=`<div class="card" onclick="openSoon('${s.n}','${s.e}')"><span class="badge soon">SOON</span><div class="emojiBoxSoon">${s.e}</div><div class="card-body"><div class="name">${s.n}</div><div style="font-size:9px;opacity:.6">❤️ ${likes.count} • SOON</div></div></div>`;
-});
-renderFav();
+function signIn(){
+  const name = document.getElementById('userNameInput').value.trim();
+  if(!name){ alert('Enter your name cutie! 💖'); return; }
+  localStorage.setItem('twirlUserName', name);
+  showProfile();
 }
-function renderFav(){
-let favGrid=document.getElementById('favGrid'); let noFav=document.getElementById('noFav');
-favGrid.innerHTML='';
-let favItems=patterns.filter(p=>favs.includes(p.id));
-if(favItems.length>0){noFav.style.display='none'; favItems.forEach(p=>{favGrid.innerHTML+=`<div class="card" onclick="openP('${p.id}')"><span class="badge ${p.isPro ? 'pro' : ''}">${p.isPro ? 'PRO' : 'FREE'}</span><span class="heart" onclick="toggleFav(event,'${p.id}')">❤️</span><img src="${p.img}"><div class="card-body"><div class="name">${p.name}</div></div></div>`})}else{noFav.style.display='block'}
+function signOut(){
+  localStorage.removeItem('twirlUserName');
+  document.getElementById('guestView').style.display='block';
+  document.getElementById('userView').style.display='none';
+  document.getElementById('userNameInput').value='';
 }
-function toggleFav(e,id){e.stopPropagation(); favs=favs.includes(id)?favs.filter(x=>x!==id):[...favs,id]; localStorage.setItem('tinyFav',JSON.stringify(favs)); render();}
-function openP(id){
-let p=patterns.find(x=>x.id===id); 
-if(p.isPro && !isPro()){showPage('home'); document.getElementById('proInputHome').focus(); return;}
-currentPatternId=id;
-document.getElementById('pImg').style.display='block'; document.getElementById('pEmojiBox').style.display='none';
-document.getElementById('pImg').src=p.img; 
-document.getElementById('pTitle').textContent=p.name; 
-document.getElementById('pDesc').textContent=p.desc;
-document.getElementById('pPattern').textContent=p.pattern;
-document.getElementById('commentInput').value='';
-loadComments(id); loadLike(id);
-document.getElementById('popup').classList.add('show');
+function showProfile(){
+  const name = localStorage.getItem('twirlUserName');
+  if(name){
+    document.getElementById('guestView').style.display='none';
+    document.getElementById('userView').style.display='block';
+    document.getElementById('displayName').innerText = name + ' 💖';
+    document.getElementById('userAvatar').innerText = name.charAt(0).toUpperCase();
+    if(localStorage.getItem('twirlPro')==='yes'){
+      document.getElementById('proStatus').innerHTML='👑 PRO Member ✨';
+      document.getElementById('proBadge').style.display='block';
+    }
+  }
 }
-function openSoon(name,emoji){
-currentPatternId='soon_'+name;
-document.getElementById('pImg').style.display='none';
-let eb=document.getElementById('pEmojiBox'); eb.style.display='flex'; eb.innerText=emoji;
-document.getElementById('pTitle').innerText=name;
-document.getElementById('pDesc').innerText=`COMING SOON`;
-document.getElementById('pPattern').innerText=`⏳ ${name} hasn't been released yet!\n\nStay tuned! @tinytwirlcloud 💖`;
-document.getElementById('commentInput').value='';
-loadComments(currentPatternId); loadLike(currentPatternId);
-document.getElementById('popup').classList.add('show');
-}
-function closeP(){document.getElementById('popup').classList.remove('show'); render();}
-function unlockHome(){let v=document.getElementById('proInputHome').value.trim().toUpperCase(); if(v==="CLOUD26"){localStorage.setItem('isPro','true'); document.getElementById('msgHome').innerText='👑 PRO Active! All 6 patterns unlocked!'; document.getElementById('msgHome').style.color='white'; render();}else{document.getElementById('msgHome').innerText='❌ Wrong code! Only CLOUD26 works'; document.getElementById('msgHome').style.color='#ffe082';}}
-function toggleLike(){
-let key='likes_'+currentPatternId;
-let data=JSON.parse(localStorage.getItem(key)||'{"count":0,"liked":false}');
-if(data.liked){data.count=Math.max(0,data.count-1); data.liked=false;}else{data.count+=1; data.liked=true;}
-localStorage.setItem(key,JSON.stringify(data));
-loadLike(currentPatternId);
-}
-function loadLike(id){
-let key='likes_'+id;
-let data=JSON.parse(localStorage.getItem(key)||'{"count":0,"liked":false}');
-document.getElementById('likeCount').innerText=data.count;
-let btn=document.getElementById('likeBtn');
-if(data.liked){btn.innerHTML=`❤️ Liked (<span id="likeCount">${data.count}</span>)`; btn.classList.add('liked');}else{btn.innerHTML=`🤍 Like (<span id="likeCount">${data.count}</span>)`; btn.classList.remove('liked');}
-}
-function postComment(){
-let txt=document.getElementById('commentInput').value.trim();
-if(!txt) return;
-let key='comments_'+currentPatternId;
-let list=JSON.parse(localStorage.getItem(key)||'[]');
-list.unshift({text:txt,time:new Date().toLocaleString()});
-localStorage.setItem(key,JSON.stringify(list));
-document.getElementById('commentInput').value='';
-loadComments(currentPatternId);
-}
-function loadComments(id){
-let key='comments_'+id;
-let list=JSON.parse(localStorage.getItem(key)||'[]');
-let div=document.getElementById('commentList');
-div.innerHTML='';
-if(list.length===0){div.innerHTML='<p style="font-size:10px;opacity:.5;margin-top:6px">No comments yet - be first! 💖</p>'; return;}
-list.forEach(c=>{div.innerHTML+=`<div class="commentItem">💬 ${c.text}<br><small style="opacity:.5;font-size:9px">${c.time}</small></div>`});
-}
-if(isPro()){document.getElementById('msgHome').innerText='👑 PRO Active with CLOUD26!';}
-render(); showPage('home');
+showProfile();
 </script>
 </body>
 </html>
