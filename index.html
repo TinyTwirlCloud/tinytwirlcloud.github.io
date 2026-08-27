@@ -3,170 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiny Twirl Cloud ☁️</title>
+<title>Tiny Twirl Cloud - By Diya</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fff5f8;color:#5a2d3f}
-.white-card{background:white;border-radius:22px;padding:16px;margin:14px;box-shadow:0 4px 15px rgba(255,100,150,.1)}
-.page{display:none}.page.active{display:block}
-.nav{position:fixed;bottom:0;width:100%;background:white;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #ffe0e8;z-index:99}
-.nav b{font-size:11px;display:block}.nav div{text-align:center;opacity:.5}.nav div.active{opacity:1;color:#ff5fad}
-.founder{display:flex;align-items:center;gap:12px;background:white;border-radius:20px;padding:14px;margin:14px}
-.founder img{width:55px;height:55px;border-radius:50%;object-fit:cover}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:#fff5f8;color:#5a2d3f;padding-bottom:90px}
+.card{background:white;border-radius:22px;padding:16px;margin:12px;box-shadow:0 4px 15px rgba(255,100,150,.12)}
+.pattern{background:#fff0f5;border-radius:18px;padding:12px;margin:16px 0;border:2px solid #ffe0e8;position:relative}
+.pattern img{width:100%;height:210px;object-fit:cover;border-radius:12px}
+.line{padding:5px 0;border-bottom:1px dashed #ffe0e8;font-size:13px;line-height:1.6}
+.line b{color:#ff5fad}
+.title{font-weight:800;color:#ff5fad;margin-top:14px;margin-bottom:4px;font-size:14px}
+.pro-lock{position:absolute;top:14px;right:14px;background:linear-gradient(135deg,#ff5fad,#a56bff);color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800}
+.locked{filter:blur(8px);pointer-events:none;user-select:none}
+.para{background:white;border-radius:14px;padding:12px;margin:10px 0;border:2px solid #ffe0e8}
+.btn{background:linear-gradient(135deg,#ff5fad,#ff8fab);color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;width:100%;margin-top:8px}
+.highlight{border:3px solid #ff5fad!important;box-shadow:0 0 15px rgba(255,95,173,.3)}
 </style>
 </head>
 <body>
 
-<!-- HOME PAGE -->
-<div id="home" class="page active">
-
-<!-- 1. Handmade Crochet Patterns ON TOP NOW -->
-<div class="white-card" style="text-align:center;padding:20px">
-<h2 style="font-size:24px;line-height:1.3">Handmade<br>Crochet Patterns 🎀</h2>
-<p style="font-size:11px;margin-top:6px;opacity:.6;letter-spacing:1px">By Diya Sahai • Soft • Pastel • Coquette</p>
-</div>
-
-<!-- 2. TWIRL PRO BELOW - NO CODE LEAK -->
-<div style="background:linear-gradient(135deg,#ff5fad,#a56bff);border-radius:22px;padding:20px;margin:14px;text-align:center;color:white">
-<h2 style="margin:0;font-size:20px">TWIRL PRO ✨ 👑</h2>
-<p style="font-size:13px;margin:8px 0;line-height:1.5">Want all patterns unlocked?<br>Follow @tinytwirlcloud<br>DM me for the code 💌</p>
-<a href="https://instagram.com/tinytwirlcloud" target="_blank" style="display:block;background:linear-gradient(90deg,#ff9a3c,#a56bff);padding:12px;border-radius:30px;color:white;font-weight:700;text-decoration:none;margin:12px 0">📸 Follow @tinytwirlcloud</a>
-<div style="background:white;border-radius:16px;padding:14px;color:#5a2d3f">
-<p style="font-weight:800;margin:0 0 8px;font-size:13px">🔑 Enter PRO Code</p>
-<input id="proInput" type="password" placeholder="••••••" style="width:90%;padding:12px;border-radius:12px;border:2px solid #333;text-align:center;font-weight:700">
-<p id="proMsg" style="font-size:12px;margin-top:8px;display:none;font-weight:700"></p>
+<div class="card" style="text-align:center">
+<img src="IMG-20260823-WA2184.jpg" style="width:95px;height:95px;border-radius:50%;object-fit:cover;border:4px solid #ffdeec">
+<h2>Tiny Twirl Cloud ☁️</h2>
+<p style="font-size:13px;font-weight:600">By Diya Sahai • Gurugram 💖</p>
+<button class="btn" onclick="doLike()" id="likeBtn">❤️ Like (<span id="likeCount">128</span>)</button>
+<div style="background:linear-gradient(135deg,#ff5fad,#a56bff);border-radius:16px;padding:14px;margin-top:12px;color:white">
+<h3>🔓 TWIRL PRO ✨</h3>
+<input id="proInput" placeholder="Enter CLOUD26" style="width:100%;padding:10px;border-radius:10px;border:none;text-align:center;font-weight:700;margin-top:8px">
+<button onclick="checkPro()" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:none;background:white;color:#ff5fad;font-weight:800">🔓 Unlock PRO!</button>
+<p id="proMsg" style="display:none;margin-top:8px;font-weight:700;font-size:12px;text-align:center"></p>
 </div>
 </div>
 
-<!-- 3. Welcome Box -->
-<div class="white-card" style="text-align:center">
-<h3 style="font-size:18px">Welcome to Tiny Twirl Cloud ☁️💖</h3>
-<p style="font-size:13px;margin-top:8px;opacity:.7;line-height:1.6">Soft pastel crochet patterns, bows, scrunchies & coquette magic made with love in Gurugram! 🎀🧶</p>
+<div class="card">
+<h3 style="text-align:center">🧶 My 6 Patterns 🎀</h3>
+
+<div class="pattern">
+<div class="pro-lock">👑 PRO</div>
+<img src="IMG-20260823-WA9459.jpg">
+<h3>1. Watermelon Bunny 🐰🍉 - PRO</h3>
+<div id="bunnyContent" class="locked" style="background:white;padding:12px;border-radius:12px;margin-top:8px">
+<div class="line">HEAD R1 6SC MR R2 INCx6 R3 [SC INC]x6 R4 [2SC INC]x6 <b>R5-R11 SC30</b> R12 [3SC DEC]x6 / HANDS R1 5SC R2 INCx5 <b>R3-R8 SC10</b> / LEGS R1 6SC R2 INCx6 <b>R3-R6 SC12</b></div>
+</div>
+<div id="bunnyLock" style="text-align:center;padding:20px;font-weight:800">🔒 PRO</div>
 </div>
 
-<div class="white-card" style="text-align:center">
-<p style="font-size:14px">✨ 25+ Free Patterns ✨</p>
-<p style="font-size:12px;opacity:.6;margin-top:4px">Bunnies, bows, scrunchies & more!</p>
+<div class="pattern">
+<div class="pro-lock">👑 PRO</div>
+<img src="IMG-20260823-WA5906.jpg">
+<h3>2. Bow Scrunchie 🎀 - PRO - Thick Black Band</h3>
+<div id="bowContent" class="locked" style="background:white;padding:12px;border-radius:12px;margin-top:8px">
+<div class="line">Thick black band - SC30 around band <b>R2 2DC each (60) R3 [DC INC] (90)</b> Bow CH18 R2-R21 SC17 attach on SL ST seam outside hide seam</div>
+</div>
+<div id="bowLock" style="text-align:center;padding:20px;font-weight:800">🔒 PRO</div>
 </div>
 
+<div class="pattern">
+<div class="pro-lock">👑 PRO</div>
+<img src="IMG-20260823-WA8603.jpg">
+<h3>3. Strawberry Scrunchie 🍓 - PRO - Thick Black Band</h3>
+<div id="berryContent" class="locked" style="background:white;padding:12px;border-radius:12px;margin-top:8px">
+<div class="line">Thick black band SC30 <b>R2 Red 2DC each R3 [DC INC]</b></div>
+</div>
+<div id="berryLock" style="text-align:center;padding:20px;font-weight:800">🔒 PRO</div>
 </div>
 
-<!-- ABOUT PAGE - 3 BIG PARAS (10 lines = 1 para) -->
-<div id="about" class="page">
-<div class="white-card" style="text-align:center; padding:28px 22px">
-<p style="font-size:18px;font-weight:800">⋆𔓘✦˚｡⋆𐙚✧♡✧･ﾟ˗ˏˋ ☁️ ˎˊ˗</p>
-<h2 style="margin:10px 0;font-size:26px;color:#d68a8a">⋆𔓘✦˚｡⋆ About Me ⋆｡˚✦𔓘⋆</h2>
-<p style="font-size:12px;letter-spacing:3px;margin:10px 0">❥─────────❥</p>
-<div style="font-size:14.5px;line-height:2.3;margin-top:20px;text-align:left">
-<p style="margin-bottom:22px">
-♡ ⋆｡°✩ Hiii besties!! I'm Diya Sahai from Gurugram and welcome to my little cloud! ☁️💖 I'm literally obsessed with soft things, pastel colors, coquette bows and all things cozy! 🎀 If you love soft girl era, pink clouds and handmade magic, we are already besties! I found crochet one day scrolling and saw a cute bunny and thought omg I NEED to make it! My first project was a total mess but I fell in LOVE with stitching little worlds! 🧶 Just me, my hook, soft yarn, music, and making cute things became my happy place! I started making scrunchies and bows for myself and my friends said teach us please! So I started sharing tutorials in my bedroom with yarn everywhere and fairy lights! 💌 That's how Tiny Twirl Cloud was born - just a girl who loves crochet sharing love! And now you're here in my cloud and I'm so so happy you found me! ✨
+<div class="pattern">
+<img src="IMG-20260827-WA4483.jpg">
+<h3>4. Granny Square 🟩 - FREE ✨</h3>
+<div style="background:white;padding:12px;border-radius:12px;margin-top:8px">
+<div class="line">R1 MR [three double crochets in one stitch CH2] x4 / R2 Corners [three double crochets in one stitch CH2 three double crochets in one stitch] / <b>R3-R6 SC all around - Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides three double crochets in one stitch</b></div>
+</div>
+</div>
+
+<!-- SECOND LAST WALA - HIGHLIGHTED -->
+<div class="pattern highlight" id="secondLast">
+<img src="IMG-20260823-WA9402.jpg">
+<h3>5. Flower Headband 🌸 - SECOND LAST WALA - FREE ✨ - FULL!</h3>
+<div style="background:white;padding:14px;border-radius:12px;margin-top:8px">
+<div class="title">⭐ THIS IS SECOND LAST WALA - HEADBAND!</div>
+<div class="line"><b>Step 1 - CH according to your head size:</b><br>
+• Measure head with tape OR use yarn around head<br>
+• <b>Adult: 70 CH</b> (56cm head)<br>
+• <b>Kid: 60 CH</b> (50cm head)<br>
+• <b>Baby: 50 CH</b> (40cm head)<br>
+• CH according to your head size - This is base chain!</div>
+<div class="line"><b>Step 2 - Stitched part:</b><br>
+R1: CH according to your head size (70/60/50) as per above<br>
+<b>R2: SC in 2nd CH from hook, SC all around - Join with SL ST to first SC to make circle - (70 SC)<br>
+R3: SC all around (70)<br>
+R4: SC all around (70)<br>
+R5: SC all around (70)<br>
+R6: SC all around (70) - FO</b><br>
+You now have a stitched band circle - Approx 5cm wide, stretchy!</div>
+<div class="line"><b>Step 3 - Flowers to cover whole stitched part (No plain band visible!):</b><br>
+Flower Pattern: Magic Ring [CH2, 2 DC, CH2, SL ST] repeat 5 times = 5 petals flower - Make 1 flower<br>
+Make 8-12 such flowers (mix colors pink/white/yellow)<br>
+<b>How to attach flowers:</b> Sew flowers side by side on whole stitched part of headband - Cover full band - Stitch flowers touching each other - No plain band should be visible - Only flowers visible!<br>
+Use needle, sew each flower base 2-3 times on band - Flowers cover whole stitched part completely!</div>
+<div class="line"><b>Final:</b> Headband ready! Flowers cover whole stitched part - No plain band visible - Super cute! 🌸✨</div>
+</div>
+</div>
+
+<div class="pattern">
+<div class="pro-lock">👑 PRO</div>
+<img src="IMG-20260827-WA0685.jpg">
+<h3>6. Daisy Blanket 🌼 - 35 Squares - PRO - 3 Paragraphs!</h3>
+<div id="daisyBox" style="margin-top:8px">
+<div id="daisyLock" style="text-align:center;font-weight:800;background:white;padding:20px;border-radius:12px">🔒 PRO</div>
+<div id="daisyContent" class="locked">
+<div class="para">
+<div class="title">Para 1 - Daisy Flower (10 lines)</div>
+<div class="line">1 Yellow MR 2 R1 6SC 3 Attach white 4 R2 [CH2 1DC CH2 SL ST] x1 petal 5 Repeat x12 =12 petals 6 Daisy shape 7 SL ST FO 5cm 8 Weave tails 9 One flower 3cm 10 Make 35</div>
+</div>
+<div class="para">
+<div class="title">Para 2 - Square (10 lines)</div>
+<div class="line">1 Pastel attach between petals 2 R1 [three double crochets in one stitch CH2] x4 4 corners 3 Square around daisy 4 R2 SC all around Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides three double crochets in one stitch 5 Bigger 12 per side 6 R3 SC Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides 1DC each 7 Corners same 8 R4 SC Corners three double crochets in one stitch CH2 three double crochets in one stitch 10x10cm 9 FO one square ready 10 Make 35</div>
+</div>
+<div class="para">
+<div class="title">Para 3 - Join 35 (10 lines)</div>
+<div class="line">1 Lay 35 floor 5 ROWS x7 COLS=35 2 SC Join white seam pretty OR whip invisible 3 Join 7 squares=1 row 2 squares right sides together white SC through both loops 1SC each across CH1 4 Join 3rd same Repeat 7=1 row Make 5 rows 5 Join 5 rows together 2 rows right sides together SC through both edges 1SC each 6 Repeat Join 5 rows big blanket 150x110cm 35 attached 7 Check no holes whip back loops zig-zag invisible 8 BORDER white any corner R1 SC all around big blanket corners 3SC in one 9 R2 SC all around corners 3SC 10 R3 SC FO Done! 🌼</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card" style="text-align:center">
+<img src="IMG-20260823-WA0231.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid #ffdeec">
+<h2>About Me 💖 - Diya Sahai</h2>
+<p style="font-size:13px;margin-top:6px;text-align:left;line-height:1.7">
+Hiii I'm Diya! Tiny Twirl Cloud is my crochet world! ☁️<br>
+PRO = Bunny + Both Scrunchies thick black band + Daisy 35 squares 3 paras<br>
+FREE = Granny three double crochets in one stitch + Second Last Wala Headband CH according to head size + flowers cover whole stitched part!<br>
+Follow @tinytwirlcloud 📸
 </p>
-<p style="margin-bottom:22px">
-⋆｡°✩ I made Tiny Twirl Cloud because handmade has MAGIC that nothing else has! ♡ Every stitch has love, every pattern has a story, every creation adds softness to world! ☁️ I wanted a cozy corner that feels like a soft pink cloud - pretty, warm, aesthetic! 💖 Here I share my favorite patterns I design myself in my room in Gurugram with love! Like my watermelon bunnies 🍉🐰, bow scrunchies 🎀 with pearls, strawberry scrunchies 🍓! And flower headbands 🌸, classic granny squares, daisy blanket 🌼 and so much more! I'm also working on 20 more patterns to share for free - bear beanies, heart pouches! Kitty ear muffs 😺, mini totes 👜, bow clips, coasters, bags, scarves, everything cute! I test each pattern 3-4 times to make it super easy even for complete beginners! 🧶 I don't sell anything, I just love sharing patterns and seeing you make them! 💖
-</p>
-<p style="margin-bottom:10px">
-✧･ﾟ Thank you SO much for being here and supporting my little dream cloud! 🥹💖 Every follow on @tinytwirlcloud, every like, every "so cute!" comment makes my day! Every time you make my pattern and tag me I literally smile for hours! ✨ I never thought my hobby would become this beautiful community of soft souls! You all are my twirl family and I love you so much for being here from start! ♡ My dream is to make this a cozy place to learn crochet and make cute things together! I want to share free YouTube tutorials soon and lots more free patterns for you all! This is just for fun and for sharing crochet love, not for selling anything at all! Let's make the world softer together, one stitch, one bow, one scrunchie at a time! Stay soft, stay cozy, stay twirly and keep crocheting! Love you! ☁️🎀🧶💖
-</p>
+<div style="margin-top:12px;text-align:left;background:#fff5f8;border-radius:12px;padding:10px">
+<h4>💬 Comments</h4>
+<div id="commentsList"><div style="background:white;padding:8px;border-radius:10px;margin-top:6px;font-size:12px"><b>@user:</b> Second last headband super clear! 🌸</div></div>
+<input id="commentInput" placeholder="Add comment..." style="width:100%;padding:10px;border-radius:10px;border:1.5px solid #ffe0e8;margin-top:8px">
+<button class="btn" onclick="addComment()">Post Comment 💬</button>
 </div>
-<p style="font-size:12px;letter-spacing:3px;margin:20px 0">❥─────────❥</p>
-<p style="font-size:16px;font-weight:700">╰┈➤ <i>With lots of love, yarn and bows,</i> 🎀🧶</p>
-<p style="font-size:18px;font-weight:800;margin-top:6px;color:#ff8fab">Diya Sahai 💖</p>
-<p style="font-size:13px;margin-top:4px;opacity:.7">Founder, Tiny Twirl Cloud ☁️</p>
-</div>
-</div>
-
-<!-- PROFILE PAGE - GREY ICON + SIGN IN -->
-<div id="profile" class="page">
-<div class="white-card" style="padding:20px;text-align:center">
-<h2 style="margin:0;color:#5a2d3f">Profile 👧</h2>
-<!-- NOT SIGNED IN -->
-<div id="guestView" style="margin-top:18px">
-<div style="width:90px;height:90px;border-radius:50%;background:#e0e0e0;margin:0 auto;display:flex;align-items:center;justify-content:center;border:2px solid #ccc">
-<svg width="60" height="60" viewBox="0 0 24 24" fill="#9e9e9e"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-</div>
-<p style="font-weight:800;margin:12px 0 4px;font-size:18px">Welcome Twirler! ☁️</p>
-<p style="font-size:12px;opacity:.6;margin-bottom:14px">Sign in to save your favourites</p>
-<div style="background:#fff0f5;border-radius:16px;padding:14px;text-align:left">
-<p style="font-weight:800;margin:0 0 8px;font-size:13px">👤 Enter Your Name</p>
-<input id="userNameInput" placeholder="Your name..." style="width:92%;padding:12px;border-radius:12px;border:2px solid #333;text-align:center;font-weight:600">
-<button onclick="signIn()" style="width:100%;margin-top:10px;padding:12px;border-radius:30px;border:none;background:linear-gradient(90deg,#ff5fad,#a56bff);color:white;font-weight:800;font-size:14px">✨ Sign In ✨</button>
-</div>
-</div>
-<!-- SIGNED IN -->
-<div id="userView" style="display:none;margin-top:18px">
-<div id="userAvatar" style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#ffc8dd,#c8b6ff);margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;color:white">T</div>
-<p id="displayName" style="font-weight:800;margin:12px 0 4px;font-size:18px;color:#5a2d3f">Twirler</p>
-<p style="font-size:12px;opacity:.6;margin-bottom:14px">📍 @tinytwirlcloud family 💖</p>
-<div style="background:#fff0f5;border-radius:16px;padding:14px;text-align:left;font-size:13px;line-height:2">
-<p>👑 Status: <span id="proStatus">Free Member</span></p>
-<p>💖 Favourites: <span id="favCount">0</span> patterns</p>
-</div>
-<button onclick="signOut()" style="width:100%;margin-top:14px;padding:11px;border-radius:30px;border:2px solid #ffb3c6;background:white;color:#ff5fad;font-weight:800">Sign Out</button>
-</div>
-<div id="proBadge" style="display:none;margin-top:14px;background:linear-gradient(90deg,#ff5fad,#a56bff);color:white;border-radius:30px;padding:8px 14px;font-weight:800;font-size:13px">👑 PRO Member ✨</div>
-</div>
-</div>
-
-<!-- NAVIGATION -->
-<div class="nav">
-<div class="active" onclick="showPage('home',this)">☁️<b>Home</b></div>
-<div onclick="showPage('about',this)">💖<b>About</b></div>
-<div onclick="showPage('profile',this)">👧<b>Profile</b></div>
 </div>
 
 <script>
-function showPage(id,el){
- document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- document.querySelectorAll('.nav div').forEach(d=>d.classList.remove('active'));
- el.classList.add('active');
- window.scrollTo(0,0);
- if(id==='profile') showProfile();
-}
-const proInput = document.getElementById('proInput');
-const proMsg = document.getElementById('proMsg');
-if(proInput){
- proInput.addEventListener('input', ()=>{
-  if(proInput.value.toUpperCase().trim() === 'CLOUD26'){
-    proMsg.style.display='block';proMsg.style.color='#b6004c';
-    proMsg.innerHTML='👑 PRO Active! ✨ All Unlocked!';
-    localStorage.setItem('twirlPro','yes');
-  } else if(proInput.value.length > 2){
-    proMsg.style.display='block';proMsg.style.color='#ff6b6b';
-    proMsg.innerHTML='❌ Wrong code! DM me on Insta 💌';
-  } else { proMsg.style.display='none'; }
- });
- if(localStorage.getItem('twirlPro')==='yes'){
-  proMsg.style.display='block';proMsg.style.color='#b6004c';
-  proMsg.innerHTML='👑 PRO Active! ✨ All Unlocked!';
- }
-}
-function signIn(){
-  const name = document.getElementById('userNameInput').value.trim();
-  if(!name){ alert('Enter your name cutie! 💖'); return; }
-  localStorage.setItem('twirlUserName', name);
-  showProfile();
-}
-function signOut(){
-  localStorage.removeItem('twirlUserName');
-  document.getElementById('guestView').style.display='block';
-  document.getElementById('userView').style.display='none';
-  document.getElementById('userNameInput').value='';
-}
-function showProfile(){
-  const name = localStorage.getItem('twirlUserName');
-  if(name){
-    document.getElementById('guestView').style.display='none';
-    document.getElementById('userView').style.display='block';
-    document.getElementById('displayName').innerText = name + ' 💖';
-    document.getElementById('userAvatar').innerText = name.charAt(0).toUpperCase();
-    if(localStorage.getItem('twirlPro')==='yes'){
-      document.getElementById('proStatus').innerHTML='👑 PRO Member ✨';
-      document.getElementById('proBadge').style.display='block';
-    }
-  }
-}
-showProfile();
+function checkPro(){const v=document.getElementById('proInput').value.toUpperCase().trim(),m=document.getElementById('proMsg');if(v==='CLOUD26'){['bunnyContent','bowContent','berryContent','daisyContent'].forEach(id=>document.getElementById(id).classList.remove('locked'));['bunnyLock','bowLock','berryLock','daisyLock'].forEach(id=>document.getElementById(id).style.display='none');m.style.display='block';m.innerText='👑 PRO Unlocked!';localStorage.setItem('twirlPro','yes');}else{m.style.display='block';m.innerText='❌ Wrong! CLOUD26 type karo';}}
+if(localStorage.getItem('twirlPro')==='yes'){['bunnyContent','bowContent','berryContent','daisyContent'].forEach(id=>document.getElementById(id).classList.remove('locked'));['bunnyLock','bowLock','berryLock','daisyLock'].forEach(id=>{let e=document.getElementById(id); if(e) e.style.display='none';});}
+function doLike(){if(localStorage.getItem('liked'))return;let l=parseInt(localStorage.getItem('likes')||'128')+1;localStorage.setItem('likes',l);localStorage.setItem('liked','yes');document.getElementById('likeCount').innerText=l;document.getElementById('likeBtn').innerText='❤️ Liked!';}
+function addComment(){const i=document.getElementById('commentInput');if(!i.value.trim())return;const d=document.createElement('div');d.style.cssText='background:white;padding:8px;border-radius:10px;margin-top:6px;font-size:12px';d.innerHTML='<b>@you:</b> '+i.value;document.getElementById('commentsList').appendChild(d);i.value='';}
+document.getElementById('secondLast')?.scrollIntoView({behavior:'smooth'});
 </script>
 </body>
 </html>
