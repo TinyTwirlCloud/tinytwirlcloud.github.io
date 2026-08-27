@@ -11,13 +11,11 @@ body{background:#fff5f8;color:#5a2d3f;padding-bottom:90px}
 .pattern{background:#fff0f5;border-radius:18px;padding:12px;margin:16px 0;border:2px solid #ffe0e8;position:relative}
 .pattern img{width:100%;height:210px;object-fit:cover;border-radius:12px}
 .line{padding:5px 0;border-bottom:1px dashed #ffe0e8;font-size:13px;line-height:1.6}
-.line b{color:#ff5fad}
-.title{font-weight:800;color:#ff5fad;margin-top:14px;margin-bottom:4px;font-size:14px}
 .pro-lock{position:absolute;top:14px;right:14px;background:linear-gradient(135deg,#ff5fad,#a56bff);color:white;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800}
-.locked{filter:blur(8px);pointer-events:none;user-select:none}
+.hidden-pro{display:none!important}
 .para{background:white;border-radius:14px;padding:12px;margin:10px 0;border:2px solid #ffe0e8}
-.btn{background:linear-gradient(135deg,#ff5fad,#ff8fab);color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;width:100%;margin-top:8px}
-.highlight{border:3px solid #ff5fad!important;box-shadow:0 0 15px rgba(255,95,173,.3)}
+.btn{background:linear-gradient(135deg,#ff5fad,#ff8fab);color:white;border:none;padding:10px 16px;border-radius:12px;font-weight:700;width:100%;margin-top:8px;cursor:pointer}
+.pro-box-locked{background:white;border-radius:14px;padding:20px;text-align:center;margin-top:10px;border:2px dashed #ff5fad}
 </style>
 </head>
 <body>
@@ -27,10 +25,10 @@ body{background:#fff5f8;color:#5a2d3f;padding-bottom:90px}
 <h2>Tiny Twirl Cloud ☁️</h2>
 <p style="font-size:13px;font-weight:600">By Diya Sahai • Gurugram 💖</p>
 <button class="btn" onclick="doLike()" id="likeBtn">❤️ Like (<span id="likeCount">128</span>)</button>
-<div style="background:linear-gradient(135deg,#ff5fad,#a56bff);border-radius:16px;padding:14px;margin-top:12px;color:white">
+<div style="background:linear-gradient(135deg,#ff5fad,#a56bff);border-radius:16px;padding:14px;margin-top:12px;color:white;text-align:left">
 <h3>🔓 TWIRL PRO ✨</h3>
-<input id="proInput" placeholder="Enter CLOUD26" style="width:100%;padding:10px;border-radius:10px;border:none;text-align:center;font-weight:700;margin-top:8px">
-<button onclick="checkPro()" style="width:100%;margin-top:8px;padding:10px;border-radius:10px;border:none;background:white;color:#ff5fad;font-weight:800">🔓 Unlock PRO!</button>
+<input id="proInput" placeholder="•••••••••••" style="width:100%;padding:14px;border-radius:10px;border:none;text-align:center;font-weight:800;margin-top:8px;font-size:18px;letter-spacing:3px">
+<button onclick="checkPro()" style="width:100%;margin-top:8px;padding:12px;border-radius:10px;border:none;background:white;color:#ff5fad;font-weight:800">🔓 Unlock PRO!</button>
 <p id="proMsg" style="display:none;margin-top:8px;font-weight:700;font-size:12px;text-align:center"></p>
 </div>
 </div>
@@ -38,120 +36,109 @@ body{background:#fff5f8;color:#5a2d3f;padding-bottom:90px}
 <div class="card">
 <h3 style="text-align:center">🧶 My 6 Patterns 🎀</h3>
 
-<div class="pattern">
-<div class="pro-lock">👑 PRO</div>
-<img src="IMG-20260823-WA9459.jpg">
-<h3>1. Watermelon Bunny 🐰🍉 - PRO</h3>
-<div id="bunnyContent" class="locked" style="background:white;padding:12px;border-radius:12px;margin-top:8px">
-<div class="line">HEAD R1 6SC MR R2 INCx6 R3 [SC INC]x6 R4 [2SC INC]x6 <b>R5-R11 SC30</b> R12 [3SC DEC]x6 / HANDS R1 5SC R2 INCx5 <b>R3-R8 SC10</b> / LEGS R1 6SC R2 INCx6 <b>R3-R6 SC12</b></div>
-</div>
-<div id="bunnyLock" style="text-align:center;padding:20px;font-weight:800">🔒 PRO</div>
-</div>
+<div class="pattern"><div class="pro-lock">👑 PRO</div><img src="IMG-20260823-WA9459.jpg"><h3>1. Bunny 🐰</h3><div id="bunnyLockBox" class="pro-box-locked">🔒 PRO Pattern - Unlock to view!</div><div id="bunnyContent" class="hidden-pro"><div class="line">R1 6SC MR R2 INCx6 R3 [SC INC]x6 R4 [2SC INC]x6 R5-R11 SC all around (30) R12 [3SC DEC]x6 HANDS R1 5SC R2 INCx5 R3-R8 SC10 LEGS R1 6SC R2 INCx6 R3-R6 SC12</div></div></div>
 
-<div class="pattern">
-<div class="pro-lock">👑 PRO</div>
-<img src="IMG-20260823-WA5906.jpg">
-<h3>2. Bow Scrunchie 🎀 - PRO - Thick Black Band</h3>
-<div id="bowContent" class="locked" style="background:white;padding:12px;border-radius:12px;margin-top:8px">
-<div class="line">Thick black band - SC30 around band <b>R2 2DC each (60) R3 [DC INC] (90)</b> Bow CH18 R2-R21 SC17 attach on SL ST seam outside hide seam</div>
-</div>
-<div id="bowLock" style="text-align:center;padding:20px;font-weight:800">🔒 PRO</div>
-</div>
+<div class="pattern"><div class="pro-lock">👑 PRO</div><img src="IMG-20260823-WA5906.jpg"><h3>2. Bow Scrunchie 🎀</h3><div id="bowLockBox" class="pro-box-locked">🔒 PRO Pattern - Unlock to view!</div><div id="bowContent" class="hidden-pro"><div class="line">Thick black band black hair band SC30 R2 2DC each (60) R3 [DC INC] (90) Bow CH18 R2-R21 SC17 Attach on SL ST seam outside hide seam</div></div></div>
 
-<div class="pattern">
-<div class="pro-lock">👑 PRO</div>
-<img src="IMG-20260823-WA8603.jpg">
-<h3>3. Strawberry Scrunchie 🍓 - PRO - Thick Black Band</h3>
-<div id="berryContent" class="locked" style="background:white;padding:12px;border-radius:12px;margin-top:8px">
-<div class="line">Thick black band SC30 <b>R2 Red 2DC each R3 [DC INC]</b></div>
-</div>
-<div id="berryLock" style="text-align:center;padding:20px;font-weight:800">🔒 PRO</div>
-</div>
+<div class="pattern"><div class="pro-lock">👑 PRO</div><img src="IMG-20260823-WA8603.jpg"><h3>3. Strawberry Scrunchie 🍓</h3><div id="berryLockBox" class="pro-box-locked">🔒 PRO Pattern - Unlock to view!</div><div id="berryContent" class="hidden-pro"><div class="line">Thick black band SC30 R2 Red 2DC each (60) R3 [DC INC] (90) Seeds V white</div></div></div>
 
-<div class="pattern">
-<img src="IMG-20260827-WA4483.jpg">
-<h3>4. Granny Square 🟩 - FREE ✨</h3>
-<div style="background:white;padding:12px;border-radius:12px;margin-top:8px">
-<div class="line">R1 MR [three double crochets in one stitch CH2] x4 / R2 Corners [three double crochets in one stitch CH2 three double crochets in one stitch] / <b>R3-R6 SC all around - Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides three double crochets in one stitch</b></div>
-</div>
-</div>
+<div class="pattern"><img src="IMG-20260827-WA4483.jpg"><h3>4. Granny Square 🟩</h3><div style="background:white;padding:12px;border-radius:12px"><div class="line">R1 MR [three double crochets in one stitch CH2] x4 / R2 Corners [three double crochets in one stitch CH2 three double crochets in one stitch] / R3-R6 SC all around</div></div></div>
 
-<!-- SECOND LAST WALA - HIGHLIGHTED -->
-<div class="pattern highlight" id="secondLast">
-<img src="IMG-20260823-WA9402.jpg">
-<h3>5. Flower Headband 🌸 - SECOND LAST WALA - FREE ✨ - FULL!</h3>
-<div style="background:white;padding:14px;border-radius:12px;margin-top:8px">
-<div class="title">⭐ THIS IS SECOND LAST WALA - HEADBAND!</div>
-<div class="line"><b>Step 1 - CH according to your head size:</b><br>
-• Measure head with tape OR use yarn around head<br>
-• <b>Adult: 70 CH</b> (56cm head)<br>
-• <b>Kid: 60 CH</b> (50cm head)<br>
-• <b>Baby: 50 CH</b> (40cm head)<br>
-• CH according to your head size - This is base chain!</div>
-<div class="line"><b>Step 2 - Stitched part:</b><br>
-R1: CH according to your head size (70/60/50) as per above<br>
-<b>R2: SC in 2nd CH from hook, SC all around - Join with SL ST to first SC to make circle - (70 SC)<br>
-R3: SC all around (70)<br>
-R4: SC all around (70)<br>
-R5: SC all around (70)<br>
-R6: SC all around (70) - FO</b><br>
-You now have a stitched band circle - Approx 5cm wide, stretchy!</div>
-<div class="line"><b>Step 3 - Flowers to cover whole stitched part (No plain band visible!):</b><br>
-Flower Pattern: Magic Ring [CH2, 2 DC, CH2, SL ST] repeat 5 times = 5 petals flower - Make 1 flower<br>
-Make 8-12 such flowers (mix colors pink/white/yellow)<br>
-<b>How to attach flowers:</b> Sew flowers side by side on whole stitched part of headband - Cover full band - Stitch flowers touching each other - No plain band should be visible - Only flowers visible!<br>
-Use needle, sew each flower base 2-3 times on band - Flowers cover whole stitched part completely!</div>
-<div class="line"><b>Final:</b> Headband ready! Flowers cover whole stitched part - No plain band visible - Super cute! 🌸✨</div>
-</div>
-</div>
+<div class="pattern"><img src="IMG-20260823-WA9402.jpg"><h3>5. Flower Headband 🌸</h3><div style="background:white;padding:12px;border-radius:12px"><div class="line">CH according to head size: Adult 70 CH Kid 60 CH Baby 50 CH R2-R6 SC all around (70) Flowers cover whole stitched part no plain visible! 8-12 flowers cover full band!</div></div></div>
 
-<div class="pattern">
-<div class="pro-lock">👑 PRO</div>
-<img src="IMG-20260827-WA0685.jpg">
-<h3>6. Daisy Blanket 🌼 - 35 Squares - PRO - 3 Paragraphs!</h3>
-<div id="daisyBox" style="margin-top:8px">
-<div id="daisyLock" style="text-align:center;font-weight:800;background:white;padding:20px;border-radius:12px">🔒 PRO</div>
-<div id="daisyContent" class="locked">
+<div class="pattern"><div class="pro-lock">👑 PRO</div><img src="IMG-20260827-WA0685.jpg"><h3>6. Daisy Blanket 🌼</h3><div id="daisyLockBox" class="pro-box-locked">🔒 PRO Pattern - Unlock to view!</div><div id="daisyContent" class="hidden-pro">
+
 <div class="para">
-<div class="title">Para 1 - Daisy Flower (10 lines)</div>
-<div class="line">1 Yellow MR 2 R1 6SC 3 Attach white 4 R2 [CH2 1DC CH2 SL ST] x1 petal 5 Repeat x12 =12 petals 6 Daisy shape 7 SL ST FO 5cm 8 Weave tails 9 One flower 3cm 10 Make 35</div>
+<div class="line">1. Yellow yarn - Magic Ring</div>
+<div class="line">2. R1: 6 SC in MR (6) Pull tight SL ST join</div>
+<div class="line">3. Cut yellow, attach white in any SC of yellow</div>
+<div class="line">4. R2: [CH2, 1 DC, CH2, SL ST in next SC] = 1 petal</div>
+<div class="line">5. Repeat [CH2, 1 DC, CH2, SL ST next] x12 = 12 petals</div>
+<div class="line">6. 12 white petals around yellow Daisy ready</div>
+<div class="line">7. SL ST first petal base FO 5cm tail</div>
+<div class="line">8. Weave tails back needle Hide ends</div>
+<div class="line">9. One daisy 3cm cute small</div>
+<div class="line">10. Make 35 such daisy flowers Keep ready</div>
 </div>
+
 <div class="para">
-<div class="title">Para 2 - Square (10 lines)</div>
-<div class="line">1 Pastel attach between petals 2 R1 [three double crochets in one stitch CH2] x4 4 corners 3 Square around daisy 4 R2 SC all around Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides three double crochets in one stitch 5 Bigger 12 per side 6 R3 SC Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides 1DC each 7 Corners same 8 R4 SC Corners three double crochets in one stitch CH2 three double crochets in one stitch 10x10cm 9 FO one square ready 10 Make 35</div>
+<div class="line">1. Pastel color attach any space between petals</div>
+<div class="line">2. R1: [three double crochets in one stitch CH2] x4 = 4 corners SL ST</div>
+<div class="line">3. Square around circle daisy 4 CH2 corners</div>
+<div class="line">4. R2: SC all around Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides three double crochets in one stitch</div>
+<div class="line">5. Bigger 12 per side SL ST join</div>
+<div class="line">6. R3: SC all around Corners three double crochets in one stitch CH2 three double crochets in one stitch Sides 1 DC each</div>
+<div class="line">7. Corners same three double crochets in one stitch CH2 three double crochets in one stitch</div>
+<div class="line">8. R4: SC all around Corners three double crochets in one stitch CH2 three double crochets in one stitch 10x10cm</div>
+<div class="line">9. FO One square ready Flower + pastel square</div>
+<div class="line">10. Make 35 squares total Same or mix colors</div>
 </div>
+
 <div class="para">
-<div class="title">Para 3 - Join 35 (10 lines)</div>
-<div class="line">1 Lay 35 floor 5 ROWS x7 COLS=35 2 SC Join white seam pretty OR whip invisible 3 Join 7 squares=1 row 2 squares right sides together white SC through both loops 1SC each across CH1 4 Join 3rd same Repeat 7=1 row Make 5 rows 5 Join 5 rows together 2 rows right sides together SC through both edges 1SC each 6 Repeat Join 5 rows big blanket 150x110cm 35 attached 7 Check no holes whip back loops zig-zag invisible 8 BORDER white any corner R1 SC all around big blanket corners 3SC in one 9 R2 SC all around corners 3SC 10 R3 SC FO Done! 🌼</div>
+<div class="line">1. Lay 35 floor Arrange 5 ROWS x 7 COLS = 35 Squares</div>
+<div class="line">2. Join method SC Join white seam visible OR Whip invisible Recommend SC white</div>
+<div class="line">3. Join 7 squares = 1 row: 2 squares right sides together white SC both loops 1 SC each CH1</div>
+<div class="line">4. Join 3rd same till 7 = 1 long row Make 5 such rows Each 7 squares</div>
+<div class="line">5. Join 5 rows: 2 rows together white SC both edges 1 SC each whole row length</div>
+<div class="line">6. Repeat Join all 5 rows big blanket 150x110cm 35 attached</div>
+<div class="line">7. Check no holes whip back loops zig-zag invisible if whip</div>
+<div class="line">8. BORDER: Attach white any corner big blanket R1 SC all around corners 3 SC in one</div>
+<div class="line">9. R2: SC all around Corners 3 SC in one Border thicker</div>
+<div class="line">10. R3: SC all around FO Done! 35 joined cozy blanket white border! 🌼</div>
 </div>
-</div>
-</div>
-</div>
+
+</div></div>
 </div>
 
 <div class="card" style="text-align:center">
 <img src="IMG-20260823-WA0231.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid #ffdeec">
-<h2>About Me 💖 - Diya Sahai</h2>
-<p style="font-size:13px;margin-top:6px;text-align:left;line-height:1.7">
-Hiii I'm Diya! Tiny Twirl Cloud is my crochet world! ☁️<br>
-PRO = Bunny + Both Scrunchies thick black band + Daisy 35 squares 3 paras<br>
-FREE = Granny three double crochets in one stitch + Second Last Wala Headband CH according to head size + flowers cover whole stitched part!<br>
-Follow @tinytwirlcloud 📸
+<h2>About Me 💖</h2>
+<div style="background:#fff0f5;border-radius:16px;padding:14px;text-align:left;margin-top:10px;border:2px solid #ffdeec">
+
+<p style="background:white;border-radius:12px;padding:12px;margin-bottom:10px;font-size:13px;line-height:1.7">
+Hiii! I'm Diya Sahai from Gurugram, owner of Tiny Twirl Cloud! ☁️<br>
+I started crocheting 1 year ago from YouTube with my first granny square!<br>
+I love pastel colors like pink, lavender and mint - tiny yarn magic is my fav! ✨<br>
+This site has my 6 favourite patterns - 3 PRO + 3 FREE with full love! 💖
 </p>
-<div style="margin-top:12px;text-align:left;background:#fff5f8;border-radius:12px;padding:10px">
-<h4>💬 Comments</h4>
-<div id="commentsList"><div style="background:white;padding:8px;border-radius:10px;margin-top:6px;font-size:12px"><b>@user:</b> Second last headband super clear! 🌸</div></div>
-<input id="commentInput" placeholder="Add comment..." style="width:100%;padding:10px;border-radius:10px;border:1.5px solid #ffe0e8;margin-top:8px">
-<button class="btn" onclick="addComment()">Post Comment 💬</button>
+
+<p style="background:white;border-radius:12px;padding:12px;margin-bottom:10px;font-size:13px;line-height:1.7">
+PRO patterns: Bunny, Bow + Strawberry scrunchies with thick black band, and Daisy blanket with 35 squares!<br>
+FREE patterns: Granny Square with three double crochets in one stitch and Flower Headband with CH according to head size!<br>
+Headband tip: Flowers cover whole stitched part - no plain band visible, only flowers! 🌸
+</p>
+
+<p style="background:white;border-radius:12px;padding:12px;font-size:13px;line-height:1.7">
+Scrunchies trick: Use thick black hair band, SC 30 around it, then ruffle with R2 2DC each and R3 [DC INC]!<br>
+Bow trick: Attach bow on SL ST seam outside to hide seam, sew middle 4-5 times and knot inside! 🎀<br>
+Follow @tinytwirlcloud and DM me for PRO code - let's crochet together! 🧶💖
+</p>
+
 </div>
 </div>
 
 <script>
-function checkPro(){const v=document.getElementById('proInput').value.toUpperCase().trim(),m=document.getElementById('proMsg');if(v==='CLOUD26'){['bunnyContent','bowContent','berryContent','daisyContent'].forEach(id=>document.getElementById(id).classList.remove('locked'));['bunnyLock','bowLock','berryLock','daisyLock'].forEach(id=>document.getElementById(id).style.display='none');m.style.display='block';m.innerText='👑 PRO Unlocked!';localStorage.setItem('twirlPro','yes');}else{m.style.display='block';m.innerText='❌ Wrong! CLOUD26 type karo';}}
-if(localStorage.getItem('twirlPro')==='yes'){['bunnyContent','bowContent','berryContent','daisyContent'].forEach(id=>document.getElementById(id).classList.remove('locked'));['bunnyLock','bowLock','berryLock','daisyLock'].forEach(id=>{let e=document.getElementById(id); if(e) e.style.display='none';});}
+const PRO_CODE = "DIYATWIRL26";
+function checkPro(){
+  const v=document.getElementById('proInput').value.toUpperCase().trim();
+  const m=document.getElementById('proMsg');
+  if(v===PRO_CODE){
+    ['bunnyContent','bowContent','berryContent','daisyContent'].forEach(id=>document.getElementById(id).classList.remove('hidden-pro'));
+    ['bunnyLockBox','bowLockBox','berryLockBox','daisyLockBox'].forEach(id=>{let e=document.getElementById(id); if(e) e.style.display='none';});
+    m.style.display='block';
+    m.innerText='👑 PRO Unlocked! Welcome! ✨';
+    localStorage.setItem('twirlPro','yes');
+    localStorage.setItem('proCode',PRO_CODE);
+  } else {
+    m.style.display='block';
+    m.innerText='❌ Wrong password! Try again!';
+  }
+}
+if(localStorage.getItem('twirlPro')==='yes' && localStorage.getItem('proCode')===PRO_CODE){
+  ['bunnyContent','bowContent','berryContent','daisyContent'].forEach(id=>document.getElementById(id).classList.remove('hidden-pro'));
+  ['bunnyLockBox','bowLockBox','berryLockBox','daisyLockBox'].forEach(id=>{let e=document.getElementById(id); if(e) e.style.display='none';});
+}
 function doLike(){if(localStorage.getItem('liked'))return;let l=parseInt(localStorage.getItem('likes')||'128')+1;localStorage.setItem('likes',l);localStorage.setItem('liked','yes');document.getElementById('likeCount').innerText=l;document.getElementById('likeBtn').innerText='❤️ Liked!';}
-function addComment(){const i=document.getElementById('commentInput');if(!i.value.trim())return;const d=document.createElement('div');d.style.cssText='background:white;padding:8px;border-radius:10px;margin-top:6px;font-size:12px';d.innerHTML='<b>@you:</b> '+i.value;document.getElementById('commentsList').appendChild(d);i.value='';}
-document.getElementById('secondLast')?.scrollIntoView({behavior:'smooth'});
 </script>
 </body>
-</html>
+  </html>
